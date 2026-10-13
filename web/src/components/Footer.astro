@@ -1,45 +1,44 @@
 ---
-import Icon from './Icon.astro'
 import {formatRange} from '../lib/time'
 import type {Settings} from '../lib/content'
 interface Props {
   settings: Settings
 }
 const {settings} = Astro.props
+const year = settings.startDate?.slice(0, 4)
+const links = [
+  {href: '/programme', label: 'Programme'},
+  {href: '/participant-information', label: 'Participant information'},
+  {href: '/resources', label: 'Resources'},
+  {href: '/gallery', label: 'Photo gallery'},
+  {href: '/announcements', label: 'Announcements'},
+  {href: '/about', label: 'About WIRE'},
+]
 ---
-<footer class="on-dark mt-24 bg-forest-900 text-white/85">
-  <div class="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
-    <div>
-      <p class="font-display text-2xl font-extrabold text-white">WIRE {settings.startDate?.slice(0, 4)}</p>
-      <p class="mt-1 font-display text-sm font-semibold text-white/80">
-        {settings.edition} {settings.eventName}
-      </p>
-      <p class="mt-1 text-sm">{formatRange(settings.startDate, settings.endDate)} · {settings.city}, {settings.country}</p>
-      {settings.organizerLine && <p class="mt-5 max-w-md text-sm leading-relaxed">{settings.organizerLine}</p>}
+<footer class="on-dark mt-28 bg-ink text-white/75 sm:mt-36">
+  <div class="container-page pt-16 pb-10 sm:pt-20">
+    <div class="grid gap-12 md:grid-cols-[1.6fr_1fr_1fr]">
+      <div>
+        <p class="text-5xl font-medium tracking-[-0.045em] text-white sm:text-6xl">WIRE {year}</p>
+        <p class="mt-4 text-white">{settings.edition} {settings.eventName}</p>
+        <p class="mt-1 text-sm">{formatRange(settings.startDate, settings.endDate)} · {settings.city}, {settings.country}</p>
+        {settings.organizerLine && <p class="mt-6 max-w-md text-sm leading-relaxed">{settings.organizerLine}</p>}
+      </div>
+      <nav aria-label="Footer">
+        <h2 class="text-xs font-medium tracking-[0.16em] text-white/60 uppercase">Explore</h2>
+        <ul class="mt-5 space-y-2.5 text-[0.95rem]">
+          {links.map((l) => <li><a class="text-white no-underline hover:text-un hover:underline" href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </nav>
+      <div>
+        <h2 class="text-xs font-medium tracking-[0.16em] text-white/60 uppercase">Contact</h2>
+        <p class="mt-5 text-[0.95rem]">WIRE Organizing Committee</p>
+        <a class="mt-1 inline-block text-[0.95rem] break-all text-white hover:text-un" href={`mailto:${settings.contactEmail}`}>{settings.contactEmail}</a>
+      </div>
     </div>
-    <div>
-      <h2 class="font-display text-xs font-semibold tracking-[0.14em] text-white/70 uppercase">Explore</h2>
-      <ul class="mt-4 space-y-2 text-sm">
-        <li><a class="text-white" href="/programme">Programme</a></li>
-        <li><a class="text-white" href="/participant-information">Participant information</a></li>
-        <li><a class="text-white" href="/resources">Resources and downloads</a></li>
-        <li><a class="text-white" href="/gallery">Photo gallery</a></li>
-        <li><a class="text-white" href="/announcements">Announcements</a></li>
-        <li><a class="text-white" href="/about">About WIRE</a></li>
-      </ul>
-    </div>
-    <div>
-      <h2 class="font-display text-xs font-semibold tracking-[0.14em] text-white/70 uppercase">Contact</h2>
-      <p class="mt-4 text-sm">WIRE Organizing Committee</p>
-      <a class="mt-1 inline-flex items-center gap-2 text-sm text-white" href={`mailto:${settings.contactEmail}`}>
-        <Icon name="mail" class="size-4" />{settings.contactEmail}
-      </a>
-    </div>
-  </div>
-  <div class="border-t border-white/15">
-    <div class="container-page flex flex-col gap-2 py-5 text-xs text-white/70 sm:flex-row sm:justify-between">
+    <div class="mt-16 flex flex-col gap-2 border-t border-white/15 pt-6 text-xs text-white/60 sm:flex-row sm:justify-between">
       <p>{settings.footerNote}</p>
-      <p class="shrink-0">© {settings.startDate?.slice(0, 4)} WIRE Forum</p>
+      <p class="shrink-0">© {year} WIRE Forum</p>
     </div>
   </div>
 </footer>

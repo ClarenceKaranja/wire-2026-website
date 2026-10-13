@@ -35,7 +35,7 @@ const ogUrl = ogImage?.asset ? new URL(imageUrl(ogImage, 1200, 630), Astro.site)
     <meta name="description" content={metaDescription} />
     <link rel="canonical" href={canonical} />
     {(noindex || preview) && <meta name="robots" content="noindex, nofollow" />}
-    <meta name="theme-color" content="#294816" />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap.xml" />
     <meta property="og:type" content="website" />
@@ -48,7 +48,7 @@ const ogUrl = ogImage?.asset ? new URL(imageUrl(ogImage, 1200, 630), Astro.site)
     <meta name="twitter:card" content={ogUrl ? 'summary_large_image' : 'summary'} />
   </head>
   <body class="flex min-h-screen flex-col">
-    <a href="#main" class="sr-only z-50 bg-forest-800 px-4 py-3 font-semibold text-white focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
+    <a href="#main" class="sr-only z-50 bg-ink px-4 py-3 font-medium text-white focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
       Skip to main content
     </a>
     {preview && (

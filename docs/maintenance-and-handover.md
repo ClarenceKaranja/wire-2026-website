@@ -54,7 +54,7 @@ If a token may have leaked: sanity.io/manage → API → Tokens → delete it, c
 | Studio menu | `studio/structure.ts` |
 | What the website fetches (and what it filters out) | `web/src/lib/queries.ts` |
 | Page layouts | `web/src/pages/` |
-| Colours, fonts, buttons | `web/src/styles/global.css` |
+| Colours (UN black, white and UN Blue), Roboto font, buttons | `web/src/styles/global.css` |
 | Security and cache headers | `web/src/middleware.ts` |
 | Netlify build settings | `netlify.toml` |
 

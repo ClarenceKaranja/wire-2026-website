@@ -46,7 +46,7 @@ All open source, installed from npm, versions locked in `package-lock.json`.
 | @netlify/functions | Clearing the page cache after publishing |
 | astro-portabletext | Displaying rich text from Sanity |
 | groq-js | Offline development with sample content |
-| Montserrat, Source Sans 3 (Fontsource) | Fonts, self-hosted (no Google Fonts tracking) |
+| Roboto (Fontsource) | The UN primary typeface, self-hosted (no Google Fonts tracking) |
 | Sanity Studio 6, React 19 | The content editor |
 
 ## Data and privacy notes

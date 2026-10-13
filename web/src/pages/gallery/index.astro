@@ -9,7 +9,7 @@ const albums = await fetchContent<any[]>(Q.ALBUMS_QUERY, Astro.locals.preview)
 ---
 <Base title="Photo gallery" description="Approved photographs from the 10th WIRE Forum in Nairobi.">
   <PageHeader eyebrow="Gallery" title="Photo gallery" lead="Approved photographs from the Forum, organized by activity." />
-  <div class="container-page py-10">
+  <div class="container-page pt-12 pb-10 sm:pt-16">
     {albums.length === 0 ? (
       <EmptyState icon="image" title="No photographs yet">
         Photographs from the opening ceremony, Forum sessions, the Nairobi National Park visit and the closing will be published here once they have been approved for release.
@@ -19,7 +19,7 @@ const albums = await fetchContent<any[]>(Q.ALBUMS_QUERY, Astro.locals.preview)
         {albums.map((a) => (
           <li>
             <a href={`/gallery/${a.slug}`} class="group block no-underline">
-              <div class="overflow-hidden rounded-sm bg-sand">
+              <div class="overflow-hidden bg-sand">
                 {a.cover?.asset && (
                   <img
                     src={imageUrl(a.cover, 640, 440)}
@@ -33,7 +33,7 @@ const albums = await fetchContent<any[]>(Q.ALBUMS_QUERY, Astro.locals.preview)
                   />
                 )}
               </div>
-              <h2 class="mt-3 text-lg font-bold text-ink group-hover:text-forest-800 group-hover:underline">{a.title}</h2>
+              <h2 class="mt-3 text-lg font-medium text-ink group-hover:text-brand-800 group-hover:underline">{a.title}</h2>
               <p class="text-sm text-muted">{a.count} photo{a.count === 1 ? '' : 's'}{a.day?.label && ` · ${a.day.label}`}</p>
               {a.description && <p class="mt-1 line-clamp-2 text-[0.95rem] text-ink-soft">{a.description}</p>}
             </a>

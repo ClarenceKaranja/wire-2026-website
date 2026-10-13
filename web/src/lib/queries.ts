@@ -42,17 +42,8 @@ export const SETTINGS_QUERY = `*[_id == "siteSettings"][0]{
 }`
 
 export const HOME_QUERY = `{
-  "home": *[_id == "homePage"][0]{..., heroImage${IMAGE}},
-  "announcements": *[${LIVE_ANNOUNCEMENT} && (!defined(expiresAt) || dateTime(expiresAt) > dateTime($now))] | order(featured desc, publishedAt desc)[0...3]${ANNOUNCEMENT},
-  "featuredSessions": *[_type == "session" && featured == true] | order(day->date asc, startTime asc)${SESSION},
-  "sessions": *[_type == "session" && status != "cancelled"] | order(day->date asc, startTime asc, sortOrder asc){_id, title, startTime, endTime, sessionType, status, "location": select(sessionType != "restricted" => location), "day": day->{_id, label, date}},
-  "featuredDocuments": *[${PUBLIC_RESOURCE} && featured == true && status == "current" && (!defined(expiresAt) || expiresAt > $today)] | order(publishedAt desc)[0...4]${RESOURCE},
-  "featuredPhotos": *[${PUBLIC_ALBUM}] | order(sortOrder asc){
-    title, "slug": slug.current,
-    "photos": photos[visible != false && featured == true]${IMAGE}
-  },
-  "albumCount": count(*[${PUBLIC_ALBUM}]),
-  "programme": *[_id == "programmePage"][0]{statusNote, "agenda": *[_id == ^.agenda._ref && ${PUBLIC_RESOURCE}][0]${RESOURCE}}
+  "home": *[_id == "homePage"][0]{heroLead, heroImage${IMAGE}, outcomesHeading, outcomesSummary},
+  "latest": *[${LIVE_ANNOUNCEMENT} && (!defined(expiresAt) || dateTime(expiresAt) > dateTime($now))] | order(featured desc, publishedAt desc)[0]{_id, title, publishedAt}
 }`
 
 export const PROGRAMME_QUERY = `{

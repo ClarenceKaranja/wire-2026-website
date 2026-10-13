@@ -18,11 +18,11 @@ const moderators = people(s.moderators)
 const speakers = people(s.speakers)
 ---
 <li
-  class:list={['session relative grid gap-x-6 gap-y-1 border-b border-line py-5 sm:grid-cols-[8.5rem_1fr]', light && 'py-3.5', cancelled && 'opacity-70']}
+  class:list={['session relative grid gap-x-6 gap-y-1 border-b border-line py-6 sm:grid-cols-[10rem_1fr]', light && 'py-4', cancelled && 'opacity-70']}
   data-start={nairobiInstant(date, s.startTime)}
   data-end={nairobiInstant(date, s.endTime)}
 >
-  <p class="font-display text-[0.95rem] font-semibold tabular-nums text-ink">
+  <p class="text-base tabular-nums text-ink">
     <time datetime={nairobiInstant(date, s.startTime)}>{s.startTime}</time>
     <span aria-hidden="true">–</span><span class="sr-only"> to </span>
     <time datetime={nairobiInstant(date, s.endTime)}>{s.endTime}</time>
@@ -30,18 +30,18 @@ const speakers = people(s.speakers)
   <div>
     <div class="flex flex-wrap items-center gap-2">
       {!light && (
-        <span class:list={['tag', restricted ? 'bg-sand text-ink-soft' : 'bg-forest-50 text-forest-800']}>
+        <span class:list={['tag', restricted ? 'bg-sand text-ink-soft' : 'bg-brand-50 text-ink']}>
           {restricted && <Icon name="lock" class="size-3.5" />}
           {SESSION_TYPE_LABELS[s.sessionType] ?? 'Session'}
         </span>
       )}
-      {s.hybrid && <span class="tag border border-forest-800/30 text-forest-800"><Icon name="video" class="size-3.5" />Hybrid</span>}
+      {s.hybrid && <span class="tag border border-line text-ink"><Icon name="video" class="size-3.5" />Hybrid</span>}
       {s.status === 'tbc' && <span class="tag bg-amber-soft text-amber-ink">Details to be confirmed</span>}
       {s.status === 'changed' && <span class="tag bg-amber-soft text-amber-ink">Changed{s.changeNote ? `: ${s.changeNote}` : ''}</span>}
       {cancelled && <span class="tag bg-alert-soft text-alert">Cancelled</span>}
-      <span class="hidden tag bg-forest-800 text-white" data-now-badge>Happening now</span>
+      <span class="hidden tag bg-un text-ink" data-now-badge>Happening now</span>
     </div>
-    <h3 class:list={['mt-1.5 leading-snug', light ? 'text-base font-semibold text-ink-soft' : 'text-lg font-bold', cancelled && 'line-through']}>
+    <h3 class:list={['mt-1.5 leading-snug', light ? 'text-base font-normal text-muted' : 'text-xl font-medium tracking-tight', cancelled && 'line-through']}>
       {light && <Icon name={s.sessionType === 'registration' ? 'users' : 'coffee'} class="mr-1.5 inline size-4 -translate-y-px text-muted" />}
       {s.title}
     </h3>

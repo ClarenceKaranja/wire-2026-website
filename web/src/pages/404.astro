@@ -7,7 +7,7 @@ Astro.response.status = 404
 <Base title="Page not found" noindex>
   <section class="container-page py-20 sm:py-28">
     <p class="eyebrow">Error 404</p>
-    <h1 class="mt-3 text-4xl font-extrabold sm:text-5xl">This page could not be found</h1>
+    <h1 class="mt-3 text-4xl font-semibold sm:text-5xl">This page could not be found</h1>
     <p class="mt-4 max-w-xl text-lg text-ink-soft">
       The link may be out of date, or the page may have been moved. Most participant information is available from the pages below.
     </p>
@@ -19,7 +19,7 @@ Astro.response.status = 404
         ['/resources', 'Resources and downloads'],
       ].map(([href, label]) => (
         <li>
-          <a href={href} class="flex items-center justify-between rounded-sm border border-line bg-white px-5 py-4 font-display font-bold no-underline hover:border-forest-800">
+          <a href={href} class="flex items-center justify-between border border-line bg-white px-5 py-4 font-display font-medium no-underline hover:border-brand-800">
             {label}<Icon name="arrow" class="size-5" />
           </a>
         </li>

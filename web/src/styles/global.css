@@ -1,31 +1,46 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/montserrat/wght.css';
-@import '@fontsource-variable/source-sans-3/wght.css';
+@import '@fontsource-variable/roboto/wght.css';
 
 @theme {
-  --font-sans: 'Source Sans 3 Variable', 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-display: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
+  /* Roboto is the UN's primary typeface (UN brand identity quick guide). */
+  --font-sans: 'Roboto Variable', 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Roboto Variable', 'Roboto', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* Deep forest green taken from the 10th WIRE visual identity (#294816). */
-  --color-forest-950: #16260b;
-  --color-forest-900: #1f3611;
-  --color-forest-800: #294816;
-  --color-forest-700: #345b1d;
-  --color-forest-600: #44742a;
-  --color-forest-200: #cfdcc1;
-  --color-forest-100: #e3ebd9;
-  --color-forest-50: #f1f5ec;
+  /* UN palette: black, white and UN Blue (#009edb). UN Blue is used for
+     shapes and with black text only (white text on it fails contrast);
+     brand-700 is a deeper blue that is safe for text and links on white. */
+  --color-un: #009edb;
+  --color-brand-950: #050607;
+  --color-brand-900: #0b0c0e;
+  --color-brand-800: #0b0c0e;
+  --color-brand-700: #0072ae;
+  --color-brand-600: #0072ae;
+  --color-brand-200: #cce9f7;
+  --color-brand-100: #e3f3fb;
+  --color-brand-50: #f1f9fd;
 
-  --color-paper: #faf8f3;
-  --color-sand: #f2eee4;
-  --color-line: #e1ddd2;
-  --color-ink: #1d211e;
-  --color-ink-soft: #3b413c;
-  --color-muted: #5d635e;
+  --color-paper: #ffffff;
+  --color-sand: #f4f6f8;
+  --color-line: #e3e6ea;
+  --color-ink: #0b0c0e;
+  --color-ink-soft: #2e3338;
+  --color-muted: #5c6670;
   --color-amber-ink: #7a4b00;
-  --color-amber-soft: #fbf1dc;
-  --color-alert: #8f1d1d;
-  --color-alert-soft: #fbe9e7;
+  --color-amber-soft: #fdf3dc;
+  --color-alert: #a3231d;
+  --color-alert-soft: #fcebea;
+
+  --animate-rise: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 }
 
 @layer base {
@@ -37,29 +52,34 @@
     @apply bg-paper text-ink font-sans antialiased;
     font-size: 1.0625rem;
     line-height: 1.6;
+    font-optical-sizing: auto;
   }
   h1, h2, h3, h4 {
     @apply font-display text-ink;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
     text-wrap: balance;
   }
   a {
-    @apply text-forest-800 underline decoration-forest-800/30 underline-offset-[3px];
+    @apply text-ink underline decoration-ink/25 underline-offset-[3px] transition-colors;
   }
   a:hover {
-    @apply decoration-forest-800;
+    @apply decoration-brand-700 text-brand-700;
   }
   :focus-visible {
-    outline: 3px solid var(--color-forest-600);
+    outline: 2px solid var(--color-brand-700);
     outline-offset: 3px;
-    border-radius: 2px;
   }
   .on-dark :focus-visible {
-    outline-color: #f3e3a2;
+    outline-color: var(--color-un);
+  }
+  ::selection {
+    background: var(--color-un);
+    color: var(--color-ink);
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
@@ -67,25 +87,25 @@
 }
 
 @utility container-page {
-  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-8 lg:px-12;
 }
 @utility eyebrow {
-  @apply font-display text-xs font-semibold tracking-[0.14em] uppercase text-forest-700;
+  @apply font-display text-xs font-medium tracking-[0.16em] uppercase text-muted;
 }
 @utility btn {
-  @apply inline-flex items-center justify-center gap-2 rounded-sm px-5 py-3 font-display text-sm font-semibold no-underline transition-colors;
+  @apply inline-flex items-center justify-center gap-2 px-5 py-3 font-display text-sm font-medium no-underline transition-colors;
 }
 @utility btn-primary {
-  @apply btn bg-forest-800 text-white hover:bg-forest-900;
+  @apply btn bg-ink text-white hover:bg-brand-700 hover:text-white;
 }
 @utility btn-secondary {
-  @apply btn border border-forest-800 text-forest-800 hover:bg-forest-50;
+  @apply btn border border-ink text-ink hover:bg-ink hover:text-white;
 }
 @utility btn-quiet {
-  @apply btn px-0 py-1 text-forest-800 hover:underline;
+  @apply btn px-0 py-1 text-ink hover:text-brand-700;
 }
 @utility tag {
-  @apply inline-flex items-center gap-1 rounded-sm px-2 py-0.5 text-xs font-semibold tracking-wide uppercase;
+  @apply inline-flex items-center gap-1 px-2 py-0.5 text-[0.7rem] font-medium tracking-[0.08em] uppercase;
 }
 
 /* Rich text from the CMS */
@@ -97,10 +117,10 @@
     margin-top: 0.9em;
   }
   .prose-wire h3 {
-    @apply mt-8 text-xl font-bold text-ink;
+    @apply mt-10 text-xl font-medium text-ink;
   }
   .prose-wire h4 {
-    @apply mt-6 text-base font-bold text-ink;
+    @apply mt-6 text-base font-semibold text-ink;
   }
   .prose-wire ul {
     @apply list-disc pl-5;
@@ -110,6 +130,9 @@
   }
   .prose-wire li + li {
     margin-top: 0.3em;
+  }
+  .prose-wire li::marker {
+    color: var(--color-muted);
   }
   .prose-wire strong {
     @apply font-semibold text-ink;

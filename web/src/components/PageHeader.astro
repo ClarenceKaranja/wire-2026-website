@@ -8,25 +8,26 @@ interface Props {
 }
 const {eyebrow, title, lead, image} = Astro.props
 ---
-<section class="border-b border-line bg-sand/60">
-  <div class:list={['container-page grid gap-8 py-10 sm:py-14', image?.asset && 'md:grid-cols-[1fr_20rem] md:items-end']}>
+<section class="container-page pt-14 pb-4 sm:pt-20 sm:pb-6">
+  <div class:list={['grid gap-10', image?.asset && 'md:grid-cols-[1fr_22rem] md:items-end']}>
     <div>
       {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-      <h1 class="mt-2 text-3xl font-extrabold sm:text-[2.6rem] sm:leading-[1.1]">{title}</h1>
-      {lead && <p class="mt-4 max-w-2xl text-lg text-ink-soft">{lead}</p>}
+      <h1 class="mt-4 text-[clamp(2.6rem,7vw,5.5rem)] leading-[0.95] font-medium tracking-[-0.04em]">{title}</h1>
+      {lead && <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft sm:text-xl">{lead}</p>}
       <slot />
     </div>
     {image?.asset && (
       <img
-        src={imageUrl(image, 640, 400)}
-        srcset={imageSrcSet(image, [320, 640, 960], 1.6)}
-        sizes="20rem"
+        src={imageUrl(image, 704, 440)}
+        srcset={imageSrcSet(image, [352, 704, 1056], 1.6)}
+        sizes="22rem"
         alt=""
-        width="640"
-        height="400"
-        class="hidden aspect-[1.6] w-full rounded-sm object-cover md:block"
+        width="704"
+        height="440"
+        class="hidden aspect-[1.6] w-full object-cover md:block"
         loading="eager"
       />
     )}
   </div>
+  <div class="mt-12 h-px bg-ink sm:mt-16" aria-hidden="true"></div>
 </section>

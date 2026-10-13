@@ -13,11 +13,8 @@ const external = !file?.url && Boolean(doc.externalUrl)
 ---
 <li class="flex flex-col gap-3 py-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
   <div class="flex gap-4">
-    <span class="mt-0.5 hidden size-11 shrink-0 items-center justify-center rounded-sm bg-forest-50 text-forest-800 sm:inline-flex">
-      <Icon name={external ? 'external' : 'file'} class="size-5" />
-    </span>
     <div>
-      <h3 class="text-base font-bold leading-snug">
+      <h3 class="text-lg font-medium leading-snug tracking-tight">
         {doc.title}
         {doc.versionLabel && <span class="ml-1 tag bg-sand align-middle text-ink-soft">{doc.versionLabel}</span>}
         {doc.status === 'archived' && <span class="ml-1 tag bg-sand align-middle text-muted">Archived</span>}
@@ -39,7 +36,7 @@ const external = !file?.url && Boolean(doc.externalUrl)
       <Icon name={external ? 'external' : 'download'} class="size-4" />
       {external ? 'Open link' : 'Download'}
       <span class="sr-only">{doc.title}</span>
-      {file?.url && <span class="font-normal text-muted">{fileLabel(file.extension)}, {fileSize(file.size)}</span>}
+      {file?.url && <span class="font-normal opacity-70">{fileLabel(file.extension)}, {fileSize(file.size)}</span>}
       {external && <span class="sr-only">(opens in a new tab)</span>}
     </a>
   ) : (
