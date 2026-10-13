@@ -1,6 +1,6 @@
-# 10th WIRE Forum: participant website
+# WIRE participant website
 
-Public website for participants of the 10th WIRE Forum, 3–6 November 2026, Nairobi, Kenya. Organized by UNODC with the Office of the Director of Public Prosecutions (ODPP) Kenya.
+Public website for participants of the 10th Wildlife Inter-Regional Enforcement (WIRE) Forum, 3–6 November 2026, Nairobi, Kenya. Organized by UNODC with the Office of the Director of Public Prosecutions (ODPP) Kenya.
 
 | Part | Folder | What it is |
 | --- | --- | --- |
