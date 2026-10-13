@@ -21,7 +21,7 @@ const singleton = (S: Parameters<StructureResolver>[0], type: string, title: str
 
 export const structure: StructureResolver = (S) =>
   S.list()
-    .title('WIRE 2026 website')
+    .title('WIRE website')
     .items([
       S.listItem()
         .title('Start here: how to edit')

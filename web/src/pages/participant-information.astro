@@ -13,7 +13,7 @@ const faqs: any[] = data.faqs ?? []
 const topics = [...new Set(faqs.map((f) => f.topic || 'General'))]
 const contacts = settings.contacts?.length ? settings.contacts : [{_key: 'main', label: 'General enquiries', email: settings.contactEmail}]
 ---
-<Base title="Participant information" description="Venue, travel, Kenya eTA, airport arrival, accommodation, Nairobi National Park visit, meals, FAQs and contacts for WIRE 2026 participants.">
+<Base title="Participant information" description="Venue, travel, Kenya eTA, airport arrival, accommodation, Nairobi National Park visit, meals, FAQs and contacts for WIRE participants.">
   <PageHeader eyebrow="Participants" title="Participant information" lead={data.page?.intro} />
   <div class="container-page grid gap-12 pt-12 pb-10 sm:pt-16 lg:grid-cols-[15rem_1fr]">
     <nav aria-label="On this page" class="lg:sticky lg:top-28 lg:self-start">

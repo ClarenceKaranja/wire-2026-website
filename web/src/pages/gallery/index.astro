@@ -7,7 +7,7 @@ import {imageSrcSet, imageUrl} from '../../lib/image'
 
 const albums = await fetchContent<any[]>(Q.ALBUMS_QUERY, Astro.locals.preview)
 ---
-<Base title="Photo gallery" description="Approved photographs from the 10th WIRE in Nairobi.">
+<Base title="Photo gallery" description="Approved photographs from WIRE in Nairobi.">
   <PageHeader eyebrow="Gallery" title="Photo gallery" lead="Approved photographs from WIRE, organized by activity." />
   <div class="container-page pt-12 pb-10 sm:pt-16">
     {albums.length === 0 ? (

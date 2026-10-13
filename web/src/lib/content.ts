@@ -34,7 +34,7 @@ export type Settings = {
 }
 
 const FALLBACK_SETTINGS: Settings = {
-  shortTitle: 'WIRE 2026',
+  shortTitle: 'WIRE',
   eventName: 'Wildlife Inter-Regional Enforcement (WIRE) Forum',
   edition: '10th',
   startDate: '2026-11-03',

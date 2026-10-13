@@ -9,7 +9,7 @@ if (!album) return Astro.rewrite('/404')
 const photos: any[] = album.photos ?? []
 const first = photos[0]
 ---
-<Base title={album.title} description={album.description ?? `Photographs: ${album.title}, 10th WIRE, Nairobi.`} image={first}>
+<Base title={album.title} description={album.description ?? `Photographs: ${album.title}, WIRE, Nairobi.`} image={first}>
   <section class="border-b border-line bg-sand/60">
     <div class="container-page pt-12 pb-10 sm:pt-16">
       <a href="/gallery" class="inline-flex items-center gap-1 text-sm font-semibold"><Icon name="chevronLeft" class="size-4" />All albums</a>

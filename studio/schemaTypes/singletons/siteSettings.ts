@@ -13,7 +13,7 @@ export const siteSettings = defineType({
     {name: 'notice', title: 'Urgent notice bar'},
   ],
   fields: [
-    defineField({name: 'shortTitle', title: 'Short title', description: 'Shown in the header, for example "WIRE 2026".', type: 'string', group: 'event', validation: (r) => r.required().max(30)}),
+    defineField({name: 'shortTitle', title: 'Short title', description: 'Shown in the header, for example "WIRE".', type: 'string', group: 'event', validation: (r) => r.required().max(30)}),
     defineField({name: 'eventName', title: 'Full event name', type: 'string', group: 'event', validation: (r) => r.required()}),
     defineField({name: 'edition', title: 'Edition', description: 'For example "10th".', type: 'string', group: 'event'}),
     defineField({name: 'startDate', title: 'First day', type: 'date', group: 'event', validation: (r) => r.required()}),
@@ -71,7 +71,7 @@ export const siteSettings = defineType({
       type: 'image',
       group: 'branding',
       options: {accept: 'image/png,image/svg+xml,image/webp'},
-      fields: [defineField({name: 'alt', title: 'Alternative text', type: 'string', initialValue: 'WIRE 2026'})],
+      fields: [defineField({name: 'alt', title: 'Alternative text', type: 'string', initialValue: 'WIRE'})],
     }),
     defineField({
       name: 'logoOnDark',

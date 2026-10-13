@@ -12,7 +12,7 @@ const previewOrigin = process.env.SANITY_STUDIO_PREVIEW_URL
 
 export default defineConfig({
   name: 'default',
-  title: 'WIRE 2026 website',
+  title: 'WIRE website',
   projectId,
   dataset,
   plugins: [

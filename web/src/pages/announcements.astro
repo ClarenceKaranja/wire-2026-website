@@ -11,7 +11,7 @@ const now = Date.now()
 const current = items.filter((a) => !a.expiresAt || Date.parse(a.expiresAt) > now).sort((a, b) => Number(b.featured) - Number(a.featured))
 const past = items.filter((a) => a.expiresAt && Date.parse(a.expiresAt) <= now)
 ---
-<Base title="Announcements" description="Programme changes, transport reminders and practical notices for WIRE 2026 participants.">
+<Base title="Announcements" description="Programme changes, transport reminders and practical notices for WIRE participants.">
   <PageHeader eyebrow="Announcements" title="Announcements" lead="Programme changes, transport reminders, room changes and other practical notices. The newest are shown first." />
   <div class="container-page pt-12 pb-10 sm:pt-16"><div class="max-w-4xl">
     {current.length === 0 ? (

@@ -35,7 +35,7 @@ export function StartHere() {
   return (
     <Box padding={4} style={{maxWidth: 760}}>
       <Stack gap={4}>
-        <Heading size={2}>How to edit the WIRE 2026 website</Heading>
+        <Heading size={2}>How to edit the WIRE website</Heading>
         <Text size={2} muted>
           Everything on the public website comes from this editor. You never need to change code to update content.
         </Text>

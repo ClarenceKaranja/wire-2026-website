@@ -10,7 +10,6 @@ const preview = Astro.locals.preview
 const [settings, data] = await Promise.all([getSettings(preview), fetchContent<any>(Q.HOME_QUERY, preview)])
 const home = data.home ?? {}
 const phase = resolvePhase(settings.eventPhase, settings.startDate, settings.endDate)
-const year = settings.startDate.slice(0, 4)
 const dates = formatRange(settings.startDate, settings.endDate)
 const place = [settings.venueName, settings.city, settings.country].filter(Boolean).join(', ')
 const hero = home.heroImage
@@ -35,7 +34,7 @@ const sections = [
   <section class="container-page pt-14 pb-16 sm:pt-24 sm:pb-24 lg:pt-32">
     <p class="eyebrow animate-rise">{settings.edition} {settings.eventName}</p>
     <h1 class="mt-6 animate-rise text-[clamp(5rem,27vw,9rem)] sm:text-[clamp(6rem,15vw,13.5rem)] leading-[0.86] font-medium tracking-[-0.055em] [animation-delay:80ms]">
-      WIRE<br class="sm:hidden" /><span class="sm:ml-[0.18em]">{year}</span>
+      WIRE
     </h1>
     <div class="mt-10 h-1.5 w-24 animate-rise bg-un [animation-delay:160ms] sm:mt-14" aria-hidden="true"></div>
     <dl class="mt-8 grid max-w-4xl animate-rise gap-6 [animation-delay:200ms] sm:grid-cols-3">

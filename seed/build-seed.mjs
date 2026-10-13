@@ -68,7 +68,7 @@ const add = (doc) => (docs.push(doc), doc._id)
 add({
   _id: 'siteSettings',
   _type: 'siteSettings',
-  shortTitle: 'WIRE 2026',
+  shortTitle: 'WIRE',
   eventName: 'Wildlife Inter-Regional Enforcement (WIRE) Forum',
   edition: '10th',
   startDate: '2026-11-03',
@@ -91,7 +91,7 @@ add({
 const agendaId = add({
   _id: 'resource-draft-agenda',
   _type: 'resource',
-  title: 'WIRE 2026 draft agenda',
+  title: 'WIRE draft agenda',
   description: 'Provisional four-day agenda for 3–6 November 2026. Subject to change.',
   category: 'agenda',
   file: file('wire-2026-draft-agenda.pdf'),
@@ -452,7 +452,7 @@ add({
   _type: 'aboutPage',
   intro: pt(
     `The Wildlife Inter-Regional Enforcement (WIRE) Forum is an annual event that brings together law enforcement and criminal justice practitioners; wildlife, forest and fisheries management authorities; policymakers; and regional and international partners to strengthen cross-regional collaboration in combating wildlife crime.
-The 10th WIRE takes place in Nairobi, Kenya, from 3 to 6 November 2026.`,
+WIRE takes place in Nairobi, Kenya, from 3 to 6 November 2026.`,
   ),
   objectives: [
     'Share information on ongoing and emerging wildlife trafficking trends.',
@@ -469,7 +469,7 @@ Restricted access meetings are closed-door discussions between agencies or deleg
 Participants come from law enforcement and criminal justice agencies across Africa and Asia, including police, customs, prosecutors, and wildlife and forestry authorities, together with government representatives, international organizations and partner institutions.`,
   ),
   organizersText: pt(
-    `The 10th WIRE is organized by the **United Nations Office on Drugs and Crime (UNODC)**, in collaboration with the **Office of the Director of Public Prosecutions (ODPP) of Kenya**.`,
+    `The 10th Wildlife Inter-Regional Enforcement (WIRE) Forum is organized by the **United Nations Office on Drugs and Crime (UNODC)**, in collaboration with the **Office of the Director of Public Prosecutions (ODPP) of Kenya**.`,
   ),
 })
 
@@ -502,7 +502,7 @@ add({
   heroLead:
     'Law enforcement and criminal justice practitioners from Africa and Asia meet in Nairobi to strengthen cross-regional cooperation against wildlife crime.',
   heroImage: image('wildlife-rhino.jpg', 'A white rhinoceros walking towards the camera'),
-  welcomeHeading: 'Welcome to the 10th WIRE',
+  welcomeHeading: 'Welcome to WIRE',
   welcomeMessage: pt(
     `Dear participant, welcome to the participant website of the 10th Wildlife Inter-Regional Enforcement (WIRE) Forum, held in Nairobi from 3 to 6 November 2026.
 This site is your single source for the official programme, practical information, documents, announcements and, after WIRE, photographs and outcomes. It is updated as arrangements are confirmed, so please check back before you travel.`,
