@@ -1,0 +1,14 @@
+---
+import {PortableText} from 'astro-portabletext'
+import RichTextLink from './RichTextLink.astro'
+interface Props {
+  value?: unknown[] | null
+  class?: string
+}
+const {value, class: className} = Astro.props
+---
+{value && value.length > 0 && (
+  <div class:list={['prose-wire', className]}>
+    <PortableText value={value as never} components={{mark: {link: RichTextLink}}} />
+  </div>
+)}

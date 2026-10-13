@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro'
+import PageHeader from '../components/PageHeader.astro'
+import SessionItem from '../components/SessionItem.astro'
+import EmptyState from '../components/EmptyState.astro'
+import Icon from '../components/Icon.astro'
+import {fetchContent, Q} from '../lib/content'
+import {formatDate, formatDateTime, nairobiToday, TZ_LABEL} from '../lib/time'
+import {downloadUrl, fileLabel, fileSize} from '../lib/format'
+
+const preview = Astro.locals.preview
+const data = await fetchContent<any>(Q.PROGRAMME_QUERY, preview)
+const page = data.page ?? {}
+const days: any[] = data.days ?? []
+const agenda = page.agenda
+const today = nairobiToday()
+const defaultDay = days.find((d) => d.date === today)?._id ?? days[0]?._id
+---
+<Base title="Programme" description="The four-day programme of the 10th WIRE Forum, 3–6 November 2026, Nairobi.">
+  <PageHeader eyebrow="Programme" title="Forum programme" lead={page.intro}>
+    <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+      {agenda?.file?.url && (
+        <a href={downloadUrl(agenda.file, agenda.title)} class="btn-primary self-start">
+          <Icon name="download" class="size-4" />Download the agenda
+          <span class="font-normal opacity-85">{fileLabel(agenda.file.extension)}, {fileSize(agenda.file.size)}</span>
+        </a>
+      )}
+      <p class="inline-flex items-center gap-2 text-sm text-muted"><Icon name="clock" class="size-4" />All times are {TZ_LABEL}.</p>
+    </div>
+    {(page.statusNote || data.lastUpdated) && (
+      <p class="mt-5 text-sm text-ink-soft">
+        {page.statusNote && <strong class="font-semibold text-amber-ink">{page.statusNote} </strong>}
+        {data.lastUpdated && <>Last updated <time datetime={data.lastUpdated}>{formatDateTime(data.lastUpdated)}</time> (Nairobi time).</>}
+      </p>
+    )}
+  </PageHeader>
+
+  <div class="container-page py-10">
+    {days.length === 0 ? (
+      <EmptyState icon="calendar" title="The programme will be published soon">Please check back, or download the agenda from Resources.</EmptyState>
+    ) : (
+      <div data-programme data-default-day={defaultDay}>
+        <!-- Day tabs (enhanced with JavaScript; without it, all days are listed in full) -->
+        <div class="sticky top-[4.6rem] z-30 -mx-4 border-b border-line bg-paper/95 px-4 backdrop-blur sm:top-[5.1rem] sm:mx-0 sm:px-0">
+          <div role="tablist" aria-label="Programme days" class="flex gap-1 overflow-x-auto" data-tablist hidden>
+            {days.map((d) => (
+              <button
+                type="button"
+                role="tab"
+                id={`tab-${d._id}`}
+                aria-controls={d._id}
+                aria-selected="false"
+                tabindex="-1"
+                data-tab={d._id}
+                class="group shrink-0 border-b-[3px] border-transparent px-4 py-3 text-left aria-selected:border-forest-800"
+              >
+                <span class="block font-display text-sm font-bold text-ink group-aria-selected:text-forest-800">{d.label}</span>
+                <span class="block text-xs whitespace-nowrap text-muted">{formatDate(d.date, {weekday: 'short', day: 'numeric', month: 'short'})}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+        {days.map((d) => (
+          <section id={d._id} role="tabpanel" aria-labelledby={`tab-${d._id}`} class="pt-8" data-panel={d._id}>
+            <h2 class="text-2xl font-extrabold">
+              {d.label}<span class="font-semibold text-muted"> · {formatDate(d.date)}</span>
+            </h2>
+            {d.summary && <p class="mt-2 max-w-3xl text-ink-soft">{d.summary}</p>}
+            {d.sessions?.length ? (
+              <ol class="mt-4 border-t border-line">
+                {d.sessions.map((s: any) => <SessionItem session={s} date={d.date} restrictedNote={page.restrictedNote} />)}
+              </ol>
+            ) : (
+              <p class="mt-4 text-ink-soft">Sessions for this day will be published soon.</p>
+            )}
+          </section>
+        ))}
+      </div>
+    )}
+  </div>
+</Base>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-programme]')
+  if (root) {
+    const tablist = root.querySelector<HTMLElement>('[data-tablist]')!
+    const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-tab]'))
+    const panels = Array.from(root.querySelectorAll<HTMLElement>('[data-panel]'))
+    const select = (id: string, focus = false, updateHash = true) => {
+      tabs.forEach((t) => {
+        const on = t.dataset.tab === id
+        t.setAttribute('aria-selected', String(on))
+        t.tabIndex = on ? 0 : -1
+        if (on && focus) t.focus()
+      })
+      panels.forEach((p) => (p.hidden = p.dataset.panel !== id))
+      if (updateHash) history.replaceState(null, '', `#${id}`)
+    }
+    tablist.hidden = false
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(t.dataset.tab!))
+      t.addEventListener('keydown', (e) => {
+        const next = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : null
+        if (next === null) return
+        e.preventDefault()
+        select(tabs[(next + tabs.length) % tabs.length].dataset.tab!, true)
+      })
+    })
+    const fromHash = location.hash.slice(1)
+    const initial = tabs.some((t) => t.dataset.tab === fromHash) ? fromHash : root.dataset.defaultDay || tabs[0]?.dataset.tab
+    if (initial) select(initial, false, false)
+
+    // Highlight the session happening now (times are fixed Nairobi instants).
+    const markNow = () => {
+      const now = Date.now()
+      root.querySelectorAll<HTMLElement>('.session').forEach((el) => {
+        const on = now >= Date.parse(el.dataset.start!) && now < Date.parse(el.dataset.end!)
+        el.classList.toggle('bg-forest-50', on)
+        el.querySelector('[data-now-badge]')?.classList.toggle('hidden', !on)
+      })
+    }
+    markNow()
+    setInterval(markNow, 60_000)
+  }
+</script>

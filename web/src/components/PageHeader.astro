@@ -1,0 +1,32 @@
+---
+import {imageSrcSet, imageUrl, type SanityImage} from '../lib/image'
+interface Props {
+  eyebrow?: string
+  title: string
+  lead?: string
+  image?: SanityImage
+}
+const {eyebrow, title, lead, image} = Astro.props
+---
+<section class="border-b border-line bg-sand/60">
+  <div class:list={['container-page grid gap-8 py-10 sm:py-14', image?.asset && 'md:grid-cols-[1fr_20rem] md:items-end']}>
+    <div>
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1 class="mt-2 text-3xl font-extrabold sm:text-[2.6rem] sm:leading-[1.1]">{title}</h1>
+      {lead && <p class="mt-4 max-w-2xl text-lg text-ink-soft">{lead}</p>}
+      <slot />
+    </div>
+    {image?.asset && (
+      <img
+        src={imageUrl(image, 640, 400)}
+        srcset={imageSrcSet(image, [320, 640, 960], 1.6)}
+        sizes="20rem"
+        alt=""
+        width="640"
+        height="400"
+        class="hidden aspect-[1.6] w-full rounded-sm object-cover md:block"
+        loading="eager"
+      />
+    )}
+  </div>
+</section>

@@ -1,0 +1,35 @@
+---
+import RichText from './RichText.astro'
+import Icon from './Icon.astro'
+import {formatDateTime} from '../lib/time'
+import {ANNOUNCEMENT_CATEGORY_LABELS, downloadUrl, fileLabel, fileSize} from '../lib/format'
+interface Props {
+  item: any
+  compact?: boolean
+  headingLevel?: 'h2' | 'h3'
+}
+const {item, compact = false, headingLevel = 'h3'} = Astro.props
+const Heading = headingLevel
+const doc = item.relatedDocument
+---
+<article id={`announcement-${item._id}`} class:list={['rounded-sm border bg-white p-5 sm:p-6', item.featured ? 'border-forest-800/40 border-l-4 border-l-forest-800' : 'border-line']}>
+  <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted">
+    <span class="tag bg-forest-50 text-forest-800">{ANNOUNCEMENT_CATEGORY_LABELS[item.category] ?? 'Announcement'}</span>
+    <time datetime={item.publishedAt}>{formatDateTime(item.publishedAt, false)}</time>
+  </div>
+  <Heading class="mt-3 text-lg font-bold leading-snug">{item.title}</Heading>
+  <RichText value={item.message} class:list={['mt-2', compact && 'line-clamp-4']} />
+  {(item.link?.href || doc?.file?.url) && (
+    <div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
+      {item.link?.href && (
+        <a href={item.link.href} class="inline-flex items-center gap-1.5">{item.link.label}<Icon name="arrow" class="size-4" /></a>
+      )}
+      {doc?.file?.url && (
+        <a href={downloadUrl(doc.file, doc.title)} class="inline-flex items-center gap-1.5">
+          <Icon name="download" class="size-4" />{doc.title}
+          <span class="font-normal text-muted">({fileLabel(doc.file.extension)}, {fileSize(doc.file.size)})</span>
+        </a>
+      )}
+    </div>
+  )}
+</article>

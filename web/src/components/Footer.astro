@@ -1,0 +1,45 @@
+---
+import Icon from './Icon.astro'
+import {formatRange} from '../lib/time'
+import type {Settings} from '../lib/content'
+interface Props {
+  settings: Settings
+}
+const {settings} = Astro.props
+---
+<footer class="on-dark mt-24 bg-forest-900 text-white/85">
+  <div class="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
+    <div>
+      <p class="font-display text-2xl font-extrabold text-white">WIRE {settings.startDate?.slice(0, 4)}</p>
+      <p class="mt-1 font-display text-sm font-semibold text-white/80">
+        {settings.edition} {settings.eventName}
+      </p>
+      <p class="mt-1 text-sm">{formatRange(settings.startDate, settings.endDate)} · {settings.city}, {settings.country}</p>
+      {settings.organizerLine && <p class="mt-5 max-w-md text-sm leading-relaxed">{settings.organizerLine}</p>}
+    </div>
+    <div>
+      <h2 class="font-display text-xs font-semibold tracking-[0.14em] text-white/70 uppercase">Explore</h2>
+      <ul class="mt-4 space-y-2 text-sm">
+        <li><a class="text-white" href="/programme">Programme</a></li>
+        <li><a class="text-white" href="/participant-information">Participant information</a></li>
+        <li><a class="text-white" href="/resources">Resources and downloads</a></li>
+        <li><a class="text-white" href="/gallery">Photo gallery</a></li>
+        <li><a class="text-white" href="/announcements">Announcements</a></li>
+        <li><a class="text-white" href="/about">About WIRE</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="font-display text-xs font-semibold tracking-[0.14em] text-white/70 uppercase">Contact</h2>
+      <p class="mt-4 text-sm">WIRE Organizing Committee</p>
+      <a class="mt-1 inline-flex items-center gap-2 text-sm text-white" href={`mailto:${settings.contactEmail}`}>
+        <Icon name="mail" class="size-4" />{settings.contactEmail}
+      </a>
+    </div>
+  </div>
+  <div class="border-t border-white/15">
+    <div class="container-page flex flex-col gap-2 py-5 text-xs text-white/70 sm:flex-row sm:justify-between">
+      <p>{settings.footerNote}</p>
+      <p class="shrink-0">© {settings.startDate?.slice(0, 4)} WIRE Forum</p>
+    </div>
+  </div>
+</footer>

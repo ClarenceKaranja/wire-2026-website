@@ -1,0 +1,156 @@
+---
+import Base from '../../layouts/Base.astro'
+import Icon from '../../components/Icon.astro'
+import {fetchContent, Q} from '../../lib/content'
+import {imageDimensions, imageSrcSet, imageUrl} from '../../lib/image'
+
+const album = await fetchContent<any>(Q.ALBUM_QUERY, Astro.locals.preview, {slug: Astro.params.slug})
+if (!album) return Astro.rewrite('/404')
+const photos: any[] = album.photos ?? []
+const first = photos[0]
+---
+<Base title={album.title} description={album.description ?? `Photographs: ${album.title}, 10th WIRE Forum, Nairobi.`} image={first}>
+  <section class="border-b border-line bg-sand/60">
+    <div class="container-page py-10">
+      <a href="/gallery" class="inline-flex items-center gap-1 text-sm font-semibold"><Icon name="chevronLeft" class="size-4" />All albums</a>
+      <h1 class="mt-3 text-3xl font-extrabold sm:text-4xl">{album.title}</h1>
+      <p class="mt-2 text-muted">{photos.length} photo{photos.length === 1 ? '' : 's'}{album.day?.label && ` · ${album.day.label}`}</p>
+      {album.description && <p class="mt-3 max-w-2xl text-lg text-ink-soft">{album.description}</p>}
+    </div>
+  </section>
+
+  <div class="container-page py-10">
+    <ul class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4" data-gallery>
+      {photos.map((p, i) => {
+        const dim = imageDimensions(p)
+        return (
+          <li>
+            <a
+              href={imageUrl(p, 2000)}
+              class="group block overflow-hidden rounded-sm bg-sand"
+              data-index={i}
+              data-full={imageUrl(p, 2000)}
+              data-srcset={imageSrcSet(p, [800, 1200, 1600, 2000])}
+              data-caption={p.caption ?? ''}
+              data-credit={p.credit ?? ''}
+              data-alt={p.alt ?? ''}
+              data-width={dim?.width}
+              data-height={dim?.height}
+            >
+              <img
+                src={imageUrl(p, 480, 480)}
+                srcset={imageSrcSet(p, [240, 360, 480, 720], 1)}
+                sizes="(min-width: 1024px) 16rem, (min-width: 640px) 30vw, 48vw"
+                alt={p.alt ?? ''}
+                width="480"
+                height="480"
+                loading={i < 8 ? 'eager' : 'lazy'}
+                class="aspect-square w-full object-cover transition-opacity group-hover:opacity-90"
+              />
+              <span class="sr-only">Open larger view{p.caption ? `: ${p.caption}` : ''}</span>
+            </a>
+          </li>
+        )
+      })}
+    </ul>
+  </div>
+
+  <dialog
+    class="m-0 h-full max-h-none w-full max-w-none bg-black/95 p-0 text-white backdrop:bg-black/80"
+    aria-label="Photo viewer"
+    data-lightbox
+  >
+    <div class="on-dark flex h-full flex-col">
+      <div class="flex items-center justify-between gap-4 px-4 py-3 text-sm">
+        <p aria-live="polite" data-counter></p>
+        <button type="button" class="inline-flex items-center gap-2 rounded-sm px-3 py-2 font-semibold hover:bg-white/10" data-close>
+          <Icon name="close" class="size-5" />Close
+        </button>
+      </div>
+      <div class="relative flex min-h-0 flex-1 items-center justify-center px-2 sm:px-16">
+        <img alt="" class="max-h-full max-w-full object-contain" data-image />
+        <button type="button" class="absolute top-1/2 left-1 -translate-y-1/2 rounded-full bg-black/50 p-3 hover:bg-white/15 sm:left-3" data-prev>
+          <Icon name="chevronLeft" class="size-6" /><span class="sr-only">Previous photo</span>
+        </button>
+        <button type="button" class="absolute top-1/2 right-1 -translate-y-1/2 rounded-full bg-black/50 p-3 hover:bg-white/15 sm:right-3" data-next>
+          <Icon name="chevronRight" class="size-6" /><span class="sr-only">Next photo</span>
+        </button>
+      </div>
+      <div class="min-h-16 px-4 py-4 text-center text-[0.95rem] text-white/90">
+        <p data-caption></p>
+        <p class="mt-1 text-xs text-white/60" data-credit></p>
+      </div>
+    </div>
+  </dialog>
+</Base>
+
+<script>
+  const gallery = document.querySelector('[data-gallery]')
+  const dialog = document.querySelector<HTMLDialogElement>('[data-lightbox]')
+  if (gallery && dialog) {
+    const links = Array.from(gallery.querySelectorAll<HTMLAnchorElement>('a[data-index]'))
+    const img = dialog.querySelector<HTMLImageElement>('[data-image]')!
+    const caption = dialog.querySelector<HTMLElement>('[data-caption]')!
+    const credit = dialog.querySelector<HTMLElement>('[data-credit]')!
+    const counter = dialog.querySelector<HTMLElement>('[data-counter]')!
+    const prev = dialog.querySelector<HTMLButtonElement>('[data-prev]')!
+    const next = dialog.querySelector<HTMLButtonElement>('[data-next]')!
+    let current = 0
+    let opener: HTMLElement | null = null
+
+    const show = (i: number) => {
+      current = (i + links.length) % links.length
+      const d = links[current].dataset
+      img.src = d.full!
+      if (d.srcset) img.srcset = d.srcset
+      else img.removeAttribute('srcset')
+      img.sizes = '100vw'
+      img.alt = d.alt ?? ''
+      if (d.width && d.height) {
+        img.width = Number(d.width)
+        img.height = Number(d.height)
+      }
+      caption.textContent = d.caption ?? ''
+      credit.textContent = d.credit ? `Photo: ${d.credit}` : ''
+      counter.textContent = `Photo ${current + 1} of ${links.length}`
+      const single = links.length < 2
+      prev.hidden = single
+      next.hidden = single
+      // Preload neighbours for quick navigation.
+      ;[current + 1, current - 1].forEach((j) => {
+        const n = links[(j + links.length) % links.length]
+        if (n) new Image().src = n.dataset.full!
+      })
+    }
+
+    links.forEach((a, i) =>
+      a.addEventListener('click', (e) => {
+        e.preventDefault()
+        opener = a
+        show(i)
+        dialog.showModal()
+      }),
+    )
+    prev.addEventListener('click', () => show(current - 1))
+    next.addEventListener('click', () => show(current + 1))
+    dialog.querySelector('[data-close]')!.addEventListener('click', () => dialog.close())
+    dialog.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') show(current - 1)
+      if (e.key === 'ArrowRight') show(current + 1)
+    })
+    // Click on the dark backdrop closes the viewer.
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog || (e.target as HTMLElement).classList.contains('relative')) dialog.close()
+    })
+    let touchX = 0
+    dialog.addEventListener('touchstart', (e) => (touchX = e.touches[0].clientX), {passive: true})
+    dialog.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchX
+      if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1))
+    })
+    dialog.addEventListener('close', () => {
+      img.removeAttribute('src')
+      opener?.focus()
+    })
+  }
+</script>

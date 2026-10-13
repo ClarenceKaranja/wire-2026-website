@@ -1,0 +1,72 @@
+---
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import NoticeBar from '../components/NoticeBar.astro'
+import {getSettings} from '../lib/content'
+import {imageUrl, type SanityImage} from '../lib/image'
+import {formatRange} from '../lib/time'
+import {hasSanity} from '../lib/sanity'
+
+interface Props {
+  title?: string
+  description?: string
+  image?: SanityImage
+  noindex?: boolean
+}
+const {title, description, image, noindex = false} = Astro.props
+const preview = Astro.locals.preview
+const settings = await getSettings(preview)
+const siteTitle = `${settings.shortTitle} · ${settings.edition} ${settings.eventName}`
+const pageTitle = title ? `${title} · ${settings.shortTitle}` : siteTitle
+const metaDescription =
+  description ??
+  `Participant website of the ${settings.edition} ${settings.eventName}, ${formatRange(settings.startDate, settings.endDate)}, ${settings.city}, ${settings.country}: programme, practical information, documents, announcements and photos.`
+const canonical = new URL(Astro.url.pathname, Astro.site)
+const ogImage = image?.asset ? image : settings.socialImage
+const ogUrl = ogImage?.asset ? new URL(imageUrl(ogImage, 1200, 630), Astro.site).toString() : undefined
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <link rel="canonical" href={canonical} />
+    {(noindex || preview) && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="theme-color" content="#294816" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteTitle} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:url" content={canonical} />
+    {ogUrl && <meta property="og:image" content={ogUrl} />}
+    {ogImage?.alt && <meta property="og:image:alt" content={ogImage.alt} />}
+    <meta name="twitter:card" content={ogUrl ? 'summary_large_image' : 'summary'} />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <a href="#main" class="sr-only z-50 bg-forest-800 px-4 py-3 font-semibold text-white focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
+      Skip to main content
+    </a>
+    {preview && (
+      <div class="bg-ink text-white" role="status">
+        <div class="container-page flex flex-wrap items-center justify-between gap-2 py-2 text-sm">
+          <p><strong>Preview mode.</strong> You are seeing unpublished drafts. Visitors do not see these changes until you publish.</p>
+          <a class="text-white" href={`/api/preview/disable?redirect=${encodeURIComponent(Astro.url.pathname)}`}>Leave preview</a>
+        </div>
+      </div>
+    )}
+    {!hasSanity && import.meta.env.DEV && (
+      <div class="bg-sand text-ink-soft text-center text-xs py-1.5">Local sample content (no Sanity project connected)</div>
+    )}
+    <NoticeBar notice={settings.notice} />
+    <Header settings={settings} />
+    <main id="main" class="flex-1" tabindex="-1">
+      <slot />
+    </main>
+    <Footer settings={settings} />
+  </body>
+</html>

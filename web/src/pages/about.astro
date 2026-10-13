@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro'
+import PageHeader from '../components/PageHeader.astro'
+import RichText from '../components/RichText.astro'
+import Icon from '../components/Icon.astro'
+import {fetchContent, Q} from '../lib/content'
+import {imageUrl} from '../lib/image'
+
+const data = await fetchContent<any>(Q.ABOUT_QUERY, Astro.locals.preview)
+const page = data.page ?? {}
+const partners: any[] = data.partners ?? []
+const organizers = partners.filter((p) => p.role === 'organizer' || p.role === 'host')
+const others = partners.filter((p) => p.role !== 'organizer' && p.role !== 'host')
+const roleLabel: Record<string, string> = {organizer: 'Organizer', host: 'In collaboration with', funder: 'Funding partner', partner: 'Partner'}
+---
+<Base title="About WIRE" description="About the Wildlife Inter-Regional Enforcement (WIRE) Forum, its objectives and organizers.">
+  <PageHeader eyebrow="About" title="About the WIRE Forum" />
+  <div class="container-page grid gap-12 py-10 lg:grid-cols-[1fr_22rem]">
+    <div class="max-w-3xl">
+      <RichText value={page.intro} class="text-lg" />
+      {page.objectives?.length > 0 && (
+        <section class="mt-10">
+          <h2 class="text-2xl font-extrabold">Objectives</h2>
+          <ul class="mt-5 grid gap-3 sm:grid-cols-2">
+            {page.objectives.map((o: string) => (
+              <li class="flex gap-3 rounded-sm border border-line bg-white p-4">
+                <Icon name="check" class="mt-0.5 size-5 shrink-0 text-forest-800" />
+                <span>{o}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+      <RichText value={page.body} class="mt-6" />
+    </div>
+    <aside class="lg:pt-2">
+      <section class="rounded-sm border border-line bg-white p-6">
+        <h2 class="text-lg font-extrabold">Organizers</h2>
+        <RichText value={page.organizersText} class="mt-3 text-[0.95rem]" />
+        {organizers.length > 0 && (
+          <ul class="mt-5 space-y-4 border-t border-line pt-5">
+            {organizers.map((p) => (
+              <li>
+                <p class="eyebrow">{roleLabel[p.role]}</p>
+                {p.logo?.asset && <img src={imageUrl(p.logo, 320)} alt={p.logo.alt || p.name} class="mt-2 h-12 w-auto" loading="lazy" />}
+                <p class="mt-1 font-semibold">{p.url ? <a href={p.url} rel="noopener" target="_blank">{p.name}<span class="sr-only"> (opens in a new tab)</span></a> : p.name}</p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+      {others.length > 0 && (
+        <section class="mt-6 rounded-sm border border-line bg-white p-6">
+          <h2 class="text-lg font-extrabold">With the support of</h2>
+          <ul class="mt-4 space-y-4">
+            {others.map((p) => (
+              <li>
+                {p.logo?.asset && <img src={imageUrl(p.logo, 320)} alt={p.logo.alt || p.name} class="h-10 w-auto" loading="lazy" />}
+                <p class="mt-1 font-semibold">{p.acknowledgement || p.name}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </aside>
+  </div>
+</Base>

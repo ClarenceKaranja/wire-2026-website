@@ -1,0 +1,48 @@
+---
+import Icon from './Icon.astro'
+import {formatDate} from '../lib/time'
+import {downloadUrl, fileLabel, fileSize, RESOURCE_CATEGORY_LABELS} from '../lib/format'
+interface Props {
+  doc: any
+  showCategory?: boolean
+}
+const {doc, showCategory = false} = Astro.props
+const file = doc.file
+const href = file?.url ? downloadUrl(file, doc.title) : doc.externalUrl
+const external = !file?.url && Boolean(doc.externalUrl)
+---
+<li class="flex flex-col gap-3 py-5 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+  <div class="flex gap-4">
+    <span class="mt-0.5 hidden size-11 shrink-0 items-center justify-center rounded-sm bg-forest-50 text-forest-800 sm:inline-flex">
+      <Icon name={external ? 'external' : 'file'} class="size-5" />
+    </span>
+    <div>
+      <h3 class="text-base font-bold leading-snug">
+        {doc.title}
+        {doc.versionLabel && <span class="ml-1 tag bg-sand align-middle text-ink-soft">{doc.versionLabel}</span>}
+        {doc.status === 'archived' && <span class="ml-1 tag bg-sand align-middle text-muted">Archived</span>}
+      </h3>
+      {doc.description && <p class="mt-1 max-w-2xl text-[0.95rem] text-ink-soft">{doc.description}</p>}
+      <p class="mt-1.5 text-sm text-muted">
+        {showCategory && <>{RESOURCE_CATEGORY_LABELS[doc.category] ?? 'Document'} · </>}
+        {doc.publishedAt && <>Published <time datetime={doc.publishedAt}>{formatDate(doc.publishedAt, {day: 'numeric', month: 'long', year: 'numeric'})}</time></>}
+        {doc.language && doc.language !== 'English' && <> · {doc.language}</>}
+      </p>
+    </div>
+  </div>
+  {href ? (
+    <a
+      href={href}
+      class="btn-secondary shrink-0 self-start py-2.5"
+      {...(external ? {target: '_blank', rel: 'noopener'} : {})}
+    >
+      <Icon name={external ? 'external' : 'download'} class="size-4" />
+      {external ? 'Open link' : 'Download'}
+      <span class="sr-only">{doc.title}</span>
+      {file?.url && <span class="font-normal text-muted">{fileLabel(file.extension)}, {fileSize(file.size)}</span>}
+      {external && <span class="sr-only">(opens in a new tab)</span>}
+    </a>
+  ) : (
+    <span class="text-sm text-muted">File not available yet</span>
+  )}
+</li>

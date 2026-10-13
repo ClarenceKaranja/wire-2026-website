@@ -1,0 +1,16 @@
+---
+import Icon from './Icon.astro'
+interface Props {
+  notice?: {active?: boolean; message?: string; href?: string; until?: string}
+}
+const {notice} = Astro.props
+const show = notice?.active && notice.message && (!notice.until || new Date(notice.until) > new Date())
+---
+{show && (
+  <div class="bg-amber-soft text-amber-ink border-b border-amber-ink/20" role="region" aria-label="Urgent notice">
+    <div class="container-page flex items-start gap-2 py-2.5 text-[0.95rem] font-semibold">
+      <Icon name="alert" class="mt-0.5 size-5 shrink-0" />
+      {notice!.href ? <a href={notice!.href} class="text-amber-ink">{notice!.message}</a> : <p>{notice!.message}</p>}
+    </div>
+  </div>
+)}

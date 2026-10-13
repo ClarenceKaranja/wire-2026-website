@@ -1,0 +1,14 @@
+# Netlify reads this file when the GitHub repository is connected.
+# The website lives in the "web" folder. The Sanity Studio is hosted separately
+# on sanity.studio (see docs/netlify-deployment.md), so it is not built here.
+
+[build]
+  base = "web"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Deploy previews and branch deploys are marked "noindex" automatically
+# (the build reads Netlify's CONTEXT variable), so search engines skip them.

@@ -1,0 +1,221 @@
+---
+import Base from '../layouts/Base.astro'
+import Icon from '../components/Icon.astro'
+import RichText from '../components/RichText.astro'
+import AnnouncementCard from '../components/AnnouncementCard.astro'
+import {fetchContent, getSettings, Q} from '../lib/content'
+import {imageSrcSet, imageUrl} from '../lib/image'
+import {formatDate, formatRange, nairobiInstant, resolvePhase, TZ_LABEL} from '../lib/time'
+import {downloadUrl, fileLabel, fileSize, SESSION_TYPE_LABELS} from '../lib/format'
+
+const preview = Astro.locals.preview
+const [settings, data] = await Promise.all([getSettings(preview), fetchContent<any>(Q.HOME_QUERY, preview)])
+const home = data.home ?? {}
+const phase = resolvePhase(settings.eventPhase, settings.startDate, settings.endDate)
+const year = settings.startDate.slice(0, 4)
+const dates = formatRange(settings.startDate, settings.endDate)
+const place = [settings.venueName, settings.city, settings.country].filter(Boolean).join(', ')
+
+// Featured sessions, or else the next few (non-break) sessions from now.
+const nowIso = new Date().toISOString()
+const upcoming = (data.sessions ?? [])
+  .filter((s: any) => s.day?.date && !['break', 'meal'].includes(s.sessionType))
+  .filter((s: any) => new Date(nairobiInstant(s.day.date, s.endTime)).toISOString() > nowIso)
+const sessions = (data.featuredSessions?.length ? data.featuredSessions : upcoming).slice(0, 4)
+const featuredPhotos = (data.featuredPhotos ?? []).flatMap((a: any) => (a.photos ?? []).map((p: any) => ({...p, album: a}))).slice(0, 6)
+const agenda = data.programme?.agenda
+const hero = home.heroImage
+const phaseLine = {
+  before: `${dates} · ${place}`,
+  during: `Taking place now · ${dates} · ${place}`,
+  after: `Held ${dates} · ${place}`,
+}[phase]
+---
+<Base>
+  <!-- Hero -->
+  <section class="border-b border-line">
+    <div class="container-page grid gap-10 py-10 sm:py-14 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-14 lg:py-20">
+      <div>
+        <p class="eyebrow">{settings.edition} {settings.eventName}</p>
+        <h1 class="mt-3 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
+          WIRE <span class="text-forest-800">{year}</span>
+        </h1>
+        <ul class="mt-6 flex flex-col gap-2 text-lg text-ink-soft sm:flex-row sm:gap-6">
+          <li class="inline-flex items-center gap-2"><Icon name="calendar" class="size-5 text-forest-700" />{dates}</li>
+          <li class="inline-flex items-center gap-2"><Icon name="pin" class="size-5 text-forest-700" />{place}</li>
+        </ul>
+        {phase !== 'before' && <p class="mt-3 font-display text-sm font-semibold text-forest-800">{phaseLine}</p>}
+        {home.heroLead && <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">{home.heroLead}</p>}
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/programme" class="btn-primary">{phase === 'after' ? 'Programme' : 'View the programme'}<Icon name="arrow" class="size-4" /></a>
+          {phase === 'after' ? (
+            <a href="/gallery" class="btn-secondary">Photos and outcomes</a>
+          ) : (
+            <a href="/participant-information" class="btn-secondary">Participant information</a>
+          )}
+        </div>
+        {settings.organizerLine && <p class="mt-8 max-w-xl border-t border-line pt-5 text-sm text-muted">{settings.organizerLine}</p>}
+      </div>
+      {hero?.asset && (
+        <figure class="relative">
+          <img
+            src={imageUrl(hero, 960, 760)}
+            srcset={imageSrcSet(hero, [480, 720, 960, 1280], 960 / 760)}
+            sizes="(min-width: 1024px) 34rem, 100vw"
+            alt={hero.alt ?? ''}
+            width="960"
+            height="760"
+            fetchpriority="high"
+            class="aspect-[960/760] w-full rounded-sm object-cover"
+          />
+          <div class="absolute bottom-0 left-0 bg-forest-800 px-5 py-3 font-display text-sm font-bold leading-tight text-white sm:text-base">
+            Wildlife Inter-Regional<br />Enforcement
+          </div>
+          {hero.credit && <figcaption class="mt-2 text-right text-xs text-muted">Photo: {hero.credit}</figcaption>}
+        </figure>
+      )}
+    </div>
+  </section>
+
+  {phase === 'after' && home.outcomesSummary?.length > 0 && (
+    <section class="border-b border-line bg-forest-50">
+      <div class="container-page py-12">
+        <p class="eyebrow">After the Forum</p>
+        <h2 class="mt-2 text-2xl font-extrabold sm:text-3xl">{home.outcomesHeading || 'Outcomes of the Forum'}</h2>
+        <RichText value={home.outcomesSummary} class="mt-4 max-w-3xl text-lg" />
+      </div>
+    </section>
+  )}
+
+  <!-- Announcements and quick links -->
+  <section class="container-page grid gap-12 py-14 lg:grid-cols-[1.35fr_1fr]">
+    <div>
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl font-extrabold">Latest announcements</h2>
+        <a href="/announcements" class="shrink-0 text-sm font-semibold">All announcements</a>
+      </div>
+      {data.announcements?.length ? (
+        <div class="mt-6 space-y-4">
+          {data.announcements.map((a: any) => <AnnouncementCard item={a} compact />)}
+        </div>
+      ) : (
+        <p class="mt-6 rounded-sm border border-line bg-white p-5 text-ink-soft">There are no current announcements. Updates will appear here.</p>
+      )}
+    </div>
+    <div>
+      <h2 class="text-2xl font-extrabold">Quick links</h2>
+      <ul class="mt-6 divide-y divide-line border-y border-line">
+        {(home.quickLinks ?? []).map((l: any) => (
+          <li>
+            <a href={l.href} class="group flex items-center justify-between gap-4 py-4 no-underline">
+              <span>
+                <span class="block font-display font-bold text-ink group-hover:text-forest-800">{l.label}</span>
+                {l.description && <span class="block text-sm text-muted">{l.description}</span>}
+              </span>
+              <Icon name="arrow" class="size-5 shrink-0 text-forest-800 transition-transform group-hover:translate-x-0.5" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Welcome -->
+  {home.welcomeMessage?.length > 0 && (
+    <section class="border-y border-line bg-white">
+      <div class="container-page grid gap-8 py-14 md:grid-cols-[16rem_1fr]">
+        <div>
+          <span class="block h-1 w-12 bg-forest-800" aria-hidden="true"></span>
+          <h2 class="mt-4 text-2xl font-extrabold">{home.welcomeHeading || 'Welcome'}</h2>
+        </div>
+        <div class="max-w-3xl">
+          <RichText value={home.welcomeMessage} class="text-lg" />
+          {home.welcomeSignature && <p class="mt-6 font-display font-semibold">{home.welcomeSignature}</p>}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Sessions -->
+  {home.showUpcomingSessions !== false && sessions.length > 0 && (
+    <section class="container-page py-14">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-extrabold">{data.featuredSessions?.length ? 'Featured sessions' : 'Coming up on the programme'}</h2>
+          <p class="mt-1 text-sm text-muted">All times are {TZ_LABEL}.</p>
+        </div>
+        <a href="/programme" class="text-sm font-semibold">Full programme</a>
+      </div>
+      <ol class="mt-6 grid gap-4 sm:grid-cols-2">
+        {sessions.map((s: any) => (
+          <li class="rounded-sm border border-line bg-white p-5">
+            <p class="text-sm text-muted">
+              <span class="font-semibold text-ink">{s.day?.label}</span> · {formatDate(s.day.date, {weekday: 'short', day: 'numeric', month: 'short'})} · <span class="tabular-nums">{s.startTime}–{s.endTime}</span>
+            </p>
+            <h3 class="mt-2 text-lg font-bold leading-snug">
+              <a class="text-ink no-underline hover:text-forest-800 hover:underline" href={`/programme#${s.day?._id}`}>{s.title}</a>
+            </h3>
+            <p class="mt-2"><span class="tag bg-forest-50 text-forest-800">{SESSION_TYPE_LABELS[s.sessionType] ?? 'Session'}</span>{s.status === 'tbc' && <span class="ml-2 tag bg-amber-soft text-amber-ink">Details TBC</span>}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )}
+
+  <!-- Documents and gallery -->
+  <section class="container-page grid gap-6 pb-4 md:grid-cols-2">
+    <div class="flex flex-col rounded-sm border border-line bg-white p-6 sm:p-8">
+      <Icon name="file" class="size-7 text-forest-800" />
+      <h2 class="mt-4 text-xl font-extrabold">Resources and downloads</h2>
+      {data.featuredDocuments?.length ? (
+        <ul class="mt-4 space-y-3">
+          {data.featuredDocuments.map((d: any) => (
+            <li>
+              {d.file?.url ? (
+                <a href={downloadUrl(d.file, d.title)} class="font-semibold">{d.title}</a>
+              ) : (
+                <a href={d.externalUrl} class="font-semibold">{d.title}</a>
+              )}
+              {d.file?.url && <span class="text-sm text-muted"> · {fileLabel(d.file.extension)}, {fileSize(d.file.size)}</span>}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="mt-3 text-ink-soft">Agendas, information notes and presentations are published here as they become available.</p>
+      )}
+      <a href="/resources" class="btn-quiet mt-auto pt-6 self-start">Open the document library<Icon name="arrow" class="size-4" /></a>
+    </div>
+    <div class="flex flex-col rounded-sm border border-line bg-white p-6 sm:p-8">
+      <Icon name="image" class="size-7 text-forest-800" />
+      <h2 class="mt-4 text-xl font-extrabold">Photo gallery</h2>
+      {featuredPhotos.length > 0 ? (
+        <ul class="mt-4 grid grid-cols-3 gap-2">
+          {featuredPhotos.map((p: any) => (
+            <li>
+              <a href={`/gallery/${p.album.slug}`}>
+                <img src={imageUrl(p, 240, 240)} alt={p.alt ?? ''} width="240" height="240" loading="lazy" class="aspect-square w-full rounded-sm object-cover" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="mt-3 text-ink-soft">
+          {data.albumCount > 0 ? 'Browse the approved photographs from the Forum.' : 'Approved photographs from the Forum will be published here during and after the event.'}
+        </p>
+      )}
+      <a href="/gallery" class="btn-quiet mt-auto pt-6 self-start">Visit the gallery<Icon name="arrow" class="size-4" /></a>
+    </div>
+  </section>
+
+  {agenda?.file?.url && (
+    <section class="container-page pt-10">
+      <div class="on-dark flex flex-col gap-4 rounded-sm bg-forest-800 p-6 text-white sm:flex-row sm:items-center sm:justify-between sm:p-8">
+        <div>
+          <h2 class="text-xl font-extrabold text-white">Download the agenda</h2>
+          <p class="mt-1 text-white/85">{agenda.title}{agenda.versionLabel && ` (${agenda.versionLabel})`} · {fileLabel(agenda.file.extension)}, {fileSize(agenda.file.size)}</p>
+        </div>
+        <a href={downloadUrl(agenda.file, agenda.title)} class="btn shrink-0 bg-white text-forest-900 hover:bg-forest-50"><Icon name="download" class="size-4" />Download agenda</a>
+      </div>
+    </section>
+  )}
+</Base>

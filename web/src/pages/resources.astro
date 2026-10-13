@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro'
+import PageHeader from '../components/PageHeader.astro'
+import DocumentItem from '../components/DocumentItem.astro'
+import EmptyState from '../components/EmptyState.astro'
+import Icon from '../components/Icon.astro'
+import {fetchContent, Q} from '../lib/content'
+import {RESOURCE_CATEGORY_LABELS} from '../lib/format'
+
+const docs = await fetchContent<any[]>(Q.RESOURCES_QUERY, Astro.locals.preview)
+const current = docs.filter((d) => d.status === 'current')
+const archived = docs.filter((d) => d.status === 'archived')
+const featured = current.filter((d) => d.featured)
+const rest = current.filter((d) => !d.featured)
+const order = Object.keys(RESOURCE_CATEGORY_LABELS)
+const groups = order
+  .map((cat) => ({cat, label: RESOURCE_CATEGORY_LABELS[cat], items: rest.filter((d) => (d.category || 'other') === cat)}))
+  .filter((g) => g.items.length > 0)
+---
+<Base title="Resources and downloads" description="Agendas, information notes, logistics notes, presentations and publications for the 10th WIRE Forum.">
+  <PageHeader
+    eyebrow="Resources"
+    title="Resources and downloads"
+    lead="Official documents for participants. Only the latest approved version of each document is listed; earlier versions are kept in the archive at the bottom of this page."
+  />
+  <div class="container-page py-10">
+    {current.length === 0 && archived.length === 0 ? (
+      <EmptyState icon="file" title="No documents have been published yet">Agendas, information notes and presentations will appear here as soon as they are approved for release.</EmptyState>
+    ) : (
+      <>
+        {groups.length > 1 && (
+          <nav aria-label="Document categories" class="mb-8 flex flex-wrap gap-2">
+            {featured.length > 0 && <a href="#key-documents" class="tag border border-line bg-white py-1.5 text-ink-soft no-underline hover:border-forest-800">Key documents</a>}
+            {groups.map((g) => <a href={`#${g.cat}`} class="tag border border-line bg-white py-1.5 text-ink-soft no-underline hover:border-forest-800">{g.label}</a>)}
+          </nav>
+        )}
+        {featured.length > 0 && (
+          <section id="key-documents" aria-labelledby="key-documents-h">
+            <h2 id="key-documents-h" class="text-xl font-extrabold">Key documents</h2>
+            <ul class="mt-2 divide-y divide-line border-y border-line">{featured.map((d) => <DocumentItem doc={d} showCategory />)}</ul>
+          </section>
+        )}
+        {groups.map((g) => (
+          <section id={g.cat} class="mt-12" aria-labelledby={`${g.cat}-h`}>
+            <h2 id={`${g.cat}-h`} class="text-xl font-extrabold">{g.label}</h2>
+            <ul class="mt-2 divide-y divide-line border-y border-line">{g.items.map((d) => <DocumentItem doc={d} />)}</ul>
+          </section>
+        ))}
+        {current.length === 0 && <p class="text-ink-soft">There are no current documents. Earlier documents are listed below.</p>}
+        {archived.length > 0 && (
+          <details class="group mt-14 rounded-sm border border-line bg-white px-5">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-display font-bold [&::-webkit-details-marker]:hidden">
+              Earlier versions and archive ({archived.length})
+              <Icon name="chevronDown" class="size-5 text-forest-800 transition-transform group-open:rotate-180" />
+            </summary>
+            <p class="text-sm text-muted">These documents have been replaced or are kept for reference only.</p>
+            <ul class="divide-y divide-line">{archived.map((d) => <DocumentItem doc={d} showCategory />)}</ul>
+          </details>
+        )}
+      </>
+    )}
+  </div>
+</Base>
