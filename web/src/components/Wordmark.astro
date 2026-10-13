@@ -16,7 +16,7 @@ const {logo, edition = '10th', year = '2026', dark = false} = Astro.props
   ) : (
     <span class:list={['inline-flex items-baseline gap-2.5 leading-none', dark ? 'text-white' : 'text-ink']}>
       <span class="text-xl font-semibold tracking-[-0.03em] sm:text-2xl">WIRE</span>
-      <span class:list={['text-[0.8rem] sm:text-sm', dark ? 'text-white/70' : 'text-muted']}>{edition} Forum · Nairobi {year}</span>
+      <span class:list={['text-[0.8rem] sm:text-sm', dark ? 'text-white/70' : 'text-muted']}>{edition} edition · Nairobi {year}</span>
     </span>
   )
 }

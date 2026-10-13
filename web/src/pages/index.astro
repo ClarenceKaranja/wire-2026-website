@@ -21,14 +21,14 @@ const status = {before: 'Upcoming', during: 'Taking place now', after: 'Held'}[p
 const sections = [
   {href: '/programme', title: 'Programme', text: 'Four days of sessions, in Nairobi time'},
   phase === 'after'
-    ? {href: '/gallery', title: 'Photo gallery', text: 'Approved photographs from the Forum'}
+    ? {href: '/gallery', title: 'Photo gallery', text: 'Approved photographs from WIRE'}
     : {href: '/participant-information', title: 'Participant information', text: 'Venue, travel, eTA, accommodation and FAQs'},
   {href: '/resources', title: 'Resources', text: 'Agenda, information and logistics notes'},
   {href: '/announcements', title: 'Announcements', text: 'Latest updates for participants'},
   phase === 'after'
-    ? {href: '/participant-information', title: 'Participant information', text: 'Practical information for the Forum'}
-    : {href: '/gallery', title: 'Photo gallery', text: 'Photographs from the Forum'},
-  {href: '/about', title: 'About WIRE', text: 'The Forum, its organizers and partners'},
+    ? {href: '/participant-information', title: 'Participant information', text: 'Practical information for WIRE'}
+    : {href: '/gallery', title: 'Photo gallery', text: 'Photographs from WIRE'},
+  {href: '/about', title: 'About WIRE', text: 'WIRE, its organizers and partners'},
 ]
 ---
 <Base>
@@ -73,7 +73,7 @@ const sections = [
 
   {phase === 'after' && home.outcomesSummary?.length > 0 && (
     <section class="container-page mt-20 grid gap-6 md:grid-cols-[16rem_1fr]">
-      <h2 class="eyebrow">{home.outcomesHeading || 'Outcomes of the Forum'}</h2>
+      <h2 class="eyebrow">{home.outcomesHeading || 'Outcomes of WIRE'}</h2>
       <RichText value={home.outcomesSummary} class="max-w-3xl text-xl" />
     </section>
   )}

@@ -82,7 +82,7 @@ add({
   contacts: [
     {_type: 'contact', _key: key(), label: 'General enquiries, travel and logistics', name: 'WIRE Organizing Committee', email: EMAIL},
   ],
-  footerNote: 'Chatham House Rule applies throughout the WIRE Forum unless otherwise expressly requested and authorized by participants.',
+  footerNote: 'Chatham House Rule applies throughout WIRE unless otherwise expressly requested and authorized by participants.',
   socialImage: image('wildlife-rhino.jpg', 'A white rhinoceros walking towards the camera'),
   notice: {active: false},
 })
@@ -202,7 +202,7 @@ add({
   _id: 'programmePage',
   _type: 'programmePage',
   intro:
-    'The Forum runs from Tuesday 3 to Friday 6 November 2026 in Nairobi. Days 1 and 2 are open plenary days; Days 3 and 4 are dedicated to restricted access meetings between delegations.',
+    'WIRE runs from Tuesday 3 to Friday 6 November 2026 in Nairobi. Days 1 and 2 are open plenary days; Days 3 and 4 are dedicated to restricted access meetings between delegations.',
   statusNote: 'Draft programme, subject to change. Speakers and panel topics will be added as they are confirmed.',
   agenda: ref(agendaId),
   restrictedNote:
@@ -238,7 +238,7 @@ add({
 // ---------------------------------------------------------------- gallery (empty albums)
 const albums = [
   ['opening-ceremony', 'Opening ceremony', 'opening', 'day-1', 10],
-  ['forum-sessions', 'Forum sessions', 'sessions', null, 20],
+  ['forum-sessions', 'WIRE sessions', 'sessions', null, 20],
   ['networking-and-partnerships', 'Networking and partnerships', 'networking', null, 30],
   ['nairobi-national-park-visit', 'Nairobi National Park visit', 'park-visit', 'day-2', 40],
   ['closing-and-outcomes', 'Closing and outcomes', 'closing', 'day-4', 50],
@@ -268,8 +268,8 @@ const sections = [
   [
     'venue',
     'Venue and directions',
-    'The Forum takes place in Nairobi, Kenya. Venue details to follow.',
-    `The Forum will be held in Nairobi, Kenya, as an in-person event.
+    'WIRE takes place in Nairobi, Kenya. Venue details to follow.',
+    `WIRE will be held in Nairobi, Kenya, as an in-person event.
 The venue name, address and meeting room information will be communicated in a final logistics note before the event, and will be added to this page.`,
     true,
   ],
@@ -289,7 +289,7 @@ The venue name, address and meeting room information will be communicated in a f
 #### After approval
 The eTA is sent by email. Print a copy and keep an electronic copy on your phone to show on arrival.
 #### Reimbursement (sponsored participants)
-The cost of the eTA for sponsored participants is eligible for reimbursement in accordance with UNODC travel procedures. Keep the official payment receipt and the approved eTA confirmation. Reimbursement instructions will be given during the Forum.`,
+The cost of the eTA for sponsored participants is eligible for reimbursement in accordance with UNODC travel procedures. Keep the official payment receipt and the approved eTA confirmation. Reimbursement instructions will be given during WIRE.`,
     false,
   ],
   [
@@ -314,7 +314,7 @@ Keep these documents readily available:
 - Hotel confirmation
 - Invitation letter (if requested by immigration authorities)
 #### Airport transfers: sponsored participants
-Transfers between JKIA and the official WIRE hotel are arranged by the organizers. Detailed transfer instructions, including meeting points and emergency contact numbers, will be shared before the Forum.
+Transfers between JKIA and the official WIRE hotel are arranged by the organizers. Detailed transfer instructions, including meeting points and emergency contact numbers, will be shared before WIRE.
 #### Airport transfers: self-sponsored participants
 Please arrange your own transport between JKIA and your accommodation. Options include registered airport taxis, Uber, Bolt, Little Cab and hotel shuttle services where available. Use only licensed transport providers and avoid unofficial taxi services.`,
     false,
@@ -324,7 +324,7 @@ Please arrange your own transport between JKIA and your accommodation. Options i
     'Accommodation',
     'Hotel arrangements for sponsored and self-sponsored participants.',
     `#### Sponsored participants
-Accommodation is arranged and paid for by the organizers for the official duration of the Forum. Hotel confirmation details, including check-in and check-out dates, will be shared once travel arrangements are finalized. Incidental expenses (such as room service, minibar, laundry, telephone calls or other personal expenses) are the participant’s responsibility.
+Accommodation is arranged and paid for by the organizers for the official duration of WIRE. Hotel confirmation details, including check-in and check-out dates, will be shared once travel arrangements are finalized. Incidental expenses (such as room service, minibar, laundry, telephone calls or other personal expenses) are the participant’s responsibility.
 #### Self-sponsored participants
 Please arrange and pay for your own accommodation. Information on recommended hotels near the venue will be shared before the event. Book early, as hotel availability in Nairobi may be limited.`,
     false,
@@ -375,14 +375,14 @@ The Kenyan Shilling (KES) is the official currency (indicatively 1 USD = 130 KES
 #### Electricity
 Kenya uses plug Type G (British three-pin), 240 volts, 50 hertz. Bring a travel adaptor if your devices use a different plug.
 #### Weather and dress
-November in Nairobi is generally warm with occasional rain: typically 22–27°C during the day and 14–18°C in the evening. Bring business attire or national dress for the Forum sessions, and a light jacket or sweater for the evenings.`,
+November in Nairobi is generally warm with occasional rain: typically 22–27°C during the day and 14–18°C in the evening. Bring business attire or national dress for WIRE sessions, and a light jacket or sweater for the evenings.`,
     false,
   ],
   [
     'ground-rules',
     'Chatham House Rule',
-    'How information shared at the Forum may be used.',
-    `The Chatham House Rule applies throughout the WIRE Forum, unless otherwise expressly requested and authorized by participants. Participants are free to use the information received, but neither the identity nor the affiliation of the speaker(s), nor that of any other participant, may be revealed.`,
+    'How information shared at WIRE may be used.',
+    `The Chatham House Rule applies throughout WIRE, unless otherwise expressly requested and authorized by participants. Participants are free to use the information received, but neither the identity nor the affiliation of the speaker(s), nor that of any other participant, may be revealed.`,
     false,
   ],
 ]
@@ -408,7 +408,7 @@ const faqs = [
   [
     'Travel and entry',
     'Will the cost of my eTA be reimbursed?',
-    'For sponsored participants, yes: the eTA cost is eligible for reimbursement in accordance with UNODC travel procedures. Keep your official payment receipt and the approved eTA confirmation. Instructions will be given during the Forum.',
+    'For sponsored participants, yes: the eTA cost is eligible for reimbursement in accordance with UNODC travel procedures. Keep your official payment receipt and the approved eTA confirmation. Instructions will be given during WIRE.',
   ],
   [
     'Travel and entry',
@@ -418,22 +418,22 @@ const faqs = [
   [
     'Travel and entry',
     'Will someone meet me at the airport?',
-    'Airport transfers between JKIA and the official WIRE hotel are arranged for sponsored participants; meeting points will be shared before the Forum. Self-sponsored participants arrange their own transport using licensed providers.',
+    'Airport transfers between JKIA and the official WIRE hotel are arranged for sponsored participants; meeting points will be shared before WIRE. Self-sponsored participants arrange their own transport using licensed providers.',
   ],
   [
     'Venue and programme',
-    'Where exactly will the Forum take place?',
-    'The venue name and address will be communicated in a final logistics note and added to this website. The Forum is an in-person event in Nairobi.',
+    'Where exactly will WIRE take place?',
+    'The venue name and address will be communicated in a final logistics note and added to this website. WIRE is an in-person event in Nairobi.',
   ],
   [
     'Venue and programme',
-    'Is the Forum open to the media or recorded?',
-    'The Chatham House Rule applies throughout the Forum unless participants expressly request and authorize otherwise.',
+    'Is WIRE open to the media or recorded?',
+    'The Chatham House Rule applies throughout WIRE unless participants expressly request and authorize otherwise.',
   ],
   [
     'Practical matters',
     'What should I wear?',
-    'Business attire or national dress for the Forum sessions, and a light jacket or sweater for cooler evenings (typically 14–18°C).',
+    'Business attire or national dress for WIRE sessions, and a light jacket or sweater for cooler evenings (typically 14–18°C).',
   ],
   [
     'Practical matters',
@@ -452,7 +452,7 @@ add({
   _type: 'aboutPage',
   intro: pt(
     `The Wildlife Inter-Regional Enforcement (WIRE) Forum is an annual event that brings together law enforcement and criminal justice practitioners; wildlife, forest and fisheries management authorities; policymakers; and regional and international partners to strengthen cross-regional collaboration in combating wildlife crime.
-The 10th WIRE Forum takes place in Nairobi, Kenya, from 3 to 6 November 2026.`,
+The 10th WIRE takes place in Nairobi, Kenya, from 3 to 6 November 2026.`,
   ),
   objectives: [
     'Share information on ongoing and emerging wildlife trafficking trends.',
@@ -469,7 +469,7 @@ Restricted access meetings are closed-door discussions between agencies or deleg
 Participants come from law enforcement and criminal justice agencies across Africa and Asia, including police, customs, prosecutors, and wildlife and forestry authorities, together with government representatives, international organizations and partner institutions.`,
   ),
   organizersText: pt(
-    `The 10th WIRE Forum is organized by the **United Nations Office on Drugs and Crime (UNODC)**, in collaboration with the **Office of the Director of Public Prosecutions (ODPP) of Kenya**.`,
+    `The 10th WIRE is organized by the **United Nations Office on Drugs and Crime (UNODC)**, in collaboration with the **Office of the Director of Public Prosecutions (ODPP) of Kenya**.`,
   ),
 })
 
@@ -502,10 +502,10 @@ add({
   heroLead:
     'Law enforcement and criminal justice practitioners from Africa and Asia meet in Nairobi to strengthen cross-regional cooperation against wildlife crime.',
   heroImage: image('wildlife-rhino.jpg', 'A white rhinoceros walking towards the camera'),
-  welcomeHeading: 'Welcome to the 10th WIRE Forum',
+  welcomeHeading: 'Welcome to the 10th WIRE',
   welcomeMessage: pt(
     `Dear participant, welcome to the participant website of the 10th Wildlife Inter-Regional Enforcement (WIRE) Forum, held in Nairobi from 3 to 6 November 2026.
-This site is your single source for the official programme, practical information, documents, announcements and, after the Forum, photographs and outcomes. It is updated as arrangements are confirmed, so please check back before you travel.`,
+This site is your single source for the official programme, practical information, documents, announcements and, after WIRE, photographs and outcomes. It is updated as arrangements are confirmed, so please check back before you travel.`,
   ),
   quickLinks: [
     {_type: 'linkItem', _key: key(), label: 'Programme', description: 'Four-day agenda, 3–6 November', href: '/programme'},
@@ -516,7 +516,7 @@ This site is your single source for the official programme, practical informatio
     {_type: 'linkItem', _key: key(), label: 'Contact', description: EMAIL, href: `mailto:${EMAIL}`},
   ],
   showUpcomingSessions: true,
-  outcomesHeading: 'Outcomes of the Forum',
+  outcomesHeading: 'Outcomes of WIRE',
 })
 
 const out = docs.map((d) => JSON.stringify(d)).join('\n') + '\n'

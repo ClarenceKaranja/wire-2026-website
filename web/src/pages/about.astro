@@ -13,7 +13,7 @@ const others = partners.filter((p) => p.role !== 'organizer' && p.role !== 'host
 const roleLabel: Record<string, string> = {organizer: 'Organizer', host: 'In collaboration with', funder: 'Funding partner', partner: 'Partner'}
 ---
 <Base title="About WIRE" description="About the Wildlife Inter-Regional Enforcement (WIRE) Forum, its objectives and organizers.">
-  <PageHeader eyebrow="About" title="About the WIRE Forum" />
+  <PageHeader eyebrow="About" title="About WIRE" />
   <div class="container-page grid gap-12 pt-12 pb-10 sm:pt-16 lg:grid-cols-[1fr_22rem]">
     <div class="max-w-3xl">
       <RichText value={page.intro} class="text-lg" />

@@ -7,12 +7,12 @@ import {imageSrcSet, imageUrl} from '../../lib/image'
 
 const albums = await fetchContent<any[]>(Q.ALBUMS_QUERY, Astro.locals.preview)
 ---
-<Base title="Photo gallery" description="Approved photographs from the 10th WIRE Forum in Nairobi.">
-  <PageHeader eyebrow="Gallery" title="Photo gallery" lead="Approved photographs from the Forum, organized by activity." />
+<Base title="Photo gallery" description="Approved photographs from the 10th WIRE in Nairobi.">
+  <PageHeader eyebrow="Gallery" title="Photo gallery" lead="Approved photographs from WIRE, organized by activity." />
   <div class="container-page pt-12 pb-10 sm:pt-16">
     {albums.length === 0 ? (
       <EmptyState icon="image" title="No photographs yet">
-        Photographs from the opening ceremony, Forum sessions, the Nairobi National Park visit and the closing will be published here once they have been approved for release.
+        Photographs from the opening ceremony, WIRE sessions, the Nairobi National Park visit and the closing will be published here once they have been approved for release.
       </EmptyState>
     ) : (
       <ul class="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
