@@ -4,7 +4,7 @@ For anyone updating the WIRE 2026 website. No technical knowledge needed.
 
 ## The basics
 
-1. Open the Studio (the address is in the handover note, e.g. `https://wire-2026.sanity.studio`) and sign in with the account you were invited with.
+1. Open the Studio at **https://wire2026.netlify.app/studio** and sign in with the account you were invited with.
 2. Pick an area from the left menu, such as **Programme** or **Documents**.
 3. Make your change. Sanity saves a **draft** automatically as you type. Drafts are never shown on the public website.
 4. Press **Publish** (bottom right). The change appears on the live website within about one minute.

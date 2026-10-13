@@ -15,3 +15,6 @@ studio/.sanity/
 Thumbs.db
 .vscode/
 .idea/
+
+# Studio build output copied into the website at build time
+web/public/studio/

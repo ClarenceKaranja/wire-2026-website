@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "build:studio": "cd ../studio && npm ci --no-audit --no-fund && SANITY_STUDIO_BASEPATH=/studio npx sanity build ../web/public/studio --yes"
   },
   "dependencies": {
     "@astrojs/netlify": "^8.2.9",

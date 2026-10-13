@@ -5,7 +5,7 @@ Public website for participants of the 10th WIRE Forum, 3–6 November 2026, Nai
 | Part | Folder | What it is |
 | --- | --- | --- |
 | Website | `web/` | Astro + Tailwind. Hosted on Netlify. Reads content from Sanity. |
-| Content editor (Studio) | `studio/` | Sanity Studio. Hosted free at `https://<name>.sanity.studio`. |
+| Content editor (Studio) | `studio/` | Sanity Studio. Built into the website at `/studio`; sign-in required. |
 | Sample content | `seed/` | The verified content already loaded into Sanity, used for offline development. |
 | Guides | `docs/` | Editor guides, deployment, checklists and handover. |
 

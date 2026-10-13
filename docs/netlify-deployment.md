@@ -26,7 +26,7 @@ Nothing in this repository deploys itself. Each step below is done by an account
 | `PUBLIC_SANITY_PROJECT_ID` | `krb5nty9` | No |
 | `PUBLIC_SANITY_DATASET` | `production` | No |
 | `PUBLIC_SITE_URL` | The final address, e.g. `https://wire2026.example.org` (or the `*.netlify.app` address until a domain is approved) | No |
-| `PUBLIC_SANITY_STUDIO_URL` | e.g. `https://wire-2026.sanity.studio` | No |
+| `PUBLIC_SANITY_STUDIO_URL` | Optional; only if the Studio is hosted somewhere other than `/studio` | No |
 | `SANITY_API_READ_TOKEN` | A Sanity token with the **Viewer** role (step 4) | **Yes**: tick "Contains secret values" |
 | `PREVIEW_COOKIE_SECRET` | A random string of 32+ characters (`openssl rand -hex 32`) | **Yes** |
 | `SANITY_WEBHOOK_SECRET` | Only if you set up the instant-refresh webhook (step 6) | **Yes** |
@@ -37,18 +37,13 @@ The build stops with a clear error if `PUBLIC_SANITY_PROJECT_ID` is missing, so 
 
 Deploy previews (for pull requests) and branch deploys automatically send `noindex` and a blocking `robots.txt`, so search engines ignore them. They are still publicly reachable by link.
 
-## 3. Host the Studio (content editor)
+## 3. The Studio (content editor)
 
-The simplest option is Sanity's free hosting:
+The Studio is built into the website on every Netlify deploy and lives at `https://<your site address>/studio` (currently https://wire2026.netlify.app/studio). Anyone can load that page, but nothing can be seen or changed without signing in with a Sanity account that has been invited to the project. Schema changes in `studio/` go live with the next deploy.
 
-```bash
-cd studio
-npm install
-npx sanity login
-SANITY_STUDIO_PREVIEW_URL=https://<your site address> npx sanity deploy
-```
+For sign-in to work, the site address must be listed as a CORS origin **with credentials** in sanity.io/manage → project → **API → CORS origins**. `https://wire2026.netlify.app` is already added; add your custom domain too when you switch to it.
 
-This publishes the editor at `https://wire-2026.sanity.studio` (change the name with `SANITY_STUDIO_HOSTNAME`). The Studio itself requires a Sanity login, so the public cannot edit or see drafts. Redeploy it after any schema change.
+Optional alternative: host it on Sanity instead (`cd studio && npx sanity deploy`, giving `https://wire-2026.sanity.studio`).
 
 Then invite editors: sanity.io/manage → project → **Members → Invite**. Give content staff the **Editor** role and only one or two people **Administrator**.
 
