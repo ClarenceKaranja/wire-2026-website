@@ -26,6 +26,10 @@ const steps: Array<[string, string]> = [
     'Announcements → Create new. Add a title and message, optionally an expiry date, then Publish. Tick "Highlight on the homepage" for important notices.',
   ],
   [
+    'French and Portuguese',
+    'Participant information sections, FAQs and the Participant information page have English, Français and Português tabs at the top. When you change the English text, update the other two tabs as well. A tab left empty shows the English text on the website. Everything else on the site is English only.',
+  ],
+  [
     'Before you publish',
     'Only publish material cleared for anyone on the internet. Never upload passports, participant lists, contact details, restricted meeting schedules or room assignments, internal planning or procurement documents. Uploaded files can be reached by anyone who has their link, even after you unpublish them; to remove a file completely, delete it from the document and then from the Media library.',
   ],

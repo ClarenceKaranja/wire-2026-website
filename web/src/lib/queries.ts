@@ -71,9 +71,12 @@ export const ALBUM_QUERY = `*[${PUBLIC_ALBUM} && slug.current == $slug][0]{
 }`
 
 export const INFO_QUERY = `{
-  "page": *[_id == "participantInfoPage"][0],
-  "sections": *[_type == "infoSection"] | order(sortOrder asc){_id, title, "slug": slug.current, summary, body, toBeConfirmed},
-  "faqs": *[_type == "faq"] | order(sortOrder asc){_id, question, answer, topic}
+  "page": *[_id == "participantInfoPage"][0]{intro, fr{intro}, pt{intro}},
+  "sections": *[_type == "infoSection"] | order(sortOrder asc){
+    _id, title, "slug": slug.current, summary, body, toBeConfirmed,
+    fr{title, summary, body}, pt{title, summary, body}
+  },
+  "faqs": *[_type == "faq"] | order(sortOrder asc){_id, question, answer, topic, fr{question, answer}, pt{question, answer}}
 }`
 
 export const ABOUT_QUERY = `{
