@@ -1,0 +1,29 @@
+---
+import {LANGS, LANG_NAMES, UI, type Lang} from '../lib/i18n'
+interface Props {
+  lang: Lang
+  /** Builds the address of this page in another language. */
+  href: (lang: Lang) => string
+}
+const {lang, href} = Astro.props
+---
+<nav aria-label={UI[lang].languages} class="mt-8">
+  <ul class="inline-flex border border-line text-sm">
+    {LANGS.map((l, i) => (
+      <li class:list={[i > 0 && 'border-l border-line']}>
+        <a
+          href={href(l)}
+          hreflang={l}
+          lang={l}
+          aria-current={l === lang ? 'true' : undefined}
+          class:list={[
+            'inline-flex min-h-11 items-center px-4 no-underline',
+            l === lang ? 'bg-ink font-medium text-white' : 'text-ink-soft hover:bg-sand hover:text-ink',
+          ]}
+        >
+          {LANG_NAMES[l]}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

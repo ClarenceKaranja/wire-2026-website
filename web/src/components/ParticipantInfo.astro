@@ -1,0 +1,101 @@
+---
+import Base from '../layouts/Base.astro'
+import PageHeader from './PageHeader.astro'
+import RichText from './RichText.astro'
+import Icon from './Icon.astro'
+import EmptyState from './EmptyState.astro'
+import LanguageSwitcher from './LanguageSwitcher.astro'
+import {fetchContent, getSettings, Q} from '../lib/content'
+import {LANGS, UI, infoPath, localize, localizeLinks, type Lang} from '../lib/i18n'
+
+interface Props {
+  lang: Lang
+}
+const {lang} = Astro.props
+const t = UI[lang]
+const preview = Astro.locals.preview
+const [settings, data] = await Promise.all([getSettings(preview), fetchContent<any>(Q.INFO_QUERY, preview)])
+const page = data.page ? localize(data.page, lang, ['intro']) : undefined
+const sections: any[] = (data.sections ?? []).map((s: any) => {
+  const l = localize(s, lang, ['title', 'summary', 'body'])
+  return {...l, body: localizeLinks(l.body, lang)}
+})
+const faqs: any[] = (data.faqs ?? []).map((f: any) => {
+  const l = localize(f, lang, ['question', 'answer'])
+  return {...l, answer: localizeLinks(l.answer, lang)}
+})
+const topics = [...new Set(faqs.map((f) => f.topic || 'General'))]
+const contacts = settings.contacts?.length ? settings.contacts : [{_key: 'main', label: 'General enquiries', email: settings.contactEmail}]
+const [emptyBefore, emptyAfter] = t.emptyBody.split('{email}')
+// Items without a translation are shown in English and marked as such.
+const textLang = (translated: boolean) => (translated ? undefined : 'en')
+---
+<Base title={t.title} description={t.description} alternates={LANGS.map((l) => ({lang: l, href: infoPath(l)}))}>
+  <div lang={lang}>
+    <PageHeader eyebrow={t.eyebrow} title={t.title} lead={page?.intro}>
+      <LanguageSwitcher lang={lang} href={infoPath} />
+    </PageHeader>
+    <div class="container-page grid gap-12 pt-12 pb-10 sm:pt-16 lg:grid-cols-[15rem_1fr]">
+      <nav aria-label={t.onThisPage} class="lg:sticky lg:top-28 lg:self-start">
+        <h2 class="eyebrow">{t.onThisPage}</h2>
+        <ul class="mt-3 space-y-1 border-l border-line text-[0.95rem]">
+          {sections.map((s) => (
+            <li><a href={`#${s.slug}`} lang={textLang(s.translated)} class="-ml-px block border-l-2 border-transparent py-1 pl-4 text-ink-soft no-underline hover:border-brand-800 hover:text-brand-800">{s.title}</a></li>
+          ))}
+          {faqs.length > 0 && <li><a href="#faq" class="-ml-px block border-l-2 border-transparent py-1 pl-4 text-ink-soft no-underline hover:border-brand-800 hover:text-brand-800">{t.faq}</a></li>}
+          <li><a href="#contacts" class="-ml-px block border-l-2 border-transparent py-1 pl-4 text-ink-soft no-underline hover:border-brand-800 hover:text-brand-800">{t.contacts}</a></li>
+        </ul>
+      </nav>
+      <div class="min-w-0">
+        {sections.length === 0 && <EmptyState title={t.emptyTitle}>{emptyBefore}<a href={`mailto:${settings.contactEmail}`}>{settings.contactEmail}</a>{emptyAfter}</EmptyState>}
+        {sections.map((s, i) => (
+          <section id={s.slug} lang={textLang(s.translated)} class:list={['max-w-3xl', i > 0 && 'mt-12 border-t border-line pt-12']}>
+            <h2 class="flex flex-wrap items-center gap-3 text-3xl font-medium tracking-tight">
+              {s.title}
+              {s.toBeConfirmed && <span lang={lang} class="tag bg-amber-soft font-sans text-amber-ink">{t.toBeConfirmed}</span>}
+              {!s.translated && <span lang={lang} class="tag bg-sand font-sans text-muted">{t.englishOnly}</span>}
+            </h2>
+            <RichText value={s.body} class="mt-4" />
+          </section>
+        ))}
+
+        {faqs.length > 0 && (
+          <section id="faq" class="mt-12 max-w-3xl border-t border-line pt-12">
+            <h2 class="text-3xl font-medium tracking-tight">{t.faq}</h2>
+            {topics.map((topic) => (
+              <div class="mt-8">
+                <h3 class="eyebrow">{t.topics[topic] ?? topic}</h3>
+                <div class="mt-3 divide-y divide-line border-y border-line">
+                  {faqs.filter((f) => (f.topic || 'General') === topic).map((f) => (
+                    <details class="group py-1" lang={textLang(f.translated)}>
+                      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-3 font-display font-medium text-ink [&::-webkit-details-marker]:hidden">
+                        {f.question}
+                        <Icon name="chevronDown" class="size-5 shrink-0 text-brand-800 transition-transform group-open:rotate-180" />
+                      </summary>
+                      <RichText value={f.answer} class="pb-4" />
+                    </details>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </section>
+        )}
+
+        <section id="contacts" class="mt-12 max-w-3xl border-t border-line pt-12">
+          <h2 class="text-3xl font-medium tracking-tight">{t.contacts}</h2>
+          <ul class="mt-6 grid gap-4 sm:grid-cols-2" lang="en">
+            {contacts.map((c) => (
+              <li class="border border-line bg-white p-5">
+                <p class="eyebrow">{c.label}</p>
+                {c.name && <p class="mt-2 font-semibold">{c.name}</p>}
+                {c.email && <p class="mt-1"><a href={`mailto:${c.email}`} class="inline-flex items-center gap-2"><Icon name="mail" class="size-4" />{c.email}</a></p>}
+                {c.phone && <p class="mt-1"><a href={`tel:${c.phone.replace(/\s+/g, '')}`}>{c.phone}</a></p>}
+                {c.note && <p class="mt-2 text-sm text-muted">{c.note}</p>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</Base>

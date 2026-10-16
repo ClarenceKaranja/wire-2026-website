@@ -120,6 +120,16 @@ Left menu: **Participant information**.
 - **FAQs** appear as expandable questions at the bottom.
 - Practical contacts are in **Site settings → Contacts and footer**. Use role-based or official addresses only, never private personal numbers unless that person has agreed.
 
+### French and Portuguese versions
+
+The Participant information page (sections, FAQs and introduction) is also published in French at **/participant-information/fr** and in Portuguese at **/participant-information/pt**, with an English / Français / Português switcher at the top. The rest of the website is English only.
+
+- Each section, each FAQ and the **Participant information page** has three tabs at the top: **English**, **Français** and **Português**. The heading, summary and text are filled in separately on each tab. Anchor, position, topic and "to be confirmed" are set once on the English tab and apply to all three.
+- **When you change the English text, update the Français and Português tabs too**, then publish. The list of sections and FAQs shows "FR ✓ PT ✓" when both translations exist.
+- If a tab is left empty, the website shows the English text there with a small "not yet translated" label, so a new section can be published in English first and translated later.
+- Portuguese follows the spelling used in Angola (as in the translated logistics notes), for example *Quénia*, *contacto*, *actualizado*.
+- Links to other parts of this page (such as `/participant-information#kenya-eta`) can be copied as they are; the website keeps readers in their language automatically.
+
 ## Homepage and About
 
 - **Homepage**: introductory sentence, main image, welcome message, quick links, and the **After the Forum** outcomes summary (shown only once the Forum is over).
