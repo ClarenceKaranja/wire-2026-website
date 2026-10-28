@@ -1,0 +1,296 @@
+---
+import Base from '../layouts/Base.astro'
+import PageHeader from '../components/PageHeader.astro'
+import EmptyState from '../components/EmptyState.astro'
+import Icon from '../components/Icon.astro'
+import {getRamSchedule, RAM_ALIASES, splitParty} from '../lib/ram'
+import {formatDateTime, nairobiInstant, TZ_LABEL} from '../lib/time'
+
+const {updatedAt, countries} = await getRamSchedule(Astro.locals.preview)
+// ?country=kenya opens that timetable directly (also how the page works without JavaScript).
+const requested = Astro.url.searchParams.get('country') ?? ''
+const selected = countries.find((c) => c.slug === requested)
+const fold = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
+---
+<Base
+  title="Your restricted access meetings"
+  description="Look up your delegation's restricted access meeting timetable for WIRE, 5–6 November 2026."
+  noindex
+>
+  <PageHeader eyebrow="Restricted access meetings" title="Your meeting timetable">
+    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
+      Choose your country or organization to see your restricted access meetings, in time order, and download them as a one-page PDF.
+    </p>
+    <p class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink-soft">
+      {updatedAt && (
+        <span class="inline-flex items-start gap-2 font-semibold text-ink">
+          <Icon name="info" class="mt-0.5 size-4 shrink-0" />
+          <span>Last updated: <time datetime={updatedAt}>{formatDateTime(updatedAt)}</time> (Nairobi time)</span>
+        </span>
+      )}
+      <span class="inline-flex items-center gap-2"><Icon name="clock" class="size-4" />All times are {TZ_LABEL}.</span>
+    </p>
+  </PageHeader>
+
+  <div class="container-page pb-16">
+    {countries.length === 0 ? (
+      <EmptyState icon="calendar" title="Timetables will be published soon">Please check back closer to the meetings.</EmptyState>
+    ) : (
+      <div data-ram>
+        <!-- Without JavaScript: a plain list and a button. With JavaScript: a searchable list (below). -->
+        <form method="get" action="/ram-timetable" class="flex max-w-xl flex-col gap-2" data-ram-fallback>
+          <label for="ram-select" class="font-medium">Country or organization</label>
+          <div class="flex gap-2">
+            <select id="ram-select" name="country" class="min-h-12 w-full border border-ink bg-paper px-3 text-base">
+              <option value="">Choose…</option>
+              {countries.map((c) => <option value={c.slug} selected={c === selected}>{c.name}</option>)}
+            </select>
+            <button type="submit" class="btn-primary">Show</button>
+          </div>
+        </form>
+
+        <div class="relative max-w-xl" data-ram-picker hidden>
+          <label for="ram-search" class="font-medium" id="ram-search-label">Country or organization</label>
+          <div class="relative mt-2">
+            <Icon name="users" class="pointer-events-none absolute top-1/2 left-3 size-5 -translate-y-1/2 text-muted" />
+            <input
+              id="ram-search"
+              type="text"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded="false"
+              aria-controls="ram-options"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              enterkeyhint="go"
+              placeholder="Type or choose, e.g. Kenya"
+              value={selected?.name ?? ''}
+              class="min-h-13 w-full border border-ink bg-paper py-3 pr-12 pl-11 text-base placeholder:text-muted"
+              data-ram-input
+            />
+            <button
+              type="button"
+              tabindex="-1"
+              aria-label="Show all countries and organizations"
+              class="absolute inset-y-0 right-0 flex w-12 items-center justify-center text-ink"
+              data-ram-toggle
+            >
+              <Icon name="chevronDown" class="size-5" />
+            </button>
+          </div>
+          <ul
+            id="ram-options"
+            role="listbox"
+            aria-labelledby="ram-search-label"
+            class="absolute inset-x-0 top-full z-20 max-h-[min(22rem,55vh)] overflow-y-auto border border-t-0 border-ink bg-paper shadow-lg"
+            hidden
+            data-ram-list
+          >
+            {countries.map((c) => (
+              <li
+                id={`ram-opt-${c.slug}`}
+                role="option"
+                aria-selected="false"
+                data-slug={c.slug}
+                data-name={c.name}
+                data-search={fold([c.name, ...(RAM_ALIASES[c.slug] ?? [])].join('|'))}
+                class="flex cursor-pointer items-center justify-between gap-4 border-b border-line px-4 py-3 last:border-b-0 aria-selected:bg-brand-50 data-[active]:bg-brand-50"
+              >
+                <span>{c.name}</span>
+                <span class="text-sm text-muted tabular-nums">{c.meetings.length}</span>
+              </li>
+            ))}
+          </ul>
+          <p class="mt-2 px-1 text-sm text-muted" hidden data-ram-none>No match. Try another spelling, or press the arrow to see the full list.</p>
+        </div>
+
+        {requested && !selected && (
+          <p class="mt-6 text-ink-soft" data-ram-unknown>We could not find that timetable. Please choose from the list.</p>
+        )}
+
+        {countries.map((c) => (
+          <section class="mt-10 sm:mt-14" id={`ram-${c.slug}`} data-ram-country={c.slug} hidden={c !== selected} aria-labelledby={`ram-h-${c.slug}`}>
+            <div class="flex flex-col gap-4 border-b border-ink pb-5 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2 id={`ram-h-${c.slug}`} class="text-3xl font-medium tracking-tight sm:text-4xl">{c.name}</h2>
+                <p class="mt-1 text-ink-soft">
+                  {c.meetings.length} meeting{c.meetings.length === 1 ? '' : 's'} · {c.days.map((d) => d.label.replace(/^\w+ /, '')).join(' and ')}
+                </p>
+              </div>
+              <a href={`/ram-timetable/${c.slug}.pdf`} download class="btn-primary self-start sm:self-auto">
+                <Icon name="download" class="size-4" />Download PDF
+              </a>
+            </div>
+
+            {c.days.map((d) => (
+              <div class="mt-8">
+                <h3 class="text-xl font-medium tracking-tight">{d.label}</h3>
+                <ol class="mt-3 border-t border-line">
+                  {d.meetings.map((m) => (
+                    <li class="grid gap-x-6 gap-y-3 border-b border-line py-5 sm:grid-cols-[9.5rem_1fr]">
+                      <div class="flex items-baseline gap-x-4 sm:block">
+                        <p class="text-lg font-medium tabular-nums">
+                          <time datetime={nairobiInstant(m.date, m.start)}>{m.start}</time>
+                          <span aria-hidden="true">–</span><span class="sr-only"> to </span>
+                          <time datetime={nairobiInstant(m.date, m.end)}>{m.end}</time>
+                        </p>
+                        {m.table && <p class="font-semibold text-brand-700 sm:mt-0.5">{m.table}</p>}
+                      </div>
+                      <div class="min-w-0">
+                        <div class="flex flex-wrap items-center gap-2">
+                          <span class="tag bg-ink text-white tabular-nums">{m.meetingId}</span>
+                          {m.format && <span class="tag bg-sand text-ink-soft">{m.format}</span>}
+                          {m.interpretation && <span class="tag bg-brand-50 text-ink">Interpretation: {m.interpretation}</span>}
+                        </div>
+                        <dl class="mt-3 grid gap-3 text-[0.97rem] sm:grid-cols-[11rem_1fr] sm:gap-x-4 sm:gap-y-2">
+                          <dt class="text-sm font-semibold text-muted sm:text-[0.97rem]">Meeting with</dt>
+                          <dd class="-mt-2.5 sm:mt-0">
+                            <ul class="space-y-0.5">
+                              {(m.meetingWith ?? []).map((line) => {
+                                const p = splitParty(line)
+                                return <li>{p.country && <strong class="font-semibold">{p.country}</strong>}{p.country && ' – '}{p.agencies}</li>
+                              })}
+                            </ul>
+                          </dd>
+                          {m.attending && (
+                            <>
+                              <dt class="text-sm font-semibold text-muted sm:text-[0.97rem]">From your delegation</dt>
+                              <dd class="-mt-2.5 font-semibold sm:mt-0">{m.attending}</dd>
+                            </>
+                          )}
+                          {m.requestedBy?.length ? (
+                            <>
+                              <dt class="text-sm font-semibold text-muted sm:text-[0.97rem]">Requested by</dt>
+                              <dd class="-mt-2.5 text-ink-soft sm:mt-0">
+                                {m.requestedBy.map((line, i) => <>{i > 0 && <br />}{line}</>)}
+                              </dd>
+                            </>
+                          ) : null}
+                        </dl>
+                        {m.clash && (
+                          <p class="mt-3 flex gap-2 bg-amber-soft px-3 py-2 text-[0.95rem] text-amber-ink">
+                            <Icon name="alert" class="mt-0.5 size-4 shrink-0" />
+                            <span>{m.clash}</span>
+                          </p>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ))}
+          </section>
+        ))}
+
+        <p class="mt-12 max-w-2xl text-sm text-muted">
+          The schedule may change up to the meetings. Please check this page again on the day. Questions: ask at the registration desk.
+        </p>
+      </div>
+    )}
+  </div>
+</Base>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-ram]')
+  if (root) {
+    const fallback = root.querySelector<HTMLElement>('[data-ram-fallback]')!
+    const picker = root.querySelector<HTMLElement>('[data-ram-picker]')!
+    const input = root.querySelector<HTMLInputElement>('[data-ram-input]')!
+    const toggle = root.querySelector<HTMLButtonElement>('[data-ram-toggle]')!
+    const list = root.querySelector<HTMLElement>('[data-ram-list]')!
+    const none = root.querySelector<HTMLElement>('[data-ram-none]')!
+    const options = Array.from(list.querySelectorAll<HTMLElement>('[role="option"]'))
+    const sections = Array.from(root.querySelectorAll<HTMLElement>('[data-ram-country]'))
+    const fold = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim()
+
+    fallback.hidden = true
+    picker.hidden = false
+
+    let visible: HTMLElement[] = options
+    let active = -1
+    let current = sections.find((s) => !s.hidden)?.dataset.ramCountry ?? ''
+
+    const setActive = (i: number) => {
+      active = i
+      options.forEach((o) => o.removeAttribute('data-active'))
+      const o = visible[i]
+      if (o) {
+        o.setAttribute('data-active', '')
+        input.setAttribute('aria-activedescendant', o.id)
+        o.scrollIntoView({block: 'nearest'})
+      } else input.removeAttribute('aria-activedescendant')
+    }
+    const open = (filter = true) => {
+      const q = filter ? fold(input.value) : ''
+      // Names starting with what was typed come first, then other matches.
+      const starts = options.filter((o) => q && o.dataset.search!.split('|').some((n) => n.startsWith(q)))
+      const contains = options.filter((o) => !starts.includes(o) && (!q || o.dataset.search!.includes(q)))
+      visible = [...starts, ...contains]
+      options.forEach((o) => (o.hidden = !visible.includes(o)))
+      visible.forEach((o) => list.appendChild(o))
+      list.hidden = visible.length === 0
+      none.hidden = visible.length > 0
+      input.setAttribute('aria-expanded', String(visible.length > 0))
+      setActive(q && visible.length ? 0 : visible.findIndex((o) => o.dataset.slug === current))
+    }
+    const close = () => {
+      list.hidden = true
+      none.hidden = true
+      input.setAttribute('aria-expanded', 'false')
+      setActive(-1)
+      // Restore the alphabetical order for next time.
+      options.forEach((o) => list.appendChild(o))
+    }
+    const choose = (o: HTMLElement) => {
+      current = o.dataset.slug!
+      input.value = o.dataset.name!
+      options.forEach((x) => x.setAttribute('aria-selected', String(x === o)))
+      sections.forEach((s) => (s.hidden = s.dataset.ramCountry !== current))
+      root.querySelector('[data-ram-unknown]')?.remove()
+      const url = new URL(location.href)
+      url.searchParams.set('country', current)
+      history.replaceState(null, '', url)
+      close()
+      input.blur() // closes the phone keyboard so the timetable is visible
+    }
+
+    options.forEach((o) => {
+      o.setAttribute('aria-selected', String(o.dataset.slug === current))
+      // mousedown keeps focus in the input, so the list does not close before the click lands
+      o.addEventListener('mousedown', (e) => e.preventDefault())
+      o.addEventListener('click', () => choose(o))
+    })
+    input.addEventListener('focus', () => {
+      input.select()
+      open(false)
+    })
+    input.addEventListener('click', () => list.hidden && open(false))
+    input.addEventListener('input', () => open())
+    input.addEventListener('blur', () => {
+      close()
+      const name = sections.find((s) => s.dataset.ramCountry === current)
+      input.value = name ? options.find((o) => o.dataset.slug === current)!.dataset.name! : ''
+    })
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault()
+        if (list.hidden) return open(false)
+        const step = e.key === 'ArrowDown' ? 1 : -1
+        setActive(Math.min(visible.length - 1, Math.max(0, active + step)))
+      } else if (e.key === 'Enter') {
+        e.preventDefault()
+        const o = visible[active] ?? (visible.length === 1 ? visible[0] : undefined)
+        if (o && !list.hidden) choose(o)
+      } else if (e.key === 'Escape') {
+        close()
+      }
+    })
+    toggle.addEventListener('mousedown', (e) => e.preventDefault())
+    toggle.addEventListener('click', () => {
+      if (!list.hidden) return close()
+      if (document.activeElement === input) open(false)
+      else input.focus()
+    })
+  }
+</script>

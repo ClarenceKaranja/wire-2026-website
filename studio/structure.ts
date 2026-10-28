@@ -10,6 +10,7 @@ import {InfoOutlineIcon} from '@sanity/icons/InfoOutline'
 import {EarthGlobeIcon} from '@sanity/icons/EarthGlobe'
 import {HelpCircleIcon} from '@sanity/icons/HelpCircle'
 import {ArchiveIcon} from '@sanity/icons/Archive'
+import {UsersIcon} from '@sanity/icons/Users'
 import {StartHere} from './components/StartHere'
 
 const singleton = (S: Parameters<StructureResolver>[0], type: string, title: string, icon: React.ComponentType) =>
@@ -69,6 +70,7 @@ export const structure: StructureResolver = (S) =>
               S.documentTypeListItem('session').title('All sessions'),
               S.documentTypeListItem('programmeDay').title('Programme days'),
               S.documentTypeListItem('person').title('Speakers and moderators'),
+              singleton(S, 'ramSchedule', 'Restricted access meeting timetables', UsersIcon),
             ]),
         ),
       S.listItem()

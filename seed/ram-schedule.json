@@ -1,0 +1,3806 @@
+{
+  "_id": "ramSchedule",
+  "_type": "ramSchedule",
+  "sourceFile": "ram.xlsx",
+  "meetingCount": 195,
+  "meetings": [
+    {
+      "_key": "m001",
+      "_type": "ramMeeting",
+      "country": "Angola",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 2",
+      "meetingId": "AGO-03 / NAM-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Namibia – Entire delegation"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Angola – Customs (AGT)",
+        "Namibia – Prosecutor-General",
+        "(combined: both sides asked to meet)"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m002",
+      "_type": "ramMeeting",
+      "country": "Angola",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 5",
+      "meetingId": "BWA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Botswana – Botswana Police Service",
+        "China – Customs Anti-Smuggling Bureau",
+        "Namibia – NamPol; Prosecutor-General",
+        "Zambia – National Prosecution Authority; National Parks and Wildlife",
+        "South Africa – SAPS"
+      ],
+      "attending": "Police / INTERPOL NCB",
+      "requestedBy": [
+        "Botswana – Botswana Police Service"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m003",
+      "_type": "ramMeeting",
+      "country": "Angola",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 4",
+      "meetingId": "PRT-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Portugal – GNR – EMPACT Africa",
+        "Kenya – DCI",
+        "Mozambique – Prosecutor (PGR)",
+        "South Africa – SAPS",
+        "Uganda – Uganda Wildlife Authority; Police",
+        "Guinea – Anti-Wildlife Trafficking Brigade",
+        "Nigeria – Police",
+        "Congo, Democratic Republic of the (online) – ICCN (online)"
+      ],
+      "attending": "Police / INTERPOL NCB",
+      "requestedBy": [
+        "Portugal – GNR – EMPACT Africa"
+      ]
+    },
+    {
+      "_key": "m004",
+      "_type": "ramMeeting",
+      "country": "Angola",
+      "date": "2026-11-06",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 3",
+      "meetingId": "AGO-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Mozambique – Entire delegation"
+      ],
+      "attending": "Customs (AGT)",
+      "requestedBy": [
+        "Angola – Customs (AGT)"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m005",
+      "_type": "ramMeeting",
+      "country": "Angola",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 2",
+      "meetingId": "LAO-08",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Lao PDR – Entire delegation"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Lao PDR – Entire delegation"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m006",
+      "_type": "ramMeeting",
+      "country": "Angola",
+      "date": "2026-11-06",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 4",
+      "meetingId": "AGO-04",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Viet Nam – Entire delegation"
+      ],
+      "attending": "Customs (AGT)",
+      "requestedBy": [
+        "Angola – Customs (AGT)"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m007",
+      "_type": "ramMeeting",
+      "country": "Austria",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 3",
+      "meetingId": "AUT-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Philippines – DENR; Customs"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Austria – Customs"
+      ]
+    },
+    {
+      "_key": "m008",
+      "_type": "ramMeeting",
+      "country": "Austria",
+      "date": "2026-11-05",
+      "start": "16:00",
+      "end": "16:30",
+      "table": "Table 2",
+      "meetingId": "AUT-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Uganda – Uganda Wildlife Authority; Ministry of Water and Environment"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Austria – Customs"
+      ]
+    },
+    {
+      "_key": "m009",
+      "_type": "ramMeeting",
+      "country": "Bangladesh",
+      "date": "2026-11-05",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 2",
+      "meetingId": "BGD-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Nepal – Ministry of Forests and Environment"
+      ],
+      "attending": "Forest Department",
+      "requestedBy": [
+        "Bangladesh – Forest Department"
+      ]
+    },
+    {
+      "_key": "m010",
+      "_type": "ramMeeting",
+      "country": "Bangladesh",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 3",
+      "meetingId": "BGD-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Nepal – Customs"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Bangladesh – Customs"
+      ]
+    },
+    {
+      "_key": "m011",
+      "_type": "ramMeeting",
+      "country": "Bangladesh",
+      "date": "2026-11-06",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 1",
+      "meetingId": "BGD-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Cambodia – Customs and Excise"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Bangladesh – Customs"
+      ]
+    },
+    {
+      "_key": "m012",
+      "_type": "ramMeeting",
+      "country": "Botswana",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 5",
+      "meetingId": "BWA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Angola – Police / INTERPOL NCB",
+        "China – Customs Anti-Smuggling Bureau",
+        "Namibia – NamPol; Prosecutor-General",
+        "Zambia – National Prosecution Authority; National Parks and Wildlife",
+        "South Africa – SAPS"
+      ],
+      "attending": "Botswana Police Service",
+      "requestedBy": [
+        "Botswana – Botswana Police Service"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m013",
+      "_type": "ramMeeting",
+      "country": "Botswana",
+      "date": "2026-11-06",
+      "start": "09:30",
+      "end": "10:00",
+      "table": "Table 3",
+      "meetingId": "BWA-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "China – Customs Anti-Smuggling Bureau"
+      ],
+      "attending": "Botswana Police Service",
+      "requestedBy": [
+        "Botswana – Botswana Police Service"
+      ]
+    },
+    {
+      "_key": "m014",
+      "_type": "ramMeeting",
+      "country": "Cambodia",
+      "date": "2026-11-05",
+      "start": "15:00",
+      "end": "15:30",
+      "table": "Table 4",
+      "meetingId": "NLD-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Netherlands – Dutch Police"
+      ],
+      "attending": "Customs and Excise",
+      "requestedBy": [
+        "Netherlands – Dutch Police"
+      ]
+    },
+    {
+      "_key": "m015",
+      "_type": "ramMeeting",
+      "country": "Cambodia",
+      "date": "2026-11-06",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 1",
+      "meetingId": "BGD-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Bangladesh – Customs"
+      ],
+      "attending": "Customs and Excise",
+      "requestedBy": [
+        "Bangladesh – Customs"
+      ],
+      "note": "Same time as KHM-02 – Forestry and Wildlife attends that one"
+    },
+    {
+      "_key": "m016",
+      "_type": "ramMeeting",
+      "country": "Cambodia",
+      "date": "2026-11-06",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 2",
+      "meetingId": "KHM-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Lao PDR – DNREI; Environmental Police"
+      ],
+      "attending": "Forestry and Wildlife",
+      "requestedBy": [
+        "Cambodia – Forestry and Wildlife"
+      ],
+      "note": "Same time as BGD-01 – Customs and Excise attends that one"
+    },
+    {
+      "_key": "m017",
+      "_type": "ramMeeting",
+      "country": "Cambodia",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 6",
+      "meetingId": "KHM-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Kenya – KRA Customs",
+        "Zambia – National Prosecution Authority",
+        "Nigeria – Customs"
+      ],
+      "attending": "Forestry and Wildlife",
+      "requestedBy": [
+        "Cambodia – Forestry and Wildlife"
+      ]
+    },
+    {
+      "_key": "m018",
+      "_type": "ramMeeting",
+      "country": "Cameroon",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:00",
+      "table": "Table 1",
+      "meetingId": "VNM-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Viet Nam – CITES Management Authority"
+      ],
+      "attending": "Ministry of Forestry and Wildlife",
+      "requestedBy": [
+        "Viet Nam – CITES Management Authority"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m019",
+      "_type": "ramMeeting",
+      "country": "Cameroon",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "14:30",
+      "table": "Table 1",
+      "meetingId": "CMR-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Nigeria – Police; NFIU"
+      ],
+      "attending": "Ministry of Forestry and Wildlife",
+      "requestedBy": [
+        "Cameroon – Ministry of Forestry and Wildlife"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m020",
+      "_type": "ramMeeting",
+      "country": "Cameroon",
+      "date": "2026-11-05",
+      "start": "16:00",
+      "end": "16:30",
+      "table": "Table 6",
+      "meetingId": "NLD-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Netherlands – Dutch Police"
+      ],
+      "attending": "Customs; Ministry of Justice; Ministry of Forestry and Wildlife",
+      "requestedBy": [
+        "Netherlands – Dutch Police"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m021",
+      "_type": "ramMeeting",
+      "country": "China",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:30",
+      "table": "Table 4",
+      "meetingId": "NGA-03",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Nigeria – NFIU",
+        "Singapore – NParks",
+        "Viet Nam – Customs; Environmental Police"
+      ],
+      "attending": "Customs Anti-Smuggling Bureau",
+      "requestedBy": [
+        "Nigeria – NFIU"
+      ]
+    },
+    {
+      "_key": "m022",
+      "_type": "ramMeeting",
+      "country": "China",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 5",
+      "meetingId": "BWA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Botswana – Botswana Police Service",
+        "Angola – Police / INTERPOL NCB",
+        "Namibia – NamPol; Prosecutor-General",
+        "Zambia – National Prosecution Authority; National Parks and Wildlife",
+        "South Africa – SAPS"
+      ],
+      "attending": "Customs Anti-Smuggling Bureau",
+      "requestedBy": [
+        "Botswana – Botswana Police Service"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m023",
+      "_type": "ramMeeting",
+      "country": "China",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "14:30",
+      "table": "Table 4",
+      "meetingId": "ZAF-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "South Africa – DFFE"
+      ],
+      "attending": "Customs Anti-Smuggling Bureau",
+      "requestedBy": [
+        "South Africa – DFFE"
+      ]
+    },
+    {
+      "_key": "m024",
+      "_type": "ramMeeting",
+      "country": "China",
+      "date": "2026-11-05",
+      "start": "14:30",
+      "end": "15:00",
+      "table": "Table 4",
+      "meetingId": "NGA-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Nigeria – NFIU"
+      ],
+      "attending": "Customs Anti-Smuggling Bureau",
+      "requestedBy": [
+        "Nigeria – NFIU"
+      ]
+    },
+    {
+      "_key": "m025",
+      "_type": "ramMeeting",
+      "country": "China",
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:30",
+      "table": "Table 5",
+      "meetingId": "MOZ-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Mozambique – AQUA",
+        "Thailand – Royal Thai Police; Customs",
+        "Viet Nam – CITES Management Authority; Customs"
+      ],
+      "attending": "Customs Anti-Smuggling Bureau",
+      "requestedBy": [
+        "Mozambique – AQUA"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m026",
+      "_type": "ramMeeting",
+      "country": "China",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 1",
+      "meetingId": "NLD-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Netherlands – Dutch Police"
+      ],
+      "attending": "Customs Anti-Smuggling Bureau",
+      "requestedBy": [
+        "Netherlands – Dutch Police"
+      ]
+    },
+    {
+      "_key": "m027",
+      "_type": "ramMeeting",
+      "country": "China",
+      "date": "2026-11-06",
+      "start": "09:30",
+      "end": "10:00",
+      "table": "Table 3",
+      "meetingId": "BWA-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Botswana – Botswana Police Service"
+      ],
+      "attending": "Customs Anti-Smuggling Bureau",
+      "requestedBy": [
+        "Botswana – Botswana Police Service"
+      ]
+    },
+    {
+      "_key": "m028",
+      "_type": "ramMeeting",
+      "country": "China",
+      "date": "2026-11-06",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 1",
+      "meetingId": "COG-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Congo, Republic of the – Ministry of Justice"
+      ],
+      "attending": "Customs Anti-Smuggling Bureau",
+      "requestedBy": [
+        "Congo, Republic of the – Ministry of Justice"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m029",
+      "_type": "ramMeeting",
+      "country": "Congo, Democratic Republic of the (online)",
+      "date": "2026-11-05",
+      "start": "15:00",
+      "end": "16:00",
+      "table": "Table 6",
+      "meetingId": "UGA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Uganda – Ministry of Water and Environment",
+        "South Sudan – National Wildlife Service"
+      ],
+      "attending": "Customs (DGDA) (online); ICCN (online)",
+      "requestedBy": [
+        "Uganda – Ministry of Water and Environment"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m030",
+      "_type": "ramMeeting",
+      "country": "Congo, Democratic Republic of the (online)",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 4",
+      "meetingId": "PRT-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Portugal – GNR – EMPACT Africa",
+        "Kenya – DCI",
+        "Mozambique – Prosecutor (PGR)",
+        "South Africa – SAPS",
+        "Uganda – Uganda Wildlife Authority; Police",
+        "Guinea – Anti-Wildlife Trafficking Brigade",
+        "Nigeria – Police",
+        "Angola – Police / INTERPOL NCB"
+      ],
+      "attending": "ICCN (online)",
+      "requestedBy": [
+        "Portugal – GNR – EMPACT Africa"
+      ]
+    },
+    {
+      "_key": "m031",
+      "_type": "ramMeeting",
+      "country": "Congo, Democratic Republic of the (online)",
+      "date": "2026-11-06",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 5",
+      "meetingId": "ZAF-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "South Africa – DFFE"
+      ],
+      "attending": "ICCN (online)",
+      "requestedBy": [
+        "South Africa – DFFE"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m032",
+      "_type": "ramMeeting",
+      "country": "Congo, Republic of the",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 1",
+      "meetingId": "COG-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Thailand – Customs; Attorney-General"
+      ],
+      "attending": "Ministry of Justice",
+      "requestedBy": [
+        "Congo, Republic of the – Ministry of Justice"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m033",
+      "_type": "ramMeeting",
+      "country": "Congo, Republic of the",
+      "date": "2026-11-05",
+      "start": "12:00",
+      "end": "12:30",
+      "table": "Table 3",
+      "meetingId": "VNM-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Viet Nam – CITES Management Authority"
+      ],
+      "attending": "Customs; Ministry of Justice",
+      "requestedBy": [
+        "Viet Nam – CITES Management Authority"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m034",
+      "_type": "ramMeeting",
+      "country": "Congo, Republic of the",
+      "date": "2026-11-06",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 1",
+      "meetingId": "COG-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "China – Customs Anti-Smuggling Bureau"
+      ],
+      "attending": "Ministry of Justice",
+      "requestedBy": [
+        "Congo, Republic of the – Ministry of Justice"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m035",
+      "_type": "ramMeeting",
+      "country": "Focused Conservation",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 6",
+      "meetingId": "ZMB-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Zambia – National Prosecution Authority"
+      ],
+      "attending": "Focused Conservation",
+      "requestedBy": [
+        "Zambia – National Prosecution Authority"
+      ]
+    },
+    {
+      "_key": "m036",
+      "_type": "ramMeeting",
+      "country": "Gabon",
+      "date": "2026-11-05",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 4",
+      "meetingId": "NLD-04",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Netherlands – Dutch Police"
+      ],
+      "attending": "Customs; Prosecutor-General's Office",
+      "requestedBy": [
+        "Netherlands – Dutch Police"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m037",
+      "_type": "ramMeeting",
+      "country": "Gabon",
+      "date": "2026-11-05",
+      "start": "14:30",
+      "end": "15:30",
+      "table": "Table 5",
+      "meetingId": "GAB-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Thailand – Customs",
+        "Nigeria – Customs"
+      ],
+      "attending": "Prosecutor-General's Office",
+      "requestedBy": [
+        "Gabon – Prosecutor-General's Office"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m038",
+      "_type": "ramMeeting",
+      "country": "Gabon",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 6",
+      "meetingId": "GAB-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Kenya – ODPP",
+        "Nigeria – NESREA / Environment (CITES)"
+      ],
+      "attending": "Prosecutor-General's Office",
+      "requestedBy": [
+        "Gabon – Prosecutor-General's Office"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m039",
+      "_type": "ramMeeting",
+      "country": "Guinea",
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:00",
+      "table": "Table 4",
+      "meetingId": "NGA-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Nigeria – NFIU"
+      ],
+      "attending": "Anti-Wildlife Trafficking Brigade",
+      "requestedBy": [
+        "Nigeria – NFIU"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m040",
+      "_type": "ramMeeting",
+      "country": "Guinea",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 4",
+      "meetingId": "PRT-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Portugal – GNR – EMPACT Africa",
+        "Kenya – DCI",
+        "Mozambique – Prosecutor (PGR)",
+        "South Africa – SAPS",
+        "Uganda – Uganda Wildlife Authority; Police",
+        "Nigeria – Police",
+        "Angola – Police / INTERPOL NCB",
+        "Congo, Democratic Republic of the (online) – ICCN (online)"
+      ],
+      "attending": "Anti-Wildlife Trafficking Brigade",
+      "requestedBy": [
+        "Portugal – GNR – EMPACT Africa"
+      ]
+    },
+    {
+      "_key": "m041",
+      "_type": "ramMeeting",
+      "country": "Hong Kong SAR, China",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 2",
+      "meetingId": "LKA-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Sri Lanka – Dept of Wildlife Conservation"
+      ],
+      "attending": "AFCD; Customs and Excise",
+      "requestedBy": [
+        "Sri Lanka – Dept of Wildlife Conservation"
+      ]
+    },
+    {
+      "_key": "m042",
+      "_type": "ramMeeting",
+      "country": "Hong Kong SAR, China",
+      "date": "2026-11-05",
+      "start": "11:30",
+      "end": "12:30",
+      "table": "Table 6",
+      "meetingId": "MDG-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Madagascar – Ministry of Justice",
+        "Tanzania – National Prosecutions Service; Anti-Poaching Taskforce",
+        "Thailand – Royal Thai Police; Customs; Attorney-General; DSI"
+      ],
+      "attending": "Customs and Excise",
+      "requestedBy": [
+        "Madagascar – Ministry of Justice"
+      ],
+      "interpretation": "French",
+      "note": "Same time as HKG-02 – AFCD attends that one"
+    },
+    {
+      "_key": "m043",
+      "_type": "ramMeeting",
+      "country": "Hong Kong SAR, China",
+      "date": "2026-11-05",
+      "start": "12:00",
+      "end": "12:30",
+      "table": "Table 1",
+      "meetingId": "HKG-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "United States – Entire delegation"
+      ],
+      "attending": "AFCD",
+      "requestedBy": [
+        "Hong Kong SAR, China – AFCD"
+      ],
+      "note": "Same time as MDG-01 – Customs and Excise attend that one"
+    },
+    {
+      "_key": "m044",
+      "_type": "ramMeeting",
+      "country": "Hong Kong SAR, China",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 1",
+      "meetingId": "HKG-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "South Africa – Entire delegation"
+      ],
+      "attending": "AFCD",
+      "requestedBy": [
+        "Hong Kong SAR, China – AFCD"
+      ]
+    },
+    {
+      "_key": "m045",
+      "_type": "ramMeeting",
+      "country": "India",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 3",
+      "meetingId": "NPL-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Nepal – Ministry of Forests and Environment"
+      ],
+      "attending": "WCCB",
+      "requestedBy": [
+        "Nepal – Ministry of Forests and Environment"
+      ]
+    },
+    {
+      "_key": "m046",
+      "_type": "ramMeeting",
+      "country": "India",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "14:30",
+      "table": "Table 5",
+      "meetingId": "MYS-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Malaysia – Wildlife and National Parks"
+      ],
+      "attending": "DRI; WCCB",
+      "requestedBy": [
+        "Malaysia – Wildlife and National Parks"
+      ]
+    },
+    {
+      "_key": "m047",
+      "_type": "ramMeeting",
+      "country": "India",
+      "date": "2026-11-05",
+      "start": "15:00",
+      "end": "15:30",
+      "table": "Table 2",
+      "meetingId": "SGP-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Singapore – NParks"
+      ],
+      "attending": "DRI; WCCB",
+      "requestedBy": [
+        "Singapore – NParks"
+      ]
+    },
+    {
+      "_key": "m048",
+      "_type": "ramMeeting",
+      "country": "India",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 4",
+      "meetingId": "IND-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Thailand – Customs; Dept of National Parks"
+      ],
+      "attending": "DRI; WCCB",
+      "requestedBy": [
+        "India – DRI; WCCB"
+      ]
+    },
+    {
+      "_key": "m049",
+      "_type": "ramMeeting",
+      "country": "Indonesia",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:30",
+      "table": "Table 5",
+      "meetingId": "THA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Thailand – DSI",
+        "Madagascar – Entire delegation",
+        "Malaysia – Entire delegation"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Thailand – DSI"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m050",
+      "_type": "ramMeeting",
+      "country": "Indonesia",
+      "date": "2026-11-05",
+      "start": "12:00",
+      "end": "12:30",
+      "table": "Table 2",
+      "meetingId": "ID-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Papua New Guinea – Entire delegation"
+      ],
+      "attending": "Attorney's Office; Ministry of Forestry",
+      "requestedBy": [
+        "Indonesia – Attorney's Office; Ministry of Forestry"
+      ]
+    },
+    {
+      "_key": "m051",
+      "_type": "ramMeeting",
+      "country": "Indonesia",
+      "date": "2026-11-05",
+      "start": "15:00",
+      "end": "15:30",
+      "table": "Table 1",
+      "meetingId": "PHL-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Philippines – DENR"
+      ],
+      "attending": "Ministry of Forestry",
+      "requestedBy": [
+        "Philippines – DENR"
+      ]
+    },
+    {
+      "_key": "m052",
+      "_type": "ramMeeting",
+      "country": "Indonesia",
+      "date": "2026-11-05",
+      "start": "16:00",
+      "end": "16:30",
+      "table": "Table 4",
+      "meetingId": "MYS-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Malaysia – Wildlife and National Parks"
+      ],
+      "attending": "Ministry of Forestry",
+      "requestedBy": [
+        "Malaysia – Wildlife and National Parks"
+      ]
+    },
+    {
+      "_key": "m053",
+      "_type": "ramMeeting",
+      "country": "Indonesia",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 2",
+      "meetingId": "ID-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Spain – Guardia Civil",
+        "Netherlands – Dutch Police"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Indonesia – Entire delegation"
+      ]
+    },
+    {
+      "_key": "m054",
+      "_type": "ramMeeting",
+      "country": "Kenya",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 5",
+      "meetingId": "KEN-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Madagascar – Entire delegation"
+      ],
+      "attending": "Kenya Wildlife Service",
+      "requestedBy": [
+        "Kenya – Kenya Wildlife Service"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m055",
+      "_type": "ramMeeting",
+      "country": "Kenya",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 1",
+      "meetingId": "KEN-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Nigeria – Customs"
+      ],
+      "attending": "KRA Investigations",
+      "requestedBy": [
+        "Kenya – KRA Investigations"
+      ]
+    },
+    {
+      "_key": "m056",
+      "_type": "ramMeeting",
+      "country": "Kenya",
+      "date": "2026-11-05",
+      "start": "12:00",
+      "end": "12:30",
+      "table": "Table 4",
+      "meetingId": "ZMB-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Zambia – National Parks and Wildlife"
+      ],
+      "attending": "ODPP",
+      "requestedBy": [
+        "Zambia – National Parks and Wildlife"
+      ]
+    },
+    {
+      "_key": "m057",
+      "_type": "ramMeeting",
+      "country": "Kenya",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "15:00",
+      "table": "Table 6",
+      "meetingId": "TZA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Tanzania – National Prosecutions Service",
+        "Madagascar – Ministry of Justice; Ministry of Environment",
+        "Mozambique – Prosecutor (PGR); AQUA",
+        "Zambia – National Prosecution Authority; National Parks and Wildlife"
+      ],
+      "attending": "ODPP; Kenya Wildlife Service",
+      "requestedBy": [
+        "Tanzania – National Prosecutions Service"
+      ]
+    },
+    {
+      "_key": "m058",
+      "_type": "ramMeeting",
+      "country": "Kenya",
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:00",
+      "table": "Table 2",
+      "meetingId": "KEN-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Tanzania – Anti-Poaching Taskforce"
+      ],
+      "attending": "KRA Investigations",
+      "requestedBy": [
+        "Kenya – KRA Investigations"
+      ]
+    },
+    {
+      "_key": "m059",
+      "_type": "ramMeeting",
+      "country": "Kenya",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 6",
+      "meetingId": "GAB-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Gabon – Prosecutor-General's Office",
+        "Nigeria – NESREA / Environment (CITES)"
+      ],
+      "attending": "ODPP",
+      "requestedBy": [
+        "Gabon – Prosecutor-General's Office"
+      ],
+      "interpretation": "French",
+      "note": "Same time as PRT-01 – DCI attends that one"
+    },
+    {
+      "_key": "m060",
+      "_type": "ramMeeting",
+      "country": "Kenya",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 4",
+      "meetingId": "PRT-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Portugal – GNR – EMPACT Africa",
+        "Mozambique – Prosecutor (PGR)",
+        "South Africa – SAPS",
+        "Uganda – Uganda Wildlife Authority; Police",
+        "Guinea – Anti-Wildlife Trafficking Brigade",
+        "Nigeria – Police",
+        "Angola – Police / INTERPOL NCB",
+        "Congo, Democratic Republic of the (online) – ICCN (online)"
+      ],
+      "attending": "DCI",
+      "requestedBy": [
+        "Portugal – GNR – EMPACT Africa"
+      ],
+      "note": "Same time as GAB-01 – ODPP attend that one"
+    },
+    {
+      "_key": "m061",
+      "_type": "ramMeeting",
+      "country": "Kenya",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 6",
+      "meetingId": "KHM-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Cambodia – Forestry and Wildlife",
+        "Zambia – National Prosecution Authority",
+        "Nigeria – Customs"
+      ],
+      "attending": "KRA Customs",
+      "requestedBy": [
+        "Cambodia – Forestry and Wildlife"
+      ]
+    },
+    {
+      "_key": "m062",
+      "_type": "ramMeeting",
+      "country": "Lao PDR",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 4",
+      "meetingId": "UGA-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Uganda – Uganda Wildlife Authority",
+        "Viet Nam – Supreme People's Procuracy; CITES Management Authority"
+      ],
+      "attending": "Supreme People's Procuracy",
+      "requestedBy": [
+        "Uganda – Uganda Wildlife Authority"
+      ]
+    },
+    {
+      "_key": "m063",
+      "_type": "ramMeeting",
+      "country": "Lao PDR",
+      "date": "2026-11-05",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 1",
+      "meetingId": "LAO-05",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Zambia – National Parks and Wildlife"
+      ],
+      "attending": "Environmental Police",
+      "requestedBy": [
+        "Lao PDR – Environmental Police"
+      ]
+    },
+    {
+      "_key": "m064",
+      "_type": "ramMeeting",
+      "country": "Lao PDR",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 6",
+      "meetingId": "LAO-02 / THA-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Thailand – Dept of National Parks; Customs"
+      ],
+      "attending": "Environmental Police; DNREI",
+      "requestedBy": [
+        "Lao PDR – Environmental Police",
+        "Thailand – Dept of National Parks",
+        "(combined: both sides asked to meet)"
+      ]
+    },
+    {
+      "_key": "m065",
+      "_type": "ramMeeting",
+      "country": "Lao PDR",
+      "date": "2026-11-05",
+      "start": "14:30",
+      "end": "15:00",
+      "table": "Table 1",
+      "meetingId": "SGP-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Singapore – NParks"
+      ],
+      "attending": "DNREI; Environmental Police",
+      "requestedBy": [
+        "Singapore – NParks"
+      ]
+    },
+    {
+      "_key": "m066",
+      "_type": "ramMeeting",
+      "country": "Lao PDR",
+      "date": "2026-11-05",
+      "start": "15:00",
+      "end": "15:30",
+      "table": "Table 3",
+      "meetingId": "LAO-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Viet Nam – Supreme People's Procuracy"
+      ],
+      "attending": "Supreme People's Procuracy",
+      "requestedBy": [
+        "Lao PDR – Supreme People's Procuracy"
+      ]
+    },
+    {
+      "_key": "m067",
+      "_type": "ramMeeting",
+      "country": "Lao PDR",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 5",
+      "meetingId": "LAO-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "UNODC",
+        "Thailand – Entire delegation",
+        "Zambia – Entire delegation",
+        "Viet Nam – Entire delegation"
+      ],
+      "attending": "Environmental Police",
+      "requestedBy": [
+        "Lao PDR – Environmental Police",
+        "UNODC"
+      ]
+    },
+    {
+      "_key": "m068",
+      "_type": "ramMeeting",
+      "country": "Lao PDR",
+      "date": "2026-11-06",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 2",
+      "meetingId": "KHM-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Cambodia – Forestry and Wildlife"
+      ],
+      "attending": "DNREI; Environmental Police",
+      "requestedBy": [
+        "Cambodia – Forestry and Wildlife"
+      ]
+    },
+    {
+      "_key": "m069",
+      "_type": "ramMeeting",
+      "country": "Lao PDR",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 2",
+      "meetingId": "LAO-08",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Angola – Entire delegation"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Lao PDR – Entire delegation"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m070",
+      "_type": "ramMeeting",
+      "country": "Lao PDR",
+      "date": "2026-11-06",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 3",
+      "meetingId": "LAO-07",
+      "format": "Bilateral",
+      "meetingWith": [
+        "South Africa – Entire delegation"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Lao PDR – Entire delegation"
+      ]
+    },
+    {
+      "_key": "m071",
+      "_type": "ramMeeting",
+      "country": "Madagascar",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 5",
+      "meetingId": "KEN-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Kenya – Kenya Wildlife Service"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Kenya – Kenya Wildlife Service"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m072",
+      "_type": "ramMeeting",
+      "country": "Madagascar",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:30",
+      "table": "Table 5",
+      "meetingId": "THA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Thailand – DSI",
+        "Malaysia – Entire delegation",
+        "Indonesia – Entire delegation"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Thailand – DSI"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m073",
+      "_type": "ramMeeting",
+      "country": "Madagascar",
+      "date": "2026-11-05",
+      "start": "11:30",
+      "end": "12:30",
+      "table": "Table 6",
+      "meetingId": "MDG-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Hong Kong SAR, China – Customs and Excise",
+        "Tanzania – National Prosecutions Service; Anti-Poaching Taskforce",
+        "Thailand – Royal Thai Police; Customs; Attorney-General; DSI"
+      ],
+      "attending": "Ministry of Justice",
+      "requestedBy": [
+        "Madagascar – Ministry of Justice"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m074",
+      "_type": "ramMeeting",
+      "country": "Madagascar",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "15:00",
+      "table": "Table 6",
+      "meetingId": "TZA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Tanzania – National Prosecutions Service",
+        "Mozambique – Prosecutor (PGR); AQUA",
+        "Zambia – National Prosecution Authority; National Parks and Wildlife",
+        "Kenya – ODPP; Kenya Wildlife Service"
+      ],
+      "attending": "Ministry of Justice; Ministry of Environment",
+      "requestedBy": [
+        "Tanzania – National Prosecutions Service"
+      ]
+    },
+    {
+      "_key": "m075",
+      "_type": "ramMeeting",
+      "country": "Madagascar",
+      "date": "2026-11-05",
+      "start": "16:00",
+      "end": "16:30",
+      "table": "Table 3",
+      "meetingId": "MDG-05",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Tanzania – Entire delegation"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Madagascar – Customs"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m076",
+      "_type": "ramMeeting",
+      "country": "Madagascar",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 5",
+      "meetingId": "MDG-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Mozambique – AQUA",
+        "Tanzania – Anti-Poaching Taskforce",
+        "Malaysia – Wildlife and National Parks; Border Control (AKPS)"
+      ],
+      "attending": "Ministry of Environment",
+      "requestedBy": [
+        "Madagascar – Ministry of Environment"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m077",
+      "_type": "ramMeeting",
+      "country": "Malaysia",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:30",
+      "table": "Table 5",
+      "meetingId": "THA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Thailand – DSI",
+        "Madagascar – Entire delegation",
+        "Indonesia – Entire delegation"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Thailand – DSI"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m078",
+      "_type": "ramMeeting",
+      "country": "Malaysia",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 4",
+      "meetingId": "NLD-05",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Netherlands – Dutch Police"
+      ],
+      "attending": "Border Control (AKPS); Royal Malaysia Police",
+      "requestedBy": [
+        "Netherlands – Dutch Police"
+      ]
+    },
+    {
+      "_key": "m079",
+      "_type": "ramMeeting",
+      "country": "Malaysia",
+      "date": "2026-11-05",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 3",
+      "meetingId": "LKA-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Sri Lanka – Customs"
+      ],
+      "attending": "Border Control (AKPS)",
+      "requestedBy": [
+        "Sri Lanka – Customs"
+      ]
+    },
+    {
+      "_key": "m080",
+      "_type": "ramMeeting",
+      "country": "Malaysia",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "14:30",
+      "table": "Table 5",
+      "meetingId": "MYS-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "India – DRI; WCCB"
+      ],
+      "attending": "Wildlife and National Parks",
+      "requestedBy": [
+        "Malaysia – Wildlife and National Parks"
+      ]
+    },
+    {
+      "_key": "m081",
+      "_type": "ramMeeting",
+      "country": "Malaysia",
+      "date": "2026-11-05",
+      "start": "14:30",
+      "end": "15:00",
+      "table": "Table 3",
+      "meetingId": "MYS-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Viet Nam – Supreme People's Procuracy; Environmental Police"
+      ],
+      "attending": "Wildlife and National Parks",
+      "requestedBy": [
+        "Malaysia – Wildlife and National Parks"
+      ]
+    },
+    {
+      "_key": "m082",
+      "_type": "ramMeeting",
+      "country": "Malaysia",
+      "date": "2026-11-05",
+      "start": "16:00",
+      "end": "16:30",
+      "table": "Table 4",
+      "meetingId": "MYS-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Indonesia – Ministry of Forestry"
+      ],
+      "attending": "Wildlife and National Parks",
+      "requestedBy": [
+        "Malaysia – Wildlife and National Parks"
+      ]
+    },
+    {
+      "_key": "m083",
+      "_type": "ramMeeting",
+      "country": "Malaysia",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 5",
+      "meetingId": "MDG-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Madagascar – Ministry of Environment",
+        "Mozambique – AQUA",
+        "Tanzania – Anti-Poaching Taskforce"
+      ],
+      "attending": "Wildlife and National Parks; Border Control (AKPS)",
+      "requestedBy": [
+        "Madagascar – Ministry of Environment"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m084",
+      "_type": "ramMeeting",
+      "country": "Mozambique",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:30",
+      "table": "Table 6",
+      "meetingId": "TZA-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Tanzania – Anti-Poaching Taskforce",
+        "Zambia – National Prosecution Authority"
+      ],
+      "attending": "Prosecutor (PGR)",
+      "requestedBy": [
+        "Tanzania – Anti-Poaching Taskforce"
+      ]
+    },
+    {
+      "_key": "m085",
+      "_type": "ramMeeting",
+      "country": "Mozambique",
+      "date": "2026-11-05",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 1",
+      "meetingId": "MOZ-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "South Africa – DFFE"
+      ],
+      "attending": "AQUA",
+      "requestedBy": [
+        "Mozambique – AQUA"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m086",
+      "_type": "ramMeeting",
+      "country": "Mozambique",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "15:00",
+      "table": "Table 6",
+      "meetingId": "TZA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Tanzania – National Prosecutions Service",
+        "Madagascar – Ministry of Justice; Ministry of Environment",
+        "Zambia – National Prosecution Authority; National Parks and Wildlife",
+        "Kenya – ODPP; Kenya Wildlife Service"
+      ],
+      "attending": "Prosecutor (PGR); AQUA",
+      "requestedBy": [
+        "Tanzania – National Prosecutions Service"
+      ]
+    },
+    {
+      "_key": "m087",
+      "_type": "ramMeeting",
+      "country": "Mozambique",
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:30",
+      "table": "Table 5",
+      "meetingId": "MOZ-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "China – Customs Anti-Smuggling Bureau",
+        "Thailand – Royal Thai Police; Customs",
+        "Viet Nam – CITES Management Authority; Customs"
+      ],
+      "attending": "AQUA",
+      "requestedBy": [
+        "Mozambique – AQUA"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m088",
+      "_type": "ramMeeting",
+      "country": "Mozambique",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 4",
+      "meetingId": "PRT-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Portugal – GNR – EMPACT Africa",
+        "Kenya – DCI",
+        "South Africa – SAPS",
+        "Uganda – Uganda Wildlife Authority; Police",
+        "Guinea – Anti-Wildlife Trafficking Brigade",
+        "Nigeria – Police",
+        "Angola – Police / INTERPOL NCB",
+        "Congo, Democratic Republic of the (online) – ICCN (online)"
+      ],
+      "attending": "Prosecutor (PGR)",
+      "requestedBy": [
+        "Portugal – GNR – EMPACT Africa"
+      ]
+    },
+    {
+      "_key": "m089",
+      "_type": "ramMeeting",
+      "country": "Mozambique",
+      "date": "2026-11-06",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 3",
+      "meetingId": "AGO-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Angola – Customs (AGT)"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Angola – Customs (AGT)"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m090",
+      "_type": "ramMeeting",
+      "country": "Mozambique",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 5",
+      "meetingId": "MDG-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Madagascar – Ministry of Environment",
+        "Tanzania – Anti-Poaching Taskforce",
+        "Malaysia – Wildlife and National Parks; Border Control (AKPS)"
+      ],
+      "attending": "AQUA",
+      "requestedBy": [
+        "Madagascar – Ministry of Environment"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m091",
+      "_type": "ramMeeting",
+      "country": "Namibia",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 2",
+      "meetingId": "AGO-03 / NAM-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Angola – Entire delegation"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Angola – Customs (AGT)",
+        "Namibia – Prosecutor-General",
+        "(combined: both sides asked to meet)"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m092",
+      "_type": "ramMeeting",
+      "country": "Namibia",
+      "date": "2026-11-05",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 3",
+      "meetingId": "ZAF-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "South Africa – DFFE"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "South Africa – DFFE"
+      ]
+    },
+    {
+      "_key": "m093",
+      "_type": "ramMeeting",
+      "country": "Namibia",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 5",
+      "meetingId": "BWA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Botswana – Botswana Police Service",
+        "Angola – Police / INTERPOL NCB",
+        "China – Customs Anti-Smuggling Bureau",
+        "Zambia – National Prosecution Authority; National Parks and Wildlife",
+        "South Africa – SAPS"
+      ],
+      "attending": "NamPol; Prosecutor-General",
+      "requestedBy": [
+        "Botswana – Botswana Police Service"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m094",
+      "_type": "ramMeeting",
+      "country": "Namibia",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "14:30",
+      "table": "Table 2",
+      "meetingId": "NAM-09",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Thailand – Customs"
+      ],
+      "attending": "Prosecutor-General",
+      "requestedBy": [
+        "Namibia – Prosecutor-General"
+      ]
+    },
+    {
+      "_key": "m095",
+      "_type": "ramMeeting",
+      "country": "Namibia",
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:00",
+      "table": "Table 3",
+      "meetingId": "NAM-06",
+      "format": "Bilateral",
+      "meetingWith": [
+        "South Africa – SAPS"
+      ],
+      "attending": "Prosecutor-General",
+      "requestedBy": [
+        "Namibia – Prosecutor-General"
+      ]
+    },
+    {
+      "_key": "m096",
+      "_type": "ramMeeting",
+      "country": "Namibia",
+      "date": "2026-11-06",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 4",
+      "meetingId": "NAM-11",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Zambia – National Prosecution Authority"
+      ],
+      "attending": "Prosecutor-General",
+      "requestedBy": [
+        "Namibia – Prosecutor-General"
+      ]
+    },
+    {
+      "_key": "m097",
+      "_type": "ramMeeting",
+      "country": "Nepal",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 3",
+      "meetingId": "NPL-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "India – WCCB"
+      ],
+      "attending": "Ministry of Forests and Environment",
+      "requestedBy": [
+        "Nepal – Ministry of Forests and Environment"
+      ]
+    },
+    {
+      "_key": "m098",
+      "_type": "ramMeeting",
+      "country": "Nepal",
+      "date": "2026-11-05",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 2",
+      "meetingId": "NPL-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Thailand – Customs"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Nepal – Customs"
+      ]
+    },
+    {
+      "_key": "m099",
+      "_type": "ramMeeting",
+      "country": "Nepal",
+      "date": "2026-11-05",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 2",
+      "meetingId": "BGD-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Bangladesh – Forest Department"
+      ],
+      "attending": "Ministry of Forests and Environment",
+      "requestedBy": [
+        "Bangladesh – Forest Department"
+      ]
+    },
+    {
+      "_key": "m100",
+      "_type": "ramMeeting",
+      "country": "Nepal",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 3",
+      "meetingId": "BGD-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Bangladesh – Customs"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Bangladesh – Customs"
+      ]
+    },
+    {
+      "_key": "m101",
+      "_type": "ramMeeting",
+      "country": "Netherlands",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 4",
+      "meetingId": "NLD-05",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Malaysia – Border Control (AKPS); Royal Malaysia Police"
+      ],
+      "attending": "Dutch Police",
+      "requestedBy": [
+        "Netherlands – Dutch Police"
+      ]
+    },
+    {
+      "_key": "m102",
+      "_type": "ramMeeting",
+      "country": "Netherlands",
+      "date": "2026-11-05",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 4",
+      "meetingId": "NLD-04",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Gabon – Customs; Prosecutor-General's Office"
+      ],
+      "attending": "Dutch Police",
+      "requestedBy": [
+        "Netherlands – Dutch Police"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m103",
+      "_type": "ramMeeting",
+      "country": "Netherlands",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "14:30",
+      "table": "Table 3",
+      "meetingId": "NLD-06",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Viet Nam – Customs; Environmental Police"
+      ],
+      "attending": "Dutch Police",
+      "requestedBy": [
+        "Netherlands – Dutch Police"
+      ]
+    },
+    {
+      "_key": "m104",
+      "_type": "ramMeeting",
+      "country": "Netherlands",
+      "date": "2026-11-05",
+      "start": "15:00",
+      "end": "15:30",
+      "table": "Table 4",
+      "meetingId": "NLD-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Cambodia – Customs and Excise"
+      ],
+      "attending": "Dutch Police",
+      "requestedBy": [
+        "Netherlands – Dutch Police"
+      ]
+    },
+    {
+      "_key": "m105",
+      "_type": "ramMeeting",
+      "country": "Netherlands",
+      "date": "2026-11-05",
+      "start": "16:00",
+      "end": "16:30",
+      "table": "Table 6",
+      "meetingId": "NLD-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Cameroon – Customs; Ministry of Justice; Ministry of Forestry and Wildlife"
+      ],
+      "attending": "Dutch Police",
+      "requestedBy": [
+        "Netherlands – Dutch Police"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m106",
+      "_type": "ramMeeting",
+      "country": "Netherlands",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 2",
+      "meetingId": "ID-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Indonesia – Entire delegation",
+        "Spain – Guardia Civil"
+      ],
+      "attending": "Dutch Police",
+      "requestedBy": [
+        "Indonesia – Entire delegation"
+      ],
+      "note": "Same time as NLD-03 – Dutch Police attends that one"
+    },
+    {
+      "_key": "m107",
+      "_type": "ramMeeting",
+      "country": "Netherlands",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 1",
+      "meetingId": "NLD-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "China – Customs Anti-Smuggling Bureau"
+      ],
+      "attending": "Dutch Police",
+      "requestedBy": [
+        "Netherlands – Dutch Police"
+      ],
+      "note": "Same time as ID-02 – Dutch Police attend that one"
+    },
+    {
+      "_key": "m108",
+      "_type": "ramMeeting",
+      "country": "Nigeria",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:30",
+      "table": "Table 4",
+      "meetingId": "NGA-03",
+      "format": "Multilateral",
+      "meetingWith": [
+        "China – Customs Anti-Smuggling Bureau",
+        "Singapore – NParks",
+        "Viet Nam – Customs; Environmental Police"
+      ],
+      "attending": "NFIU",
+      "requestedBy": [
+        "Nigeria – NFIU"
+      ]
+    },
+    {
+      "_key": "m109",
+      "_type": "ramMeeting",
+      "country": "Nigeria",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 1",
+      "meetingId": "KEN-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Kenya – KRA Investigations"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Kenya – KRA Investigations"
+      ]
+    },
+    {
+      "_key": "m110",
+      "_type": "ramMeeting",
+      "country": "Nigeria",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "14:30",
+      "table": "Table 1",
+      "meetingId": "CMR-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Cameroon – Ministry of Forestry and Wildlife"
+      ],
+      "attending": "Police; NFIU",
+      "requestedBy": [
+        "Cameroon – Ministry of Forestry and Wildlife"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m111",
+      "_type": "ramMeeting",
+      "country": "Nigeria",
+      "date": "2026-11-05",
+      "start": "14:30",
+      "end": "15:30",
+      "table": "Table 5",
+      "meetingId": "GAB-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Gabon – Prosecutor-General's Office",
+        "Thailand – Customs"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Gabon – Prosecutor-General's Office"
+      ],
+      "interpretation": "French",
+      "note": "Same time as NGA-01 – NFIU attends that one; Same time as VNM-03 – NESREA / Environment (CITES) attend that one"
+    },
+    {
+      "_key": "m112",
+      "_type": "ramMeeting",
+      "country": "Nigeria",
+      "date": "2026-11-05",
+      "start": "14:30",
+      "end": "15:00",
+      "table": "Table 4",
+      "meetingId": "NGA-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "China – Customs Anti-Smuggling Bureau"
+      ],
+      "attending": "NFIU",
+      "requestedBy": [
+        "Nigeria – NFIU"
+      ],
+      "note": "Same time as GAB-02 – Customs attend that one; Same time as VNM-03 – NESREA / Environment (CITES) attend that one"
+    },
+    {
+      "_key": "m113",
+      "_type": "ramMeeting",
+      "country": "Nigeria",
+      "date": "2026-11-05",
+      "start": "14:30",
+      "end": "15:00",
+      "table": "Table 2",
+      "meetingId": "VNM-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Viet Nam – CITES Management Authority"
+      ],
+      "attending": "NESREA / Environment (CITES)",
+      "requestedBy": [
+        "Viet Nam – CITES Management Authority"
+      ],
+      "note": "Same time as GAB-02 – Customs attend that one; Same time as NGA-01 – NFIU attends that one"
+    },
+    {
+      "_key": "m114",
+      "_type": "ramMeeting",
+      "country": "Nigeria",
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:00",
+      "table": "Table 4",
+      "meetingId": "NGA-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Guinea – Anti-Wildlife Trafficking Brigade"
+      ],
+      "attending": "NFIU",
+      "requestedBy": [
+        "Nigeria – NFIU"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m115",
+      "_type": "ramMeeting",
+      "country": "Nigeria",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 6",
+      "meetingId": "GAB-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Gabon – Prosecutor-General's Office",
+        "Kenya – ODPP"
+      ],
+      "attending": "NESREA / Environment (CITES)",
+      "requestedBy": [
+        "Gabon – Prosecutor-General's Office"
+      ],
+      "interpretation": "French",
+      "note": "Same time as PRT-01 – Police attends that one"
+    },
+    {
+      "_key": "m116",
+      "_type": "ramMeeting",
+      "country": "Nigeria",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 4",
+      "meetingId": "PRT-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Portugal – GNR – EMPACT Africa",
+        "Kenya – DCI",
+        "Mozambique – Prosecutor (PGR)",
+        "South Africa – SAPS",
+        "Uganda – Uganda Wildlife Authority; Police",
+        "Guinea – Anti-Wildlife Trafficking Brigade",
+        "Angola – Police / INTERPOL NCB",
+        "Congo, Democratic Republic of the (online) – ICCN (online)"
+      ],
+      "attending": "Police",
+      "requestedBy": [
+        "Portugal – GNR – EMPACT Africa"
+      ],
+      "note": "Same time as GAB-01 – NESREA / Environment (CITES) attend that one"
+    },
+    {
+      "_key": "m117",
+      "_type": "ramMeeting",
+      "country": "Nigeria",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 6",
+      "meetingId": "KHM-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Cambodia – Forestry and Wildlife",
+        "Kenya – KRA Customs",
+        "Zambia – National Prosecution Authority"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Cambodia – Forestry and Wildlife"
+      ]
+    },
+    {
+      "_key": "m118",
+      "_type": "ramMeeting",
+      "country": "Papua New Guinea",
+      "date": "2026-11-05",
+      "start": "12:00",
+      "end": "12:30",
+      "table": "Table 2",
+      "meetingId": "ID-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Indonesia – Attorney's Office; Ministry of Forestry"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Indonesia – Attorney's Office; Ministry of Forestry"
+      ]
+    },
+    {
+      "_key": "m119",
+      "_type": "ramMeeting",
+      "country": "Papua New Guinea",
+      "date": "2026-11-06",
+      "start": "09:30",
+      "end": "10:00",
+      "table": "Table 1",
+      "meetingId": "PNG-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Philippines – Customs; Police"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Papua New Guinea – Entire delegation"
+      ]
+    },
+    {
+      "_key": "m120",
+      "_type": "ramMeeting",
+      "country": "Philippines",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:00",
+      "table": "Table 3",
+      "meetingId": "THA-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Thailand – Customs"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Thailand – Customs"
+      ]
+    },
+    {
+      "_key": "m121",
+      "_type": "ramMeeting",
+      "country": "Philippines",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 3",
+      "meetingId": "AUT-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Austria – Customs"
+      ],
+      "attending": "DENR; Customs",
+      "requestedBy": [
+        "Austria – Customs"
+      ]
+    },
+    {
+      "_key": "m122",
+      "_type": "ramMeeting",
+      "country": "Philippines",
+      "date": "2026-11-05",
+      "start": "15:00",
+      "end": "15:30",
+      "table": "Table 1",
+      "meetingId": "PHL-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Indonesia – Ministry of Forestry"
+      ],
+      "attending": "DENR",
+      "requestedBy": [
+        "Philippines – DENR"
+      ]
+    },
+    {
+      "_key": "m123",
+      "_type": "ramMeeting",
+      "country": "Philippines",
+      "date": "2026-11-06",
+      "start": "09:30",
+      "end": "10:00",
+      "table": "Table 1",
+      "meetingId": "PNG-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Papua New Guinea – Entire delegation"
+      ],
+      "attending": "Customs; Police",
+      "requestedBy": [
+        "Papua New Guinea – Entire delegation"
+      ]
+    },
+    {
+      "_key": "m124",
+      "_type": "ramMeeting",
+      "country": "Portugal",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 4",
+      "meetingId": "PRT-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Kenya – DCI",
+        "Mozambique – Prosecutor (PGR)",
+        "South Africa – SAPS",
+        "Uganda – Uganda Wildlife Authority; Police",
+        "Guinea – Anti-Wildlife Trafficking Brigade",
+        "Nigeria – Police",
+        "Angola – Police / INTERPOL NCB",
+        "Congo, Democratic Republic of the (online) – ICCN (online)"
+      ],
+      "attending": "GNR – EMPACT Africa",
+      "requestedBy": [
+        "Portugal – GNR – EMPACT Africa"
+      ]
+    },
+    {
+      "_key": "m125",
+      "_type": "ramMeeting",
+      "country": "Singapore",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:30",
+      "table": "Table 4",
+      "meetingId": "NGA-03",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Nigeria – NFIU",
+        "China – Customs Anti-Smuggling Bureau",
+        "Viet Nam – Customs; Environmental Police"
+      ],
+      "attending": "NParks",
+      "requestedBy": [
+        "Nigeria – NFIU"
+      ]
+    },
+    {
+      "_key": "m126",
+      "_type": "ramMeeting",
+      "country": "Singapore",
+      "date": "2026-11-05",
+      "start": "14:30",
+      "end": "15:00",
+      "table": "Table 1",
+      "meetingId": "SGP-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Lao PDR – DNREI; Environmental Police"
+      ],
+      "attending": "NParks",
+      "requestedBy": [
+        "Singapore – NParks"
+      ]
+    },
+    {
+      "_key": "m127",
+      "_type": "ramMeeting",
+      "country": "Singapore",
+      "date": "2026-11-05",
+      "start": "15:00",
+      "end": "15:30",
+      "table": "Table 2",
+      "meetingId": "SGP-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "India – DRI; WCCB"
+      ],
+      "attending": "NParks",
+      "requestedBy": [
+        "Singapore – NParks"
+      ]
+    },
+    {
+      "_key": "m128",
+      "_type": "ramMeeting",
+      "country": "South Africa",
+      "date": "2026-11-05",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 3",
+      "meetingId": "ZAF-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Namibia – Entire delegation"
+      ],
+      "attending": "DFFE",
+      "requestedBy": [
+        "South Africa – DFFE"
+      ]
+    },
+    {
+      "_key": "m129",
+      "_type": "ramMeeting",
+      "country": "South Africa",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 5",
+      "meetingId": "BWA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Botswana – Botswana Police Service",
+        "Angola – Police / INTERPOL NCB",
+        "China – Customs Anti-Smuggling Bureau",
+        "Namibia – NamPol; Prosecutor-General",
+        "Zambia – National Prosecution Authority; National Parks and Wildlife"
+      ],
+      "attending": "SAPS",
+      "requestedBy": [
+        "Botswana – Botswana Police Service"
+      ],
+      "interpretation": "Portuguese",
+      "note": "Same time as MOZ-02 – DFFE attends that one"
+    },
+    {
+      "_key": "m130",
+      "_type": "ramMeeting",
+      "country": "South Africa",
+      "date": "2026-11-05",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 1",
+      "meetingId": "MOZ-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Mozambique – AQUA"
+      ],
+      "attending": "DFFE",
+      "requestedBy": [
+        "Mozambique – AQUA"
+      ],
+      "interpretation": "Portuguese",
+      "note": "Same time as BWA-01 – SAPS attends that one"
+    },
+    {
+      "_key": "m131",
+      "_type": "ramMeeting",
+      "country": "South Africa",
+      "date": "2026-11-05",
+      "start": "12:00",
+      "end": "12:30",
+      "table": "Table 5",
+      "meetingId": "ZMB-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Zambia – National Prosecution Authority"
+      ],
+      "attending": "DFFE",
+      "requestedBy": [
+        "Zambia – National Prosecution Authority"
+      ]
+    },
+    {
+      "_key": "m132",
+      "_type": "ramMeeting",
+      "country": "South Africa",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "14:30",
+      "table": "Table 4",
+      "meetingId": "ZAF-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "China – Customs Anti-Smuggling Bureau"
+      ],
+      "attending": "DFFE",
+      "requestedBy": [
+        "South Africa – DFFE"
+      ]
+    },
+    {
+      "_key": "m133",
+      "_type": "ramMeeting",
+      "country": "South Africa",
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:00",
+      "table": "Table 3",
+      "meetingId": "NAM-06",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Namibia – Prosecutor-General"
+      ],
+      "attending": "SAPS",
+      "requestedBy": [
+        "Namibia – Prosecutor-General"
+      ]
+    },
+    {
+      "_key": "m134",
+      "_type": "ramMeeting",
+      "country": "South Africa",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 4",
+      "meetingId": "PRT-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Portugal – GNR – EMPACT Africa",
+        "Kenya – DCI",
+        "Mozambique – Prosecutor (PGR)",
+        "Uganda – Uganda Wildlife Authority; Police",
+        "Guinea – Anti-Wildlife Trafficking Brigade",
+        "Nigeria – Police",
+        "Angola – Police / INTERPOL NCB",
+        "Congo, Democratic Republic of the (online) – ICCN (online)"
+      ],
+      "attending": "SAPS",
+      "requestedBy": [
+        "Portugal – GNR – EMPACT Africa"
+      ]
+    },
+    {
+      "_key": "m135",
+      "_type": "ramMeeting",
+      "country": "South Africa",
+      "date": "2026-11-06",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 5",
+      "meetingId": "ZAF-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Congo, Democratic Republic of the (online) – ICCN (online)"
+      ],
+      "attending": "DFFE",
+      "requestedBy": [
+        "South Africa – DFFE"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m136",
+      "_type": "ramMeeting",
+      "country": "South Africa",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 1",
+      "meetingId": "HKG-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Hong Kong SAR, China – AFCD"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Hong Kong SAR, China – AFCD"
+      ]
+    },
+    {
+      "_key": "m137",
+      "_type": "ramMeeting",
+      "country": "South Africa",
+      "date": "2026-11-06",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 3",
+      "meetingId": "LAO-07",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Lao PDR – Entire delegation"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Lao PDR – Entire delegation"
+      ]
+    },
+    {
+      "_key": "m138",
+      "_type": "ramMeeting",
+      "country": "South Sudan",
+      "date": "2026-11-05",
+      "start": "15:00",
+      "end": "16:00",
+      "table": "Table 6",
+      "meetingId": "UGA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Uganda – Ministry of Water and Environment",
+        "Congo, Democratic Republic of the (online) – Customs (DGDA) (online); ICCN (online)"
+      ],
+      "attending": "National Wildlife Service",
+      "requestedBy": [
+        "Uganda – Ministry of Water and Environment"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m139",
+      "_type": "ramMeeting",
+      "country": "Spain",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 2",
+      "meetingId": "ID-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Indonesia – Entire delegation",
+        "Netherlands – Dutch Police"
+      ],
+      "attending": "Guardia Civil",
+      "requestedBy": [
+        "Indonesia – Entire delegation"
+      ]
+    },
+    {
+      "_key": "m140",
+      "_type": "ramMeeting",
+      "country": "Sri Lanka",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 2",
+      "meetingId": "LKA-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Hong Kong SAR, China – AFCD; Customs and Excise"
+      ],
+      "attending": "Dept of Wildlife Conservation",
+      "requestedBy": [
+        "Sri Lanka – Dept of Wildlife Conservation"
+      ]
+    },
+    {
+      "_key": "m141",
+      "_type": "ramMeeting",
+      "country": "Sri Lanka",
+      "date": "2026-11-05",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 3",
+      "meetingId": "LKA-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Malaysia – Border Control (AKPS)"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Sri Lanka – Customs"
+      ]
+    },
+    {
+      "_key": "m142",
+      "_type": "ramMeeting",
+      "country": "Sri Lanka",
+      "date": "2026-11-06",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 6",
+      "meetingId": "LKA-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Thailand – Customs"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Sri Lanka – Customs"
+      ]
+    },
+    {
+      "_key": "m143",
+      "_type": "ramMeeting",
+      "country": "Sri Lanka",
+      "date": "2026-11-06",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 2",
+      "meetingId": "LKA-04",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Thailand – Dept of National Parks; Customs"
+      ],
+      "attending": "Dept of Wildlife Conservation",
+      "requestedBy": [
+        "Sri Lanka – Dept of Wildlife Conservation"
+      ]
+    },
+    {
+      "_key": "m144",
+      "_type": "ramMeeting",
+      "country": "Tanzania",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:30",
+      "table": "Table 6",
+      "meetingId": "TZA-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Mozambique – Prosecutor (PGR)",
+        "Zambia – National Prosecution Authority"
+      ],
+      "attending": "Anti-Poaching Taskforce",
+      "requestedBy": [
+        "Tanzania – Anti-Poaching Taskforce"
+      ]
+    },
+    {
+      "_key": "m145",
+      "_type": "ramMeeting",
+      "country": "Tanzania",
+      "date": "2026-11-05",
+      "start": "11:30",
+      "end": "12:30",
+      "table": "Table 6",
+      "meetingId": "MDG-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Madagascar – Ministry of Justice",
+        "Hong Kong SAR, China – Customs and Excise",
+        "Thailand – Royal Thai Police; Customs; Attorney-General; DSI"
+      ],
+      "attending": "National Prosecutions Service; Anti-Poaching Taskforce",
+      "requestedBy": [
+        "Madagascar – Ministry of Justice"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m146",
+      "_type": "ramMeeting",
+      "country": "Tanzania",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "15:00",
+      "table": "Table 6",
+      "meetingId": "TZA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Madagascar – Ministry of Justice; Ministry of Environment",
+        "Mozambique – Prosecutor (PGR); AQUA",
+        "Zambia – National Prosecution Authority; National Parks and Wildlife",
+        "Kenya – ODPP; Kenya Wildlife Service"
+      ],
+      "attending": "National Prosecutions Service",
+      "requestedBy": [
+        "Tanzania – National Prosecutions Service"
+      ]
+    },
+    {
+      "_key": "m147",
+      "_type": "ramMeeting",
+      "country": "Tanzania",
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:00",
+      "table": "Table 2",
+      "meetingId": "KEN-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Kenya – KRA Investigations"
+      ],
+      "attending": "Anti-Poaching Taskforce",
+      "requestedBy": [
+        "Kenya – KRA Investigations"
+      ]
+    },
+    {
+      "_key": "m148",
+      "_type": "ramMeeting",
+      "country": "Tanzania",
+      "date": "2026-11-05",
+      "start": "16:00",
+      "end": "16:30",
+      "table": "Table 3",
+      "meetingId": "MDG-05",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Madagascar – Customs"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Madagascar – Customs"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m149",
+      "_type": "ramMeeting",
+      "country": "Tanzania",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 5",
+      "meetingId": "MDG-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Madagascar – Ministry of Environment",
+        "Mozambique – AQUA",
+        "Malaysia – Wildlife and National Parks; Border Control (AKPS)"
+      ],
+      "attending": "Anti-Poaching Taskforce",
+      "requestedBy": [
+        "Madagascar – Ministry of Environment"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m150",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 1",
+      "meetingId": "COG-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Congo, Republic of the – Ministry of Justice"
+      ],
+      "attending": "Customs; Attorney-General",
+      "requestedBy": [
+        "Congo, Republic of the – Ministry of Justice"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m151",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:30",
+      "table": "Table 5",
+      "meetingId": "THA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Madagascar – Entire delegation",
+        "Malaysia – Entire delegation",
+        "Indonesia – Entire delegation"
+      ],
+      "attending": "DSI",
+      "requestedBy": [
+        "Thailand – DSI"
+      ],
+      "interpretation": "French",
+      "note": "Same time as NPL-02 – Customs attend that one; Same time as THA-03 – Customs attends that one"
+    },
+    {
+      "_key": "m152",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:00",
+      "table": "Table 3",
+      "meetingId": "THA-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Philippines – Customs"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Thailand – Customs"
+      ],
+      "note": "Same time as THA-01 – DSI attends that one"
+    },
+    {
+      "_key": "m153",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-05",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 2",
+      "meetingId": "NPL-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Nepal – Customs"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Nepal – Customs"
+      ],
+      "note": "Same time as THA-01 – DSI attends that one"
+    },
+    {
+      "_key": "m154",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 6",
+      "meetingId": "LAO-02 / THA-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Lao PDR – Environmental Police; DNREI"
+      ],
+      "attending": "Dept of National Parks; Customs",
+      "requestedBy": [
+        "Lao PDR – Environmental Police",
+        "Thailand – Dept of National Parks",
+        "(combined: both sides asked to meet)"
+      ]
+    },
+    {
+      "_key": "m155",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-05",
+      "start": "11:30",
+      "end": "12:30",
+      "table": "Table 6",
+      "meetingId": "MDG-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Madagascar – Ministry of Justice",
+        "Hong Kong SAR, China – Customs and Excise",
+        "Tanzania – National Prosecutions Service; Anti-Poaching Taskforce"
+      ],
+      "attending": "Royal Thai Police; Customs; Attorney-General; DSI",
+      "requestedBy": [
+        "Madagascar – Ministry of Justice"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m156",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "14:30",
+      "table": "Table 2",
+      "meetingId": "NAM-09",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Namibia – Prosecutor-General"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Namibia – Prosecutor-General"
+      ]
+    },
+    {
+      "_key": "m157",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-05",
+      "start": "14:30",
+      "end": "15:30",
+      "table": "Table 5",
+      "meetingId": "GAB-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Gabon – Prosecutor-General's Office",
+        "Nigeria – Customs"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Gabon – Prosecutor-General's Office"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m158",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:30",
+      "table": "Table 5",
+      "meetingId": "MOZ-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Mozambique – AQUA",
+        "China – Customs Anti-Smuggling Bureau",
+        "Viet Nam – CITES Management Authority; Customs"
+      ],
+      "attending": "Royal Thai Police; Customs",
+      "requestedBy": [
+        "Mozambique – AQUA"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m159",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 5",
+      "meetingId": "LAO-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Lao PDR – Environmental Police",
+        "UNODC",
+        "Zambia – Entire delegation",
+        "Viet Nam – Entire delegation"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Lao PDR – Environmental Police",
+        "UNODC"
+      ]
+    },
+    {
+      "_key": "m160",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-06",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 6",
+      "meetingId": "LKA-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Sri Lanka – Customs"
+      ],
+      "attending": "Customs",
+      "requestedBy": [
+        "Sri Lanka – Customs"
+      ]
+    },
+    {
+      "_key": "m161",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 4",
+      "meetingId": "IND-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "India – DRI; WCCB"
+      ],
+      "attending": "Customs; Dept of National Parks",
+      "requestedBy": [
+        "India – DRI; WCCB"
+      ],
+      "note": "Same time as VNM-04 – Attorney-General attends that one"
+    },
+    {
+      "_key": "m162",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 3",
+      "meetingId": "VNM-04",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Viet Nam – Supreme People's Procuracy"
+      ],
+      "attending": "Attorney-General",
+      "requestedBy": [
+        "Viet Nam – Supreme People's Procuracy"
+      ],
+      "note": "Same time as IND-01 – Customs; Dept of National Parks attend that one"
+    },
+    {
+      "_key": "m163",
+      "_type": "ramMeeting",
+      "country": "Thailand",
+      "date": "2026-11-06",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 2",
+      "meetingId": "LKA-04",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Sri Lanka – Dept of Wildlife Conservation"
+      ],
+      "attending": "Dept of National Parks; Customs",
+      "requestedBy": [
+        "Sri Lanka – Dept of Wildlife Conservation"
+      ]
+    },
+    {
+      "_key": "m164",
+      "_type": "ramMeeting",
+      "country": "Uganda",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 4",
+      "meetingId": "UGA-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Viet Nam – Supreme People's Procuracy; CITES Management Authority",
+        "Lao PDR – Supreme People's Procuracy"
+      ],
+      "attending": "Uganda Wildlife Authority",
+      "requestedBy": [
+        "Uganda – Uganda Wildlife Authority"
+      ]
+    },
+    {
+      "_key": "m165",
+      "_type": "ramMeeting",
+      "country": "Uganda",
+      "date": "2026-11-05",
+      "start": "15:00",
+      "end": "16:00",
+      "table": "Table 6",
+      "meetingId": "UGA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Congo, Democratic Republic of the (online) – Customs (DGDA) (online); ICCN (online)",
+        "South Sudan – National Wildlife Service"
+      ],
+      "attending": "Ministry of Water and Environment",
+      "requestedBy": [
+        "Uganda – Ministry of Water and Environment"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m166",
+      "_type": "ramMeeting",
+      "country": "Uganda",
+      "date": "2026-11-05",
+      "start": "16:00",
+      "end": "16:30",
+      "table": "Table 2",
+      "meetingId": "AUT-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Austria – Customs"
+      ],
+      "attending": "Uganda Wildlife Authority; Ministry of Water and Environment",
+      "requestedBy": [
+        "Austria – Customs"
+      ]
+    },
+    {
+      "_key": "m167",
+      "_type": "ramMeeting",
+      "country": "Uganda",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 4",
+      "meetingId": "PRT-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Portugal – GNR – EMPACT Africa",
+        "Kenya – DCI",
+        "Mozambique – Prosecutor (PGR)",
+        "South Africa – SAPS",
+        "Guinea – Anti-Wildlife Trafficking Brigade",
+        "Nigeria – Police",
+        "Angola – Police / INTERPOL NCB",
+        "Congo, Democratic Republic of the (online) – ICCN (online)"
+      ],
+      "attending": "Uganda Wildlife Authority; Police",
+      "requestedBy": [
+        "Portugal – GNR – EMPACT Africa"
+      ]
+    },
+    {
+      "_key": "m168",
+      "_type": "ramMeeting",
+      "country": "United States",
+      "date": "2026-11-05",
+      "start": "12:00",
+      "end": "12:30",
+      "table": "Table 1",
+      "meetingId": "HKG-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Hong Kong SAR, China – AFCD"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Hong Kong SAR, China – AFCD"
+      ]
+    },
+    {
+      "_key": "m169",
+      "_type": "ramMeeting",
+      "country": "UNODC",
+      "date": "2026-11-05",
+      "start": "16:00",
+      "end": "16:30",
+      "table": "Table 1",
+      "meetingId": "ZMB-04",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Zambia – National Prosecution Authority"
+      ],
+      "attending": "UNODC",
+      "requestedBy": [
+        "Zambia – National Prosecution Authority"
+      ]
+    },
+    {
+      "_key": "m170",
+      "_type": "ramMeeting",
+      "country": "UNODC",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 5",
+      "meetingId": "LAO-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Lao PDR – Environmental Police",
+        "Thailand – Entire delegation",
+        "Zambia – Entire delegation",
+        "Viet Nam – Entire delegation"
+      ],
+      "attending": "UNODC",
+      "requestedBy": [
+        "Lao PDR – Environmental Police",
+        "UNODC"
+      ]
+    },
+    {
+      "_key": "m171",
+      "_type": "ramMeeting",
+      "country": "Viet Nam",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 4",
+      "meetingId": "UGA-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Uganda – Uganda Wildlife Authority",
+        "Lao PDR – Supreme People's Procuracy"
+      ],
+      "attending": "Supreme People's Procuracy; CITES Management Authority",
+      "requestedBy": [
+        "Uganda – Uganda Wildlife Authority"
+      ]
+    },
+    {
+      "_key": "m172",
+      "_type": "ramMeeting",
+      "country": "Viet Nam",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:30",
+      "table": "Table 4",
+      "meetingId": "NGA-03",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Nigeria – NFIU",
+        "China – Customs Anti-Smuggling Bureau",
+        "Singapore – NParks"
+      ],
+      "attending": "Customs; Environmental Police",
+      "requestedBy": [
+        "Nigeria – NFIU"
+      ],
+      "note": "Same time as VNM-01 – CITES Management Authority attends that one"
+    },
+    {
+      "_key": "m173",
+      "_type": "ramMeeting",
+      "country": "Viet Nam",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:00",
+      "table": "Table 1",
+      "meetingId": "VNM-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Cameroon – Ministry of Forestry and Wildlife"
+      ],
+      "attending": "CITES Management Authority",
+      "requestedBy": [
+        "Viet Nam – CITES Management Authority"
+      ],
+      "interpretation": "French",
+      "note": "Same time as NGA-03 – Customs; Environmental Police attend that one"
+    },
+    {
+      "_key": "m174",
+      "_type": "ramMeeting",
+      "country": "Viet Nam",
+      "date": "2026-11-05",
+      "start": "12:00",
+      "end": "12:30",
+      "table": "Table 3",
+      "meetingId": "VNM-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Congo, Republic of the – Customs; Ministry of Justice"
+      ],
+      "attending": "CITES Management Authority",
+      "requestedBy": [
+        "Viet Nam – CITES Management Authority"
+      ],
+      "interpretation": "French"
+    },
+    {
+      "_key": "m175",
+      "_type": "ramMeeting",
+      "country": "Viet Nam",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "14:30",
+      "table": "Table 3",
+      "meetingId": "NLD-06",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Netherlands – Dutch Police"
+      ],
+      "attending": "Customs; Environmental Police",
+      "requestedBy": [
+        "Netherlands – Dutch Police"
+      ]
+    },
+    {
+      "_key": "m176",
+      "_type": "ramMeeting",
+      "country": "Viet Nam",
+      "date": "2026-11-05",
+      "start": "14:30",
+      "end": "15:00",
+      "table": "Table 3",
+      "meetingId": "MYS-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Malaysia – Wildlife and National Parks"
+      ],
+      "attending": "Supreme People's Procuracy; Environmental Police",
+      "requestedBy": [
+        "Malaysia – Wildlife and National Parks"
+      ],
+      "note": "Same time as VNM-03 – CITES Management Authority attends that one"
+    },
+    {
+      "_key": "m177",
+      "_type": "ramMeeting",
+      "country": "Viet Nam",
+      "date": "2026-11-05",
+      "start": "14:30",
+      "end": "15:00",
+      "table": "Table 2",
+      "meetingId": "VNM-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Nigeria – NESREA / Environment (CITES)"
+      ],
+      "attending": "CITES Management Authority",
+      "requestedBy": [
+        "Viet Nam – CITES Management Authority"
+      ],
+      "note": "Same time as MYS-03 – Supreme People's Procuracy; Environmental Police attend that one"
+    },
+    {
+      "_key": "m178",
+      "_type": "ramMeeting",
+      "country": "Viet Nam",
+      "date": "2026-11-05",
+      "start": "15:00",
+      "end": "15:30",
+      "table": "Table 3",
+      "meetingId": "LAO-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Lao PDR – Supreme People's Procuracy"
+      ],
+      "attending": "Supreme People's Procuracy",
+      "requestedBy": [
+        "Lao PDR – Supreme People's Procuracy"
+      ]
+    },
+    {
+      "_key": "m179",
+      "_type": "ramMeeting",
+      "country": "Viet Nam",
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:30",
+      "table": "Table 5",
+      "meetingId": "MOZ-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Mozambique – AQUA",
+        "China – Customs Anti-Smuggling Bureau",
+        "Thailand – Royal Thai Police; Customs"
+      ],
+      "attending": "CITES Management Authority; Customs",
+      "requestedBy": [
+        "Mozambique – AQUA"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m180",
+      "_type": "ramMeeting",
+      "country": "Viet Nam",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 5",
+      "meetingId": "LAO-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Lao PDR – Environmental Police",
+        "UNODC",
+        "Thailand – Entire delegation",
+        "Zambia – Entire delegation"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Lao PDR – Environmental Police",
+        "UNODC"
+      ]
+    },
+    {
+      "_key": "m181",
+      "_type": "ramMeeting",
+      "country": "Viet Nam",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "11:30",
+      "table": "Table 3",
+      "meetingId": "VNM-04",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Thailand – Attorney-General"
+      ],
+      "attending": "Supreme People's Procuracy",
+      "requestedBy": [
+        "Viet Nam – Supreme People's Procuracy"
+      ]
+    },
+    {
+      "_key": "m182",
+      "_type": "ramMeeting",
+      "country": "Viet Nam",
+      "date": "2026-11-06",
+      "start": "11:30",
+      "end": "12:00",
+      "table": "Table 4",
+      "meetingId": "AGO-04",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Angola – Customs (AGT)"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Angola – Customs (AGT)"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m183",
+      "_type": "ramMeeting",
+      "country": "Wildlife Justice Commission",
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:00",
+      "table": "Table 1",
+      "meetingId": "ZMB-05",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Zambia – National Prosecution Authority"
+      ],
+      "attending": "Wildlife Justice Commission",
+      "requestedBy": [
+        "Zambia – National Prosecution Authority"
+      ]
+    },
+    {
+      "_key": "m184",
+      "_type": "ramMeeting",
+      "country": "Zambia",
+      "date": "2026-11-05",
+      "start": "09:00",
+      "end": "09:30",
+      "table": "Table 6",
+      "meetingId": "ZMB-01",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Focused Conservation"
+      ],
+      "attending": "National Prosecution Authority",
+      "requestedBy": [
+        "Zambia – National Prosecution Authority"
+      ]
+    },
+    {
+      "_key": "m185",
+      "_type": "ramMeeting",
+      "country": "Zambia",
+      "date": "2026-11-05",
+      "start": "09:30",
+      "end": "10:30",
+      "table": "Table 6",
+      "meetingId": "TZA-02",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Tanzania – Anti-Poaching Taskforce",
+        "Mozambique – Prosecutor (PGR)"
+      ],
+      "attending": "National Prosecution Authority",
+      "requestedBy": [
+        "Tanzania – Anti-Poaching Taskforce"
+      ],
+      "note": "Same time as LAO-05 – National Parks and Wildlife attends that one"
+    },
+    {
+      "_key": "m186",
+      "_type": "ramMeeting",
+      "country": "Zambia",
+      "date": "2026-11-05",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 1",
+      "meetingId": "LAO-05",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Lao PDR – Environmental Police"
+      ],
+      "attending": "National Parks and Wildlife",
+      "requestedBy": [
+        "Lao PDR – Environmental Police"
+      ],
+      "note": "Same time as TZA-02 – National Prosecution Authority attends that one"
+    },
+    {
+      "_key": "m187",
+      "_type": "ramMeeting",
+      "country": "Zambia",
+      "date": "2026-11-05",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 5",
+      "meetingId": "BWA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Botswana – Botswana Police Service",
+        "Angola – Police / INTERPOL NCB",
+        "China – Customs Anti-Smuggling Bureau",
+        "Namibia – NamPol; Prosecutor-General",
+        "South Africa – SAPS"
+      ],
+      "attending": "National Prosecution Authority; National Parks and Wildlife",
+      "requestedBy": [
+        "Botswana – Botswana Police Service"
+      ],
+      "interpretation": "Portuguese"
+    },
+    {
+      "_key": "m188",
+      "_type": "ramMeeting",
+      "country": "Zambia",
+      "date": "2026-11-05",
+      "start": "12:00",
+      "end": "12:30",
+      "table": "Table 4",
+      "meetingId": "ZMB-02",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Kenya – ODPP"
+      ],
+      "attending": "National Parks and Wildlife",
+      "requestedBy": [
+        "Zambia – National Parks and Wildlife"
+      ],
+      "note": "Same time as ZMB-03 – National Prosecution Authority attends that one"
+    },
+    {
+      "_key": "m189",
+      "_type": "ramMeeting",
+      "country": "Zambia",
+      "date": "2026-11-05",
+      "start": "12:00",
+      "end": "12:30",
+      "table": "Table 5",
+      "meetingId": "ZMB-03",
+      "format": "Bilateral",
+      "meetingWith": [
+        "South Africa – DFFE"
+      ],
+      "attending": "National Prosecution Authority",
+      "requestedBy": [
+        "Zambia – National Prosecution Authority"
+      ],
+      "note": "Same time as ZMB-02 – National Parks and Wildlife attends that one"
+    },
+    {
+      "_key": "m190",
+      "_type": "ramMeeting",
+      "country": "Zambia",
+      "date": "2026-11-05",
+      "start": "14:00",
+      "end": "15:00",
+      "table": "Table 6",
+      "meetingId": "TZA-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Tanzania – National Prosecutions Service",
+        "Madagascar – Ministry of Justice; Ministry of Environment",
+        "Mozambique – Prosecutor (PGR); AQUA",
+        "Kenya – ODPP; Kenya Wildlife Service"
+      ],
+      "attending": "National Prosecution Authority; National Parks and Wildlife",
+      "requestedBy": [
+        "Tanzania – National Prosecutions Service"
+      ]
+    },
+    {
+      "_key": "m191",
+      "_type": "ramMeeting",
+      "country": "Zambia",
+      "date": "2026-11-05",
+      "start": "15:30",
+      "end": "16:00",
+      "table": "Table 1",
+      "meetingId": "ZMB-05",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Wildlife Justice Commission"
+      ],
+      "attending": "National Prosecution Authority",
+      "requestedBy": [
+        "Zambia – National Prosecution Authority"
+      ]
+    },
+    {
+      "_key": "m192",
+      "_type": "ramMeeting",
+      "country": "Zambia",
+      "date": "2026-11-05",
+      "start": "16:00",
+      "end": "16:30",
+      "table": "Table 1",
+      "meetingId": "ZMB-04",
+      "format": "Bilateral",
+      "meetingWith": [
+        "UNODC"
+      ],
+      "attending": "National Prosecution Authority",
+      "requestedBy": [
+        "Zambia – National Prosecution Authority"
+      ]
+    },
+    {
+      "_key": "m193",
+      "_type": "ramMeeting",
+      "country": "Zambia",
+      "date": "2026-11-06",
+      "start": "09:00",
+      "end": "10:00",
+      "table": "Table 5",
+      "meetingId": "LAO-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Lao PDR – Environmental Police",
+        "UNODC",
+        "Thailand – Entire delegation",
+        "Viet Nam – Entire delegation"
+      ],
+      "attending": "Entire delegation",
+      "requestedBy": [
+        "Lao PDR – Environmental Police",
+        "UNODC"
+      ]
+    },
+    {
+      "_key": "m194",
+      "_type": "ramMeeting",
+      "country": "Zambia",
+      "date": "2026-11-06",
+      "start": "10:00",
+      "end": "10:30",
+      "table": "Table 4",
+      "meetingId": "NAM-11",
+      "format": "Bilateral",
+      "meetingWith": [
+        "Namibia – Prosecutor-General"
+      ],
+      "attending": "National Prosecution Authority",
+      "requestedBy": [
+        "Namibia – Prosecutor-General"
+      ]
+    },
+    {
+      "_key": "m195",
+      "_type": "ramMeeting",
+      "country": "Zambia",
+      "date": "2026-11-06",
+      "start": "11:00",
+      "end": "12:00",
+      "table": "Table 6",
+      "meetingId": "KHM-01",
+      "format": "Multilateral",
+      "meetingWith": [
+        "Cambodia – Forestry and Wildlife",
+        "Kenya – KRA Customs",
+        "Nigeria – Customs"
+      ],
+      "attending": "National Prosecution Authority",
+      "requestedBy": [
+        "Cambodia – Forestry and Wildlife"
+      ]
+    }
+  ],
+  "_updatedAt": "2026-10-28T16:02:57.124Z"
+}

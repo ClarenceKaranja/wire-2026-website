@@ -6,6 +6,7 @@ import {readFileSync, statSync} from 'node:fs'
 import {join, resolve} from 'node:path'
 import {evaluate, parse} from 'groq-js'
 import seedRaw from '../../../seed/dataset.ndjson?raw'
+import ramSchedule from '../../../seed/ram-schedule.json'
 
 type Doc = Record<string, unknown> & {_id: string; _type: string}
 
@@ -43,6 +44,7 @@ function load(): Doc[] {
     .split('\n')
     .filter(Boolean)
     .map((line) => JSON.parse(line))
+  docs.push(ramSchedule as Doc)
   const assets = new Map<string, Doc>()
 
   const walk = (node: unknown): unknown => {
