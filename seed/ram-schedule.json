@@ -1,7 +1,7 @@
 {
   "_id": "ramSchedule",
   "_type": "ramSchedule",
-  "sourceFile": "ram.xlsx",
+  "sourceFile": "WIRE 2026 RAM Scheduling Plan - 28-10-2026.xlsx",
   "meetingCount": 195,
   "meetings": [
     {
@@ -3802,5 +3802,5 @@
       ]
     }
   ],
-  "_updatedAt": "2026-10-28T16:02:57.124Z"
+  "_updatedAt": "2026-10-28T16:13:37.665Z"
 }
