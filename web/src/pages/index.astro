@@ -19,6 +19,7 @@ const status = {before: 'Upcoming', during: 'Taking place now', after: 'Held'}[p
 // The homepage is a simple index: each section of the site, one line each.
 const sections = [
   {href: '/programme', title: 'Programme', text: 'Four days of sessions, in Nairobi time'},
+  ...(phase === 'after' ? [] : [{href: '/ram-timetable', title: 'Restricted access meetings', text: 'Find your delegation’s meeting timetable'}]),
   phase === 'after'
     ? {href: '/gallery', title: 'Photo gallery', text: 'Approved photographs from WIRE'}
     : {href: '/participant-information', title: 'Participant information', text: 'Venue, travel, eTA, accommodation and FAQs'},

@@ -10,6 +10,7 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/'
 const nav: {href: string; label: string; short?: string}[] = [
   {href: '/', label: 'Home'},
   {href: '/programme', label: 'Programme'},
+  {href: '/ram-timetable', label: 'Restricted access meetings', short: 'RAM timetable'},
   {href: '/participant-information', label: 'Participant information', short: 'Participants'},
   {href: '/resources', label: 'Resources'},
   {href: '/gallery', label: 'Gallery'},
