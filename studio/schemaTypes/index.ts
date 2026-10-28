@@ -15,8 +15,9 @@ import {homePage} from './singletons/homePage'
 import {programmePage} from './singletons/programmePage'
 import {participantInfoPage} from './singletons/participantInfoPage'
 import {aboutPage} from './singletons/aboutPage'
+import {ramSchedule} from './singletons/ramSchedule'
 
-export const SINGLETONS = ['siteSettings', 'homePage', 'programmePage', 'participantInfoPage', 'aboutPage']
+export const SINGLETONS = ['siteSettings', 'homePage', 'programmePage', 'participantInfoPage', 'aboutPage', 'ramSchedule']
 
 export const schemaTypes = [
   blockContent,
@@ -36,4 +37,5 @@ export const schemaTypes = [
   programmePage,
   participantInfoPage,
   aboutPage,
+  ramSchedule,
 ]

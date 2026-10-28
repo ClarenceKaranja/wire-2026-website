@@ -87,3 +87,6 @@ export const ABOUT_QUERY = `{
 export const SITEMAP_QUERY = `{
   "albums": *[${PUBLIC_ALBUM}]{"slug": slug.current, _updatedAt}
 }`
+
+// Restricted access meeting timetables (see lib/ram.ts). Names were removed on import.
+export const RAM_SCHEDULE_QUERY = `*[_id == "ramSchedule"][0]{_updatedAt, meetings}`

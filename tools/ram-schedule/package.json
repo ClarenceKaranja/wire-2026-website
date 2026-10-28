@@ -1,0 +1,14 @@
+{
+  "name": "wire-2026-ram-schedule",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Turns the RAM scheduling Excel (Participant Schedule sheet) into the website's ramSchedule document.",
+  "scripts": {
+    "import": "node import.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
+  }
+}

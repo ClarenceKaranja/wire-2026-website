@@ -25,6 +25,7 @@ const defaultDay = days.find((d) => d.date === today)?._id ?? days[0]?._id
           <span class="font-normal opacity-85">{fileLabel(agenda.file.extension)}, {fileSize(agenda.file.size)}</span>
         </a>
       )}
+      <a href="/ram-timetable" class="btn-secondary self-start"><Icon name="users" class="size-4" />Your restricted access meetings</a>
       <p class="inline-flex items-center gap-2 text-sm text-muted"><Icon name="clock" class="size-4" />All times are {TZ_LABEL}.</p>
     </div>
     {(page.statusNote || data.lastUpdated) && (
