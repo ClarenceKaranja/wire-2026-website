@@ -13,17 +13,28 @@ const data = await fetchContent<any>(Q.PROGRAMME_QUERY, preview)
 const page = data.page ?? {}
 const days: any[] = data.days ?? []
 const agenda = page.agenda
+const LANGUAGE_NAMES: Record<string, {label: string; lang: string}> = {French: {label: 'Français', lang: 'fr'}, Portuguese: {label: 'Português', lang: 'pt'}}
+const translations: any[] = (data.translations ?? []).filter((t: any) => t.file?.url && LANGUAGE_NAMES[t.language])
 const today = nairobiToday()
 const defaultDay = days.find((d) => d.date === today)?._id ?? days[0]?._id
 ---
-<Base title="Programme" description="The four-day programme of WIRE, 3–6 November 2026, Nairobi.">
-  <PageHeader eyebrow="Programme" title="The WIRE programme" lead={page.intro}>
+<Base title="Agenda" description="The four-day agenda of WIRE, 3–6 November 2026, Nairobi.">
+  <PageHeader eyebrow="Agenda" title="The WIRE agenda" lead={page.intro}>
     <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
       {agenda?.file?.url && (
         <a href={downloadUrl(agenda.file, agenda.title)} class="btn-primary self-start">
           <Icon name="download" class="size-4" />Download the agenda
           <span class="font-normal opacity-85">{fileLabel(agenda.file.extension)}, {fileSize(agenda.file.size)}</span>
         </a>
+      )}
+      {translations.length > 0 && (
+        <p class="text-sm text-ink-soft">
+          Also in{' '}
+          {translations.map((t, i) => (
+            <>{i > 0 && ' · '}<a href={downloadUrl(t.file, t.title)} lang={LANGUAGE_NAMES[t.language].lang} hreflang={LANGUAGE_NAMES[t.language].lang}>{LANGUAGE_NAMES[t.language].label}</a></>
+          ))}
+          <span class="text-muted"> ({fileLabel(translations[0].file.extension)})</span>
+        </p>
       )}
       <a href="/ram-timetable" class="btn-secondary self-start"><Icon name="users" class="size-4" />Your restricted access meetings</a>
       <p class="inline-flex items-center gap-2 text-sm text-muted"><Icon name="clock" class="size-4" />All times are {TZ_LABEL}.</p>
@@ -38,12 +49,12 @@ const defaultDay = days.find((d) => d.date === today)?._id ?? days[0]?._id
 
   <div class="container-page pb-10">
     {days.length === 0 ? (
-      <EmptyState icon="calendar" title="The programme will be published soon">Please check back, or download the agenda from Resources.</EmptyState>
+      <EmptyState icon="calendar" title="The agenda will be published soon">Please check back, or download the agenda from Resources.</EmptyState>
     ) : (
       <div data-programme data-default-day={defaultDay}>
         <!-- Day tabs (enhanced with JavaScript; without it, all days are listed in full) -->
         <div class="sticky top-[4.6rem] z-30 -mx-4 border-b border-line bg-paper/95 px-4 backdrop-blur sm:top-[5.1rem] sm:mx-0 sm:px-0">
-          <div role="tablist" aria-label="Programme days" class="flex gap-1 overflow-x-auto" data-tablist hidden>
+          <div role="tablist" aria-label="Agenda days" class="flex gap-1 overflow-x-auto" data-tablist hidden>
             {days.map((d) => (
               <button
                 type="button"

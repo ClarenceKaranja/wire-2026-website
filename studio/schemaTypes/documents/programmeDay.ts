@@ -3,7 +3,7 @@ import {CalendarIcon} from '@sanity/icons/Calendar'
 
 export const programmeDay = defineType({
   name: 'programmeDay',
-  title: 'Programme day',
+  title: 'Agenda day',
   type: 'document',
   icon: CalendarIcon,
   fields: [

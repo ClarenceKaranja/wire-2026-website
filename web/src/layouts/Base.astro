@@ -23,7 +23,7 @@ const siteTitle = `${settings.shortTitle} · ${settings.edition} ${settings.even
 const pageTitle = title ? `${title} · ${settings.shortTitle}` : siteTitle
 const metaDescription =
   description ??
-  `Participant website of the ${settings.edition} ${settings.eventName}, ${formatRange(settings.startDate, settings.endDate)}, ${settings.city}, ${settings.country}: programme, practical information, documents, announcements and photos.`
+  `Participant website of the ${settings.edition} ${settings.eventName}, ${formatRange(settings.startDate, settings.endDate)}, ${settings.city}, ${settings.country}: agenda, practical information, documents, announcements and photos.`
 const canonical = new URL(Astro.url.pathname, Astro.site)
 const ogImage = image?.asset ? image : settings.socialImage
 const ogUrl = ogImage?.asset ? new URL(imageUrl(ogImage, 1200, 630), Astro.site).toString() : undefined

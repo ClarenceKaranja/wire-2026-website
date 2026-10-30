@@ -17,7 +17,7 @@ export const linkItem = defineType({
     defineField({
       name: 'href',
       title: 'Link to',
-      description: 'A page on this site such as /programme or /participant-information, or a full https:// address.',
+      description: 'A page on this site such as /agenda or /participant-information, or a full https:// address.',
       type: 'string',
       validation: (r) =>
         r.required().custom((v) =>

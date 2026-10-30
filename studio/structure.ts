@@ -38,14 +38,14 @@ export const structure: StructureResolver = (S) =>
         .child(S.documentTypeList('announcement').title('Announcements').defaultOrdering([{field: 'publishedAt', direction: 'desc'}])),
       S.divider(),
       S.listItem()
-        .title('Programme')
+        .title('Agenda')
         .id('programme')
         .icon(CalendarIcon)
         .child(
           S.list()
-            .title('Programme')
+            .title('Agenda')
             .items([
-              singleton(S, 'programmePage', 'Programme page and agenda download', CalendarIcon),
+              singleton(S, 'programmePage', 'Agenda page and agenda download', CalendarIcon),
               S.listItem()
                 .title('Sessions by day')
                 .id('sessions-by-day')
@@ -68,7 +68,7 @@ export const structure: StructureResolver = (S) =>
                     ),
                 ),
               S.documentTypeListItem('session').title('All sessions'),
-              S.documentTypeListItem('programmeDay').title('Programme days'),
+              S.documentTypeListItem('programmeDay').title('Agenda days'),
               S.documentTypeListItem('person').title('Speakers and moderators'),
               singleton(S, 'ramSchedule', 'Restricted access meeting timetables', UsersIcon),
             ]),
