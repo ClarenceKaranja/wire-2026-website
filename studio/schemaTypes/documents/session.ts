@@ -34,11 +34,11 @@ export const session = defineType({
     defineField({
       name: 'endTime',
       title: 'End time (Nairobi time)',
-      description: '24-hour clock, for example 10:30.',
+      description: '24-hour clock, for example 10:30. Leave empty for a single moment, such as a departure time.',
       type: 'string',
       group: 'basics',
       validation: (r) =>
-        r.required().custom(timeOfDay).custom((end, ctx) => {
+        r.custom(timeOfDay).custom((end, ctx) => {
           const start = (ctx.document as {startTime?: string})?.startTime
           if (start && end && end <= start) return 'The end time must be after the start time.'
           return true
@@ -155,7 +155,7 @@ export const session = defineType({
     select: {title: 'title', start: 'startTime', end: 'endTime', day: 'day.label', status: 'status'},
     prepare: ({title, start, end, day, status}) => ({
       title,
-      subtitle: `${day ?? 'No day'} · ${start ?? '?'}–${end ?? '?'}${status === 'tbc' ? ' · TBC' : ''}${status === 'cancelled' ? ' · CANCELLED' : ''}`,
+      subtitle: `${day ?? 'No day'} · ${start ?? '?'}${end ? `–${end}` : ''}${status === 'tbc' ? ' · TBC' : ''}${status === 'cancelled' ? ' · CANCELLED' : ''}`,
     }),
   },
 })

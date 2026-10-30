@@ -20,12 +20,14 @@ const speakers = people(s.speakers)
 <li
   class:list={['session relative grid gap-x-6 gap-y-1 border-b border-line py-6 sm:grid-cols-[10rem_1fr]', light && 'py-4', cancelled && 'opacity-70']}
   data-start={nairobiInstant(date, s.startTime)}
-  data-end={nairobiInstant(date, s.endTime)}
+  data-end={nairobiInstant(date, s.endTime ?? s.startTime)}
 >
   <p class="text-base tabular-nums text-ink">
     <time datetime={nairobiInstant(date, s.startTime)}>{s.startTime}</time>
-    <span aria-hidden="true">–</span><span class="sr-only"> to </span>
-    <time datetime={nairobiInstant(date, s.endTime)}>{s.endTime}</time>
+    {s.endTime && <>
+      <span aria-hidden="true">–</span><span class="sr-only"> to </span>
+      <time datetime={nairobiInstant(date, s.endTime)}>{s.endTime}</time>
+    </>}
   </p>
   <div>
     <div class="flex flex-wrap items-center gap-2">
