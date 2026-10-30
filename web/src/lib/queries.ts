@@ -52,6 +52,8 @@ export const PROGRAMME_QUERY = `{
     _id, label, date, summary,
     "sessions": *[_type == "session" && day._ref == ^._id] | order(startTime asc, sortOrder asc)${SESSION}
   },
+  // Current agenda PDFs in other languages, shown next to the main download.
+  "translations": *[${PUBLIC_RESOURCE} && category == "agenda" && language in ["French", "Portuguese"] && status != "archived" && (!defined(expiresAt) || expiresAt > $today)] | order(language asc)${RESOURCE},
   "lastUpdated": *[_type in ["session", "programmeDay", "programmePage", "person"]] | order(_updatedAt desc)[0]._updatedAt
 }`
 
