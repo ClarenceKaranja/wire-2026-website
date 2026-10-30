@@ -45,7 +45,7 @@ Left menu: **Programme**.
 | Moderators / Speakers | Pick from **People**. A person only appears if their consent box is ticked. |
 | Order within the same start time | Only needed when two sessions start at the same time. |
 
-**Last-minute changes:** set the status to **Changed** and fill in **What changed?**. The session is highlighted on the programme page. Use **Cancelled** rather than deleting, so participants can see it was cancelled.
+**Last-minute changes:** set the status to **Changed** and fill in **What changed?**. The session is highlighted on the agenda page. Use **Cancelled** rather than deleting, so participants can see it was cancelled.
 
 ### Restricted Access Meetings
 

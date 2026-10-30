@@ -32,7 +32,7 @@ export const blockContent = defineType({
                 name: 'href',
                 title: 'Web address',
                 description:
-                  'A full address such as https://example.org, an email such as mailto:unodc-wire@un.org, or a page on this site such as /programme.',
+                  'A full address such as https://example.org, an email such as mailto:unodc-wire@un.org, or a page on this site such as /agenda.',
                 type: 'string',
                 validation: (rule) =>
                   rule.required().custom((v) =>

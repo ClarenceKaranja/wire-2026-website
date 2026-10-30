@@ -5,7 +5,7 @@ import {timeOfDay} from '../validation'
 
 export const session = defineType({
   name: 'session',
-  title: 'Programme session',
+  title: 'Agenda session',
   type: 'document',
   icon: ClockIcon,
   groups: [

@@ -16,8 +16,8 @@ const agenda = page.agenda
 const today = nairobiToday()
 const defaultDay = days.find((d) => d.date === today)?._id ?? days[0]?._id
 ---
-<Base title="Programme" description="The four-day programme of WIRE, 3–6 November 2026, Nairobi.">
-  <PageHeader eyebrow="Programme" title="The WIRE programme" lead={page.intro}>
+<Base title="Agenda" description="The four-day agenda of WIRE, 3–6 November 2026, Nairobi.">
+  <PageHeader eyebrow="Agenda" title="The WIRE agenda" lead={page.intro}>
     <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
       {agenda?.file?.url && (
         <a href={downloadUrl(agenda.file, agenda.title)} class="btn-primary self-start">
@@ -38,12 +38,12 @@ const defaultDay = days.find((d) => d.date === today)?._id ?? days[0]?._id
 
   <div class="container-page pb-10">
     {days.length === 0 ? (
-      <EmptyState icon="calendar" title="The programme will be published soon">Please check back, or download the agenda from Resources.</EmptyState>
+      <EmptyState icon="calendar" title="The agenda will be published soon">Please check back, or download the agenda from Resources.</EmptyState>
     ) : (
       <div data-programme data-default-day={defaultDay}>
         <!-- Day tabs (enhanced with JavaScript; without it, all days are listed in full) -->
         <div class="sticky top-[4.6rem] z-30 -mx-4 border-b border-line bg-paper/95 px-4 backdrop-blur sm:top-[5.1rem] sm:mx-0 sm:px-0">
-          <div role="tablist" aria-label="Programme days" class="flex gap-1 overflow-x-auto" data-tablist hidden>
+          <div role="tablist" aria-label="Agenda days" class="flex gap-1 overflow-x-auto" data-tablist hidden>
             {days.map((d) => (
               <button
                 type="button"

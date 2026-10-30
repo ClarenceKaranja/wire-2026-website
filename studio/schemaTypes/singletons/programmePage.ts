@@ -3,15 +3,15 @@ import {CalendarIcon} from '@sanity/icons/Calendar'
 
 export const programmePage = defineType({
   name: 'programmePage',
-  title: 'Programme page',
+  title: 'Agenda page',
   type: 'document',
   icon: CalendarIcon,
   fields: [
     defineField({name: 'intro', title: 'Introduction', type: 'text', rows: 3}),
     defineField({
       name: 'statusNote',
-      title: 'Programme status',
-      description: 'For example "Draft programme, subject to change". Leave empty when final.',
+      title: 'Agenda status',
+      description: 'For example "Draft agenda, subject to change". Leave empty when final.',
       type: 'string',
     }),
     defineField({
@@ -30,5 +30,5 @@ export const programmePage = defineType({
       rows: 3,
     }),
   ],
-  preview: {prepare: () => ({title: 'Programme page'})},
+  preview: {prepare: () => ({title: 'Agenda page'})},
 })

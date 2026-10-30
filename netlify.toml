@@ -12,3 +12,17 @@
 
 # Deploy previews and branch deploys are marked "noindex" automatically
 # (the build reads Netlify's CONTEXT variable), so search engines skip them.
+
+# The Programme page was renamed Agenda on 30 October 2026. Old links
+# (/programme, with or without a day anchor) go to the new address.
+[[redirects]]
+  from = "/programme"
+  to = "/agenda"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/programme/*"
+  to = "/agenda"
+  status = 301
+  force = true
