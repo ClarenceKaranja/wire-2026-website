@@ -18,3 +18,4 @@ Thumbs.db
 
 # Studio build output copied into the website at build time
 web/public/studio/
+__pycache__/
