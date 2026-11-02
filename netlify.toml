@@ -26,3 +26,19 @@
   to = "/agenda"
   status = 301
   force = true
+
+# The Resources page was renamed Downloads on 2 November 2026. Old links
+# (/resources, with or without a section anchor such as #agenda) go to the new
+# address; browsers keep the #anchor across the redirect. Document files are
+# served by the Sanity CDN, so their links do not change.
+[[redirects]]
+  from = "/resources"
+  to = "/downloads"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/*"
+  to = "/downloads"
+  status = 301
+  force = true

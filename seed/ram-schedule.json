@@ -2,7 +2,7 @@
   "_id": "ramSchedule",
   "_type": "ramSchedule",
   "sourceFile": "WIRE 2026 RAM Scheduling Plan - 28-10-2026.xlsx",
-  "meetingCount": 195,
+  "meetingCount": 193,
   "meetings": [
     {
       "_key": "m001",
@@ -482,17 +482,14 @@
       "end": "16:30",
       "table": "Table 5",
       "meetingId": "MOZ-01",
-      "format": "Multilateral",
+      "format": "Bilateral",
       "meetingWith": [
-        "Mozambique – AQUA",
-        "Thailand – Royal Thai Police; Customs",
         "Viet Nam – CITES Management Authority; Customs"
       ],
       "attending": "Customs Anti-Smuggling Bureau",
       "requestedBy": [
         "Mozambique – AQUA"
-      ],
-      "interpretation": "Portuguese"
+      ]
     },
     {
       "_key": "m026",
@@ -1677,27 +1674,6 @@
       "requestedBy": [
         "Tanzania – National Prosecutions Service"
       ]
-    },
-    {
-      "_key": "m087",
-      "_type": "ramMeeting",
-      "country": "Mozambique",
-      "date": "2026-11-05",
-      "start": "15:30",
-      "end": "16:30",
-      "table": "Table 5",
-      "meetingId": "MOZ-01",
-      "format": "Multilateral",
-      "meetingWith": [
-        "China – Customs Anti-Smuggling Bureau",
-        "Thailand – Royal Thai Police; Customs",
-        "Viet Nam – CITES Management Authority; Customs"
-      ],
-      "attending": "AQUA",
-      "requestedBy": [
-        "Mozambique – AQUA"
-      ],
-      "interpretation": "Portuguese"
     },
     {
       "_key": "m088",
@@ -3059,27 +3035,6 @@
       "interpretation": "French"
     },
     {
-      "_key": "m158",
-      "_type": "ramMeeting",
-      "country": "Thailand",
-      "date": "2026-11-05",
-      "start": "15:30",
-      "end": "16:30",
-      "table": "Table 5",
-      "meetingId": "MOZ-01",
-      "format": "Multilateral",
-      "meetingWith": [
-        "Mozambique – AQUA",
-        "China – Customs Anti-Smuggling Bureau",
-        "Viet Nam – CITES Management Authority; Customs"
-      ],
-      "attending": "Royal Thai Police; Customs",
-      "requestedBy": [
-        "Mozambique – AQUA"
-      ],
-      "interpretation": "Portuguese"
-    },
-    {
       "_key": "m159",
       "_type": "ramMeeting",
       "country": "Thailand",
@@ -3477,17 +3432,14 @@
       "end": "16:30",
       "table": "Table 5",
       "meetingId": "MOZ-01",
-      "format": "Multilateral",
+      "format": "Bilateral",
       "meetingWith": [
-        "Mozambique – AQUA",
-        "China – Customs Anti-Smuggling Bureau",
-        "Thailand – Royal Thai Police; Customs"
+        "China – Customs Anti-Smuggling Bureau"
       ],
       "attending": "CITES Management Authority; Customs",
       "requestedBy": [
         "Mozambique – AQUA"
-      ],
-      "interpretation": "Portuguese"
+      ]
     },
     {
       "_key": "m180",

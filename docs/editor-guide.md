@@ -61,7 +61,7 @@ On **Programme page**, the **Downloadable agenda** field links to a document fro
 
 ---
 
-## Documents (resources and downloads)
+## Documents (the Downloads page, /downloads)
 
 Left menu: **Documents**.
 
