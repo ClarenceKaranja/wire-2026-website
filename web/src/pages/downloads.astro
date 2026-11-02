@@ -17,10 +17,10 @@ const groups = order
   .map((cat) => ({cat, label: RESOURCE_CATEGORY_LABELS[cat], items: rest.filter((d) => (d.category || 'other') === cat)}))
   .filter((g) => g.items.length > 0)
 ---
-<Base title="Resources and downloads" description="Agendas, information notes, logistics notes, presentations and publications for WIRE.">
+<Base title="Downloads" description="Agendas, information notes, logistics notes, presentations and publications for WIRE.">
   <PageHeader
-    eyebrow="Resources"
-    title="Resources and downloads"
+    eyebrow="Downloads"
+    title="Documents to download"
     lead="Official documents for participants. Only the latest approved version of each document is listed; earlier versions are kept in the archive at the bottom of this page."
   />
   <div class="container-page pt-12 pb-10 sm:pt-16">

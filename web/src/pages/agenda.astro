@@ -49,7 +49,7 @@ const defaultDay = days.find((d) => d.date === today)?._id ?? days[0]?._id
 
   <div class="container-page pb-10">
     {days.length === 0 ? (
-      <EmptyState icon="calendar" title="The agenda will be published soon">Please check back, or download the agenda from Resources.</EmptyState>
+      <EmptyState icon="calendar" title="The agenda will be published soon">Please check back, or download the agenda from <a href="/downloads">Downloads</a>.</EmptyState>
     ) : (
       <div data-programme data-default-day={defaultDay}>
         <!-- Day tabs (enhanced with JavaScript; without it, all days are listed in full) -->

@@ -1,7 +1,7 @@
 import type {APIRoute} from 'astro'
 import {fetchContent, Q} from '../lib/content'
 
-const PAGES = ['/', '/agenda', '/participant-information', '/participant-information/fr', '/participant-information/pt', '/resources', '/gallery', '/announcements', '/about']
+const PAGES = ['/', '/agenda', '/participant-information', '/participant-information/fr', '/participant-information/pt', '/downloads', '/gallery', '/announcements', '/about']
 
 export const GET: APIRoute = async ({site}) => {
   const data = await fetchContent<{albums: Array<{slug: string; _updatedAt?: string}>}>(Q.SITEMAP_QUERY)
