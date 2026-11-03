@@ -4,15 +4,32 @@ import PageHeader from '../../components/PageHeader.astro'
 import EmptyState from '../../components/EmptyState.astro'
 import {fetchContent, Q} from '../../lib/content'
 import {imageSrcSet, imageUrl} from '../../lib/image'
+import Icon from '../../components/Icon.astro'
+
+// Shared Google Drive folder with every photograph from the event.
+const PHOTOS_URL = 'https://drive.google.com/drive/folders/1zhNmNlGlDH6TNXMPb7wPkMtofefcz5r6?usp=sharing'
 
 const albums = await fetchContent<any[]>(Q.ALBUMS_QUERY, Astro.locals.preview)
 ---
 <Base title="Photo gallery" description="Approved photographs from WIRE in Nairobi.">
-  <PageHeader eyebrow="Gallery" title="Photo gallery" lead="Approved photographs from WIRE, organized by activity." />
+  <PageHeader eyebrow="Gallery" title="Photo gallery" lead="Approved photographs from WIRE, organized by activity.">
+    <div class="mt-8 border border-ink bg-sand p-6 sm:p-8">
+      <h2 class="text-2xl font-medium tracking-[-0.02em]">All the event photos</h2>
+      <p class="mt-2 max-w-2xl text-ink-soft">The full collection of WIRE photographs is in a shared Google Drive folder. You can view and download them there.</p>
+      <a href={PHOTOS_URL} target="_blank" rel="noopener" class="btn-primary mt-5">
+        <Icon name="image" class="size-4" />Open the photo folder<Icon name="external" class="size-4" />
+        <span class="sr-only">(opens Google Drive in a new tab)</span>
+      </a>
+      <ul class="mt-5 space-y-1 text-sm text-ink-soft">
+        <li lang="fr"><a href={PHOTOS_URL} target="_blank" rel="noopener" hreflang="fr">Toutes les photos de l’événement</a> sont disponibles dans un dossier Google Drive partagé.</li>
+        <li lang="pt"><a href={PHOTOS_URL} target="_blank" rel="noopener" hreflang="pt">Todas as fotografias do evento</a> estão disponíveis numa pasta partilhada do Google Drive.</li>
+      </ul>
+    </div>
+  </PageHeader>
   <div class="container-page pt-12 pb-10 sm:pt-16">
     {albums.length === 0 ? (
       <EmptyState icon="image" title="No photographs yet">
-        Photographs from the opening ceremony, WIRE sessions, the Nairobi National Park visit and the closing will be published here once they have been approved for release.
+        Photographs from the opening ceremony, WIRE sessions, the Nairobi National Park visit and the closing will also be published here. In the meantime, all the photographs are in the <a href={PHOTOS_URL} target="_blank" rel="noopener">shared photo folder</a>.
       </EmptyState>
     ) : (
       <ul class="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
