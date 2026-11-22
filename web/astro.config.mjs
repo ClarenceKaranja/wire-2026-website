@@ -35,11 +35,11 @@ export default defineConfig({
   adapter: onNetlify ? netlify({imageCDN: false}) : cloudflare({imageService: 'passthrough'}),
   // Old addresses kept working after pages were renamed (Programme → Agenda on
   // 30 Oct 2026, Resources → Downloads on 2 Nov 2026). Browsers keep any #anchor.
+  // Deeper old paths (/programme/...) are redirected in src/middleware.ts: Astro
+  // turns wildcard redirects into rules that Cloudflare rejects as loops.
   redirects: {
     '/programme': '/agenda',
-    '/programme/[...rest]': '/agenda',
     '/resources': '/downloads',
-    '/resources/[...rest]': '/downloads',
   },
   // The site does not use Astro sessions (no KV store needed on Cloudflare).
   session: false,

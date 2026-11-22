@@ -2,7 +2,7 @@
 // Cloudflare builds the "web" folder from GitHub (see docs/cloudflare-deployment.md).
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "wire2026",
+  "name": "wire-2026-website",
   "compatibility_date": "2026-11-01",
   "compatibility_flags": ["nodejs_compat"],
   "observability": {"enabled": true}

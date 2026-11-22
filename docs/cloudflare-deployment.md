@@ -11,7 +11,7 @@ Nothing here deploys itself. An account owner does each step, and each go-live n
 1. Sign in at dash.cloudflare.com (or create a free account).
 2. Go to **Workers & Pages → Create → Import a repository**, connect GitHub, and pick `wire-2026-website`.
 3. Fill in the settings:
-   - **Project name:** `wire2026` (must match `name` in `web/wrangler.jsonc`)
+   - **Project name:** `wire-2026-website` (must match `name` in `web/wrangler.jsonc`)
    - **Production branch:** `main`
    - **Root directory (path):** `web`
    - **Build command:** `npm run build:studio && npm run build`
