@@ -2,9 +2,23 @@
 # The website lives in the "web" folder. The Sanity Studio (content editor) is
 # built into the same site and served at /studio; editors sign in with Sanity.
 
+# MOVING TO CLOUDFLARE: the site is now hosted on Cloudflare (see
+# docs/cloudflare-deployment.md). Until NEW_SITE_URL is set, Netlify keeps
+# building the full site as before. Once the Cloudflare site is live, set
+# NEW_SITE_URL (e.g. https://wire2026.org, no trailing slash) in Netlify →
+# Site configuration → Environment variables and redeploy: every old
+# wire2026.netlify.app link then sends visitors to the same page there.
 [build]
   base = "web"
-  command = "npm run build:studio && npm run build"
+  command = """
+    if [ -n "$NEW_SITE_URL" ]; then
+      rm -rf dist && mkdir -p dist &&
+      printf '/*  %s/:splat  301!\n' "${NEW_SITE_URL%/}" > dist/_redirects &&
+      echo "Redirect-only deploy to $NEW_SITE_URL";
+    else
+      npm run build:studio && npm run build;
+    fi
+  """
   publish = "dist"
 
 [build.environment]

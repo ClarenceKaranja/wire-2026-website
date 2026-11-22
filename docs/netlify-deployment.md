@@ -1,4 +1,6 @@
-# Deploying with GitHub and Netlify
+# Deploying with GitHub and Netlify (old host)
+
+> The site is moving to Cloudflare. See [cloudflare-deployment.md](cloudflare-deployment.md). This page stays for reference until the Netlify address is retired.
 
 Nothing in this repository deploys itself. Each step below is done by an account owner, and the public launch should wait for the [pre-launch checklist](pre-launch-checklist.md).
 
