@@ -38,14 +38,15 @@ npm run dev          # http://localhost:3333 (sign in with your Sanity account)
 
 ## Deploying
 
-See [docs/netlify-deployment.md](docs/netlify-deployment.md). Nothing is deployed until the steps there are carried out by an account owner.
+See [docs/cloudflare-deployment.md](docs/cloudflare-deployment.md) (the site is moving from Netlify to Cloudflare). Nothing is deployed until the steps there are carried out by an account owner.
 
 ## Documentation
 
 - [Editor guide](docs/editor-guide.md): programme, documents, photos, announcements, everyday edits
 - [Publishing workflow](docs/publishing-workflow.md): how changes reach the site, cache, preview, webhook
 - [Content approval checklist](docs/content-approval-checklist.md): what must never be published
-- [Netlify and GitHub deployment](docs/netlify-deployment.md): setup, custom domain, rollback
+- [Cloudflare deployment](docs/cloudflare-deployment.md): setup, custom domain, retiring the Netlify address
+- [Netlify deployment (old host)](docs/netlify-deployment.md)
 - [Pre-launch checklist](docs/pre-launch-checklist.md)
 - [Restricted access meeting timetables](docs/ram-timetables.md): updating the RAM lookup page from the Excel schedule
 - [Maintenance and handover](docs/maintenance-and-handover.md): during and after the Forum

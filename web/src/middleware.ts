@@ -20,7 +20,8 @@ export const onRequest = defineMiddleware(async (context, next) => {
 
   if (context.isPrerendered) return response
 
-  // Caching: published pages are cached on Netlify's CDN for 60 seconds and then
+  // Caching (Netlify only; Cloudflare ignores the Netlify-* headers and renders
+  // every visit fresh): published pages are cached on Netlify's CDN for 60 seconds and then
   // refreshed in the background, so Sanity changes appear without a rebuild.
   // Editor previews (drafts) are never cached.
   headers.set('Netlify-Vary', `cookie=${PREVIEW_COOKIE}`)
