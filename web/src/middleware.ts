@@ -4,7 +4,13 @@ import {isValidPreviewToken, PREVIEW_COOKIE} from './lib/preview.server'
 
 const frameAncestors = ["'self'", 'https://*.sanity.studio', PUBLIC_SANITY_STUDIO_URL].filter(Boolean).join(' ')
 
+// Old addresses under renamed pages (see `redirects` in astro.config.mjs).
+const RENAMED: Record<string, string> = {programme: '/agenda', resources: '/downloads'}
+
 export const onRequest = defineMiddleware(async (context, next) => {
+  const renamed = RENAMED[context.url.pathname.split('/')[1]]
+  if (renamed && !context.isPrerendered) return context.redirect(renamed, 301)
+
   context.locals.preview = context.isPrerendered ? false : isValidPreviewToken(context.cookies.get(PREVIEW_COOKIE)?.value)
 
   const response = await next()
