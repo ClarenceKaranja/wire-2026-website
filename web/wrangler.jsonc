@@ -5,5 +5,9 @@
   "name": "wire-2026-website",
   "compatibility_date": "2026-11-01",
   "compatibility_flags": ["nodejs_compat"],
-  "observability": {"enabled": true}
+  "observability": {"enabled": true},
+  // The site is only public at https://wireforum.org. Keep the free
+  // *.workers.dev addresses switched off, or every deploy would turn them back on.
+  "workers_dev": false,
+  "preview_urls": false
 }
